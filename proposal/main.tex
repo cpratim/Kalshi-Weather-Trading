@@ -1,0 +1,83 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{array}
+
+\geometry{margin=0.6in}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.2em}
+
+\title{\vspace{-1.1cm}Jump Tank Proposal: Trading in Kalshi Weather Prediction Markets}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-.5cm}
+
+\noindent\textbf{Overview:} Kalshi's weather prediction markets offer consistent trading opportunities, with daily high temperature markets showing the highest liquidity and volume. Target markets: daily high temperature for New York, Chicago, Miami, and Austin. Markets resolve to YES when actual temperature falls within specific ranges (e.g., $50$-$51^{\circ}$F).
+
+\vspace{0.2cm}
+\noindent\textbf{Strategy:} My approach targets volatility and trading patterns while maintaining a theoretical fair price, distinguishing informative trades from noise through contextual analysis.
+
+\noindent\textbf{Information Value Model:} For each trade at time $T$ with price $P$, I define information value $f(P)$ as:
+\begin{align*}
+f(P) = 
+\begin{cases}
+99 - P & \text{if YES resolves correctly and trader bought YES} \\
+P - 1 & \text{if YES resolves incorrectly and trader bought NO} \\
+\bar{P}_{\text{YES}}(t \to \text{EOD}) - P & \text{if YES resolves incorrectly and trader bought YES} \\
+\bar{P}_{\text{NO}}(t \to \text{EOD}) - P & \text{if YES resolves correctly and trader bought NO}
+\end{cases}
+\end{align*}
+Where $\bar{P}_{\text{YES}}(t \to \text{EOD})$ is the average price from time $t$ until end-of-day.
+
+\vspace{0.2cm}
+\noindent\textbf{Execution:} Train a linear regression model using historical trade data to predict information value. Initialize fair prices using weather forecast averages, then continuously update based on incoming trades. Execute orders when detecting significant mispricing between fair and market prices.
+
+\vspace{0.3cm}
+\noindent\textbf{Sample Trade Data and Information Values:}
+\begin{table}[h]
+\small
+\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.5cm}cccccc>{\bfseries}c}
+\toprule
+\textbf{Market} & \textbf{Trade Size} & \textbf{YES Price} & \textbf{NO Price} & \textbf{High Forecast} & \textbf{Rain \%} & $\cdots$ & \textbf{Info Value} \\
+\midrule
+75-76°F & \$500 & 65 & 35 & 74.8°F & 10\% & $\cdots$ & 0.72 \\
+75-76°F & \$50 & 68 & 32 & 74.8°F & 10\% & $\cdots$ & 0.21 \\
+76-77°F & \$300 & 32 & 68 & 74.8°F & 10\% & $\cdots$ & -0.45 \\
+68-69°F & \$1,000 & 75 & 25 & 74.6°F & 0\% & $\cdots$ & 0.83 \\
+69-70°F & \$200 & 42 & 58 & 74.3°F & 0\% & $\cdots$ & -0.38 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+I will also experiment with different features and models while I backtest this strategy, generally 
+trying to improve the signal to noise ratio while making it robust to overfitting.
+
+\vspace{0.2cm}
+\noindent\textbf{Execution Example:} If my fair price indicates $80$-$81^{\circ}$F as most likely, and a trade suggests shifting to $81$-$82^{\circ}$F, I would buy NO in the $80$-$81^{\circ}$F market and buy YES in the $81$-$82^{\circ}$F market, scaling order size with model confidence.
+
+
+\begin{table}[h]
+    \small
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Market} & \textbf{Action} & \textbf{Position} & \textbf{Price} & \textbf{Size} \\
+    \hline
+    $80$-$81^{\circ}$F & Buy & NO & 38 & \$3 \\
+    $81$-$82^{\circ}$F & Buy & YES & 35 & \$7 \\
+    \hline
+    \end{tabular}
+\end{table}
+\noindent This execution reflects my updated probability distribution across temperature ranges, with order sizes proportional to my confidence in the signal (higher for the $81$-$82^{\circ}$F market). As additional trades arrive, I continuously reassess and adjust my positions accordingly.
+
+
+\noindent\textbf{Requirements (have been found already):} Real-time Kalshi API access, multi-source weather data pipeline, historical trade data for model training, and computational resources for continuous model updating and execution.
+
+
+\end{document}

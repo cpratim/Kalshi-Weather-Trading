@@ -1,0 +1,2372 @@
+{
+    "HIGHCHI-24AUG13-T79": [
+        {
+            "trade_id": "90c1c805-683a-439f-b587-77ec7215ba1f",
+            "ticker": "HIGHCHI-24AUG13-T79",
+            "count": 50,
+            "created_time": "2024-08-12T22:33:40.866766Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHCHI-24AUG13-B79.5": [
+        {
+            "trade_id": "32c6b979-bd4c-4621-ad8a-3b6fb336172a",
+            "ticker": "HIGHCHI-24AUG13-B79.5",
+            "count": 50,
+            "created_time": "2024-08-13T12:00:35.425781Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHCHI-24AUG13-B81.5": [
+        {
+            "trade_id": "4c5ae543-d923-48d7-8853-cc7e36e50016",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 93,
+            "created_time": "2024-08-13T23:59:24.323485Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "2e4e519d-47d1-4876-805b-9200cdcac60c",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 33,
+            "created_time": "2024-08-13T18:10:32.357852Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "d98ab778-e218-404e-ac14-f64056b9c17b",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 33,
+            "created_time": "2024-08-13T16:42:01.017881Z",
+            "yes_price": 19,
+            "no_price": 81,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6808f227-6d25-4d8f-a69c-35f7009a4992",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 35,
+            "created_time": "2024-08-13T15:26:21.636803Z",
+            "yes_price": 27,
+            "no_price": 73,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "079bd923-c2db-42a3-9f84-4a66f4a124ab",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 7,
+            "created_time": "2024-08-13T14:53:55.211537Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "71e659c3-5eb6-4cb1-9524-21972b32b21b",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 36,
+            "created_time": "2024-08-13T14:01:50.458153Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "52808df1-d186-4eef-ba34-b240a78bb6db",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 64,
+            "created_time": "2024-08-13T14:01:50.458153Z",
+            "yes_price": 11,
+            "no_price": 89,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "aafca889-2871-4596-a83a-b0da460cf842",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 18,
+            "created_time": "2024-08-13T13:17:07.951523Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "9330e8fc-dc78-4afd-9310-632ce80f00e2",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 220,
+            "created_time": "2024-08-13T12:42:08.912622Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "e476d706-d0e2-4a49-942a-648bb1676fe6",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 50,
+            "created_time": "2024-08-13T12:40:06.049634Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c1baa3ef-7a59-4967-85f9-e6840eae4eed",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 50,
+            "created_time": "2024-08-13T12:00:35.401809Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b6370d3c-4ebf-4045-b0ab-c2efec94b58d",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 4,
+            "created_time": "2024-08-13T02:31:29.790036Z",
+            "yes_price": 9,
+            "no_price": 91,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5e97906e-2e31-4b48-aca8-927eb80b13a2",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 144,
+            "created_time": "2024-08-12T15:31:57.793357Z",
+            "yes_price": 19,
+            "no_price": 81,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "2563dbb2-448f-4bce-be28-af987fe385b6",
+            "ticker": "HIGHCHI-24AUG13-B81.5",
+            "count": 76,
+            "created_time": "2024-08-12T15:31:57.793357Z",
+            "yes_price": 21,
+            "no_price": 79,
+            "taker_side": "yes"
+        }
+    ],
+    "HIGHCHI-24AUG13-B83.5": [
+        {
+            "trade_id": "85750b1f-e89b-41c7-a57e-1cb3b673dc18",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 935,
+            "created_time": "2024-08-14T00:08:22.962791Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f7e5211d-ed75-4573-8ee9-f3d9251a3931",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 935,
+            "created_time": "2024-08-13T19:40:44.70055Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "248739c9-22f2-47c1-a0f7-fe87bd701a8b",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 8,
+            "created_time": "2024-08-13T19:39:32.281558Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "bd82469a-cdf9-48b7-8f86-ba0872226f63",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 15,
+            "created_time": "2024-08-13T18:22:13.169285Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "37424727-0007-47c5-95b0-a54d5550e982",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 986,
+            "created_time": "2024-08-13T18:11:49.16113Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5cad2ce6-337a-4e08-bc18-5c889c00f157",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:10:12.223253Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7d28c69b-f19d-448a-93fd-0441602ecb0f",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:09:53.890806Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "77b86779-ea30-446f-ae9d-71d898752df9",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:09:33.365195Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6d55b957-dbcf-4d8c-a57b-b7a329025922",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:09:13.745103Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "aa1fb220-d931-4081-a2c6-553552325012",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:08:52.20386Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "66fe5096-91b3-44eb-aff8-fb61c6c21f0c",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:08:31.372071Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e20bf039-e482-434b-a852-ea638ab002ad",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:08:11.028341Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6e766cdd-5472-4bec-9f0e-eda938209e3b",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:07:50.96919Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4092ea97-79ea-46cd-ac8b-66cf99992683",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:07:31.09047Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "35725f30-a3d9-488b-ab5c-f717b2da7a60",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:07:10.954855Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "a04501f2-dbcd-4a59-9056-de7ce3198cfa",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:06:50.499335Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "c4a42404-dfb1-421b-99fd-a910a5bf86e7",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 14,
+            "created_time": "2024-08-13T18:06:31.740651Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "52303b66-bf59-4dfd-a9c3-32a49263990c",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 20,
+            "created_time": "2024-08-13T18:06:31.740651Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1f001ec9-6dcf-4c54-963e-c74dc22bb32a",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 50,
+            "created_time": "2024-08-13T18:06:31.740651Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f644d943-c1fa-4bd5-a07b-08b1328baf8a",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 486,
+            "created_time": "2024-08-13T18:06:09.726653Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4434dc58-c9ab-4342-8a1f-1166fc010e52",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 250,
+            "created_time": "2024-08-13T18:06:09.726653Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3e5e8c51-8f65-40ea-b94d-0ece6dbdddaf",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 250,
+            "created_time": "2024-08-13T18:06:09.726653Z",
+            "yes_price": 4,
+            "no_price": 96,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "ce035d45-72d1-4d6c-8c67-fc5bd768469e",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 23,
+            "created_time": "2024-08-13T17:38:24.64902Z",
+            "yes_price": 38,
+            "no_price": 62,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a0b09e52-ea6a-4a55-a231-2e13c72c9f6f",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 6,
+            "created_time": "2024-08-13T17:36:29.119719Z",
+            "yes_price": 38,
+            "no_price": 62,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "925477dc-c698-407b-853a-176940f54a8f",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 8,
+            "created_time": "2024-08-13T15:39:03.737912Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "6c0ecc1b-1f9f-48e1-a9b1-175c4662c98b",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 7,
+            "created_time": "2024-08-13T15:38:22.644737Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0cf58291-093b-4dc6-867a-b83a5bf9cb9c",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 35,
+            "created_time": "2024-08-13T15:26:21.704017Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b17de69b-ed1a-41e4-bc7f-9ad213104afc",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 90,
+            "created_time": "2024-08-13T15:23:28.121495Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "13f94786-83bf-40a2-9511-da4eddaf41dc",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 54,
+            "created_time": "2024-08-13T15:23:28.121495Z",
+            "yes_price": 32,
+            "no_price": 68,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7547d6af-a977-4f31-a8bd-206d70a1e87c",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 1,
+            "created_time": "2024-08-13T15:00:00.171859Z",
+            "yes_price": 22,
+            "no_price": 78,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3ea3b8c8-48ce-4a7b-b290-0936f5a51aba",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 7,
+            "created_time": "2024-08-13T14:53:55.135694Z",
+            "yes_price": 69,
+            "no_price": 31,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "abd297ee-3376-4ac2-8b09-a9a6a23f0ca7",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 72,
+            "created_time": "2024-08-13T13:54:27.429133Z",
+            "yes_price": 61,
+            "no_price": 39,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "3792063c-0471-43ba-b70d-3b2f8caaa36c",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 72,
+            "created_time": "2024-08-13T13:54:27.429133Z",
+            "yes_price": 63,
+            "no_price": 37,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7fbc3f94-2ca9-4024-8c60-3bdf5c6a4133",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 1,
+            "created_time": "2024-08-13T13:25:14.815612Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "dddb8f99-8f4e-4827-864e-aa5d4439a64e",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 18,
+            "created_time": "2024-08-13T13:17:07.865857Z",
+            "yes_price": 52,
+            "no_price": 48,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b901d0ed-4952-4bff-9909-3128095d433b",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 18,
+            "created_time": "2024-08-13T13:17:07.865857Z",
+            "yes_price": 56,
+            "no_price": 44,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ada42c2c-80c8-47d0-b234-8dc68797c465",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 54,
+            "created_time": "2024-08-13T13:17:07.865857Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "32c304da-aae6-4df4-a5e1-5b3c871f06c3",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 13,
+            "created_time": "2024-08-13T12:46:31.161841Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6435e8eb-0e6a-4cc9-bea6-d9ed28cf4f3e",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 10,
+            "created_time": "2024-08-13T12:28:12.128232Z",
+            "yes_price": 31,
+            "no_price": 69,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f334ed01-2ccf-4ce3-bd5d-448314c3dbcb",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 10,
+            "created_time": "2024-08-13T12:19:08.732995Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "21cd3a82-eeaf-43b3-9767-dc414b5532d0",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 4,
+            "created_time": "2024-08-13T12:00:35.521328Z",
+            "yes_price": 49,
+            "no_price": 51,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f6f5ba2a-8e2e-4414-8300-38460a7888f4",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 50,
+            "created_time": "2024-08-13T12:00:35.443577Z",
+            "yes_price": 49,
+            "no_price": 51,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "690ac181-1ee2-4468-a551-db1ea8d071b9",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 1,
+            "created_time": "2024-08-13T03:46:10.134354Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b5c5d06f-2aaf-45ce-9b7e-35c0d16a272b",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 1,
+            "created_time": "2024-08-13T03:45:48.015068Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7e25db8c-65df-40f0-b74d-86c53424d1b3",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 2,
+            "created_time": "2024-08-13T03:45:27.966264Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "78aa8b7b-8515-4c92-96bb-f9d8de628eac",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 3,
+            "created_time": "2024-08-13T03:45:08.063191Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "cc6f9c68-21e0-4bcb-a8e5-1b5aae9bf039",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 4,
+            "created_time": "2024-08-13T03:44:47.847308Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "05d0bf95-83bc-4231-9b0b-89a8762332a6",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 6,
+            "created_time": "2024-08-13T03:44:27.593389Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "ea12cccb-22fa-45e9-b256-5aa7da85f510",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 8,
+            "created_time": "2024-08-13T03:44:07.816256Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "61bc3a00-86ec-4de6-97fd-3c8976aca183",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 12,
+            "created_time": "2024-08-13T03:43:47.468256Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "396ac914-3393-4b00-8372-8259e06444d6",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 18,
+            "created_time": "2024-08-13T03:43:27.417096Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "fd9391b9-ea6c-48df-a311-e50e1d83dcc6",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 13,
+            "created_time": "2024-08-13T03:43:07.83566Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "d602f00b-0af2-4842-b0e9-4a3f86cabbc2",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 13,
+            "created_time": "2024-08-13T03:43:07.83566Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7a94b9ee-967e-4f5c-8066-4766f1ab7448",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 37,
+            "created_time": "2024-08-13T03:42:47.244782Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7d57efcc-f88b-454d-90b6-934147e81ba8",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 50,
+            "created_time": "2024-08-13T03:42:27.072031Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7c8ceb57-437d-49d3-8069-578c2fffb580",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 50,
+            "created_time": "2024-08-13T03:42:06.943837Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "607c57da-ba51-43f1-86e3-39a39975542b",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 25,
+            "created_time": "2024-08-13T02:29:02.954081Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "12d100dc-4551-4b12-9561-8fe6f7667bc1",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 54,
+            "created_time": "2024-08-13T02:28:48.047462Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "dce2326b-efbe-4bd9-bc6b-e12dac1fe683",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 90,
+            "created_time": "2024-08-13T02:26:27.393183Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f7b95354-0de9-4aa9-88b8-d7a68e7a911e",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 90,
+            "created_time": "2024-08-13T02:25:57.8269Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "68fe5ea5-55a1-4363-9c41-274f987f7224",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 72,
+            "created_time": "2024-08-13T02:25:46.455143Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6feb7c93-584e-42be-b3a5-8090a282d4f1",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 45,
+            "created_time": "2024-08-13T01:24:08.226659Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "403fc053-4664-4899-bef9-0240eaae49d9",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 54,
+            "created_time": "2024-08-12T23:09:11.02436Z",
+            "yes_price": 41,
+            "no_price": 59,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "780e1702-8144-4bf6-9df8-b1c7ad29fa2b",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 15,
+            "created_time": "2024-08-12T23:07:41.867571Z",
+            "yes_price": 36,
+            "no_price": 64,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "acee0baa-286d-467c-a873-fd8a4fd3618c",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 30,
+            "created_time": "2024-08-12T20:56:00.86381Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b8e66b77-ee8e-4996-87a7-a068f7098d30",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 180,
+            "created_time": "2024-08-12T20:35:08.570379Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "447019c1-b9bd-4183-937c-9e85c92e2799",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 36,
+            "created_time": "2024-08-12T20:35:08.570379Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6b7b830c-0ae1-48ad-a613-ad495515a692",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 2,
+            "created_time": "2024-08-12T20:01:26.31855Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "acbb5019-945c-457f-ad63-a5521112c5e8",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 1,
+            "created_time": "2024-08-12T17:30:27.046947Z",
+            "yes_price": 38,
+            "no_price": 62,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "bff36bc5-3f5e-4df0-b802-598757aa3416",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 30,
+            "created_time": "2024-08-12T16:58:11.81112Z",
+            "yes_price": 41,
+            "no_price": 59,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4fe0b5be-0b08-4b86-b3cf-14e0ad090a60",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 23,
+            "created_time": "2024-08-12T16:35:36.136878Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b2abb448-1ccd-496a-8d67-09db380daead",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 14,
+            "created_time": "2024-08-12T16:33:42.339968Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e4a47f79-9c9b-46ba-ad6e-f55965c612a3",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 36,
+            "created_time": "2024-08-12T16:31:28.28988Z",
+            "yes_price": 38,
+            "no_price": 62,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8d32da8c-11a5-45e3-8099-e177890d3095",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 180,
+            "created_time": "2024-08-12T16:08:33.527975Z",
+            "yes_price": 39,
+            "no_price": 61,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "3dd0b3e5-c2a4-46d4-a647-9a89bcef3862",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 54,
+            "created_time": "2024-08-12T16:08:33.527975Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "26f7c497-2da4-4490-a8c1-c26035ef5c9e",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 180,
+            "created_time": "2024-08-12T16:08:33.527975Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "d883a24c-aade-49fe-a409-a3c58342a5d8",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 36,
+            "created_time": "2024-08-12T14:30:33.811405Z",
+            "yes_price": 34,
+            "no_price": 66,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7d39a1e9-584d-49cb-ba8e-a5c501175a63",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 18,
+            "created_time": "2024-08-12T14:27:37.249707Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4fa2b52d-b8c5-472b-9277-7dbbfcbcc466",
+            "ticker": "HIGHCHI-24AUG13-B83.5",
+            "count": 54,
+            "created_time": "2024-08-12T14:27:03.098546Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "yes"
+        }
+    ],
+    "HIGHCHI-24AUG13-B85.5": [
+        {
+            "trade_id": "a3850bf2-d679-4a15-95cf-817d2e23aae7",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 4,
+            "created_time": "2024-08-14T00:25:18.925773Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0f79e039-3940-469d-aa92-701788535c73",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 314,
+            "created_time": "2024-08-14T00:12:31.097349Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1748b00f-44b4-4add-8d84-d801f0ee5c35",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 102,
+            "created_time": "2024-08-13T23:55:43.064851Z",
+            "yes_price": 98,
+            "no_price": 2,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "97800ac5-6274-4aaa-9534-4a12e85ecbe1",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 32,
+            "created_time": "2024-08-13T23:09:11.712658Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4d3b0e27-46e1-4f72-98ef-c0834c9600ac",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T22:39:27.892063Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0660e8a7-5102-4d6c-92d0-2fdd5a2ecd53",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 17,
+            "created_time": "2024-08-13T21:43:03.187655Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "993b1f66-ece8-49fb-a484-c38bf58ee73e",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T18:28:44.78258Z",
+            "yes_price": 98,
+            "no_price": 2,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f99a7861-adee-45b4-83fe-99423c11f651",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 13,
+            "created_time": "2024-08-13T18:16:16.061902Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8fc19540-2bf7-45b3-9bf4-5536f22cb9c2",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-13T18:15:56.181341Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "26b50ce1-2bdb-43ba-8335-73162d52ac75",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 49,
+            "created_time": "2024-08-13T18:15:56.181341Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b4a9523e-ee8a-42cf-90a7-ad80c4e3972f",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 49,
+            "created_time": "2024-08-13T18:14:55.928501Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7cd5b4f7-063b-4d24-81c9-e05a9118b7e9",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 49,
+            "created_time": "2024-08-13T18:14:35.585954Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "c2ba5f53-847f-4536-ba51-5c1bb1434e7c",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 49,
+            "created_time": "2024-08-13T18:14:15.450697Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "56b48540-eb37-465a-8b23-be5565b2867e",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 49,
+            "created_time": "2024-08-13T18:13:55.683394Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "c35998f2-2470-4cde-a1ae-adb873550e11",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 49,
+            "created_time": "2024-08-13T18:13:35.35417Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "cfb8f630-b31e-499e-826c-ad540cfab9ff",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 49,
+            "created_time": "2024-08-13T18:13:15.182523Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "41356d81-cb7e-4620-8c7e-b5c8c898e8c6",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T18:12:55.63293Z",
+            "yes_price": 90,
+            "no_price": 10,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "60255296-acf1-47f9-b99e-e04c5e252ed9",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 108,
+            "created_time": "2024-08-13T18:12:55.624817Z",
+            "yes_price": 89,
+            "no_price": 11,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8d4656d2-d3a4-48fa-a5da-24ce904d4030",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 5,
+            "created_time": "2024-08-13T18:08:20.619353Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "bd2074c4-c3e8-4c71-b7af-fb0c0e7df097",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 45,
+            "created_time": "2024-08-13T18:05:28.40307Z",
+            "yes_price": 85,
+            "no_price": 15,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f2f78bb9-10e9-41b0-8c68-3799d81bf723",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 5,
+            "created_time": "2024-08-13T17:37:19.333641Z",
+            "yes_price": 61,
+            "no_price": 39,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8e69c584-4126-4f56-aaed-cf78c51437e5",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 6,
+            "created_time": "2024-08-13T17:36:29.047073Z",
+            "yes_price": 64,
+            "no_price": 36,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5da9545a-fb0d-4cfd-9897-05c8184f7964",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 4,
+            "created_time": "2024-08-13T16:57:17.927922Z",
+            "yes_price": 46,
+            "no_price": 54,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "52471c33-f5d0-49f3-aeaf-760cb6ccbb5a",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T16:57:14.639801Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7af4034f-4ba7-4f62-ab24-31c15ceafafa",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T16:56:54.377368Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a75f6df9-2acf-4b25-bc8f-d4a0114dea3f",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T16:56:34.225803Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "cf63bc74-9177-4dc1-a61a-b10843817195",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T16:56:14.52013Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "bc7ae18c-b60c-4aad-96d8-4fec78a76ef0",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-13T16:55:54.068688Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2e5a1443-00f0-433e-90c1-26fd673e3dd5",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-13T16:55:33.779884Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "6f3cd8ee-6ad5-4c15-95d0-1e22efac24ae",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-13T16:55:13.909902Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b365bff3-7cea-44de-983a-a550f7eafdee",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-13T16:54:51.200102Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "fb147983-4f77-41a9-8e0a-b92508ccc72d",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 3,
+            "created_time": "2024-08-13T16:54:30.98032Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "131e3864-a7d3-43ec-bd78-52b38acd1124",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 4,
+            "created_time": "2024-08-13T16:54:11.379415Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b932f1a4-1532-44ee-86f6-e81393b8d451",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 4,
+            "created_time": "2024-08-13T16:53:50.861986Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "516b80f7-788b-4b26-8387-dd138f122ee5",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 5,
+            "created_time": "2024-08-13T16:53:30.513387Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4b6516ab-114f-4722-814a-1a43989a1480",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 6,
+            "created_time": "2024-08-13T16:53:10.830483Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "8a6fd2ac-f919-41bf-98d9-17c9b72429a3",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 7,
+            "created_time": "2024-08-13T16:52:50.318702Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f5c896ed-63a9-40cc-bce1-6297f090c08b",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 6,
+            "created_time": "2024-08-13T16:52:30.185668Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4527406f-74e2-47e4-9d41-bd6cf527ad63",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 7,
+            "created_time": "2024-08-13T16:52:10.560522Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "8a010776-4117-4542-9a37-263e052aaceb",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 8,
+            "created_time": "2024-08-13T16:51:50.150913Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "ea2343cf-5c28-400e-82b7-7d527436a99e",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 11,
+            "created_time": "2024-08-13T16:51:29.404039Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "539ecad4-d5c5-484a-b581-e6d93dcb6e17",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 13,
+            "created_time": "2024-08-13T16:51:09.757478Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "5e019a16-ec94-4b79-9e4e-2eb3df6e576a",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 5,
+            "created_time": "2024-08-13T16:50:49.349844Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7eca8912-deeb-405c-b06a-dd4184d41301",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 5,
+            "created_time": "2024-08-13T16:50:29.249562Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a54ccdaa-3a28-4631-93e6-a30bd0a6cffa",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T16:30:14.423911Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a76b1fc6-3fb4-4d5d-9dde-58528a1925c3",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 17,
+            "created_time": "2024-08-13T15:38:51.96609Z",
+            "yes_price": 57,
+            "no_price": 43,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "50d7d7b6-fb3c-4ee6-8a21-4ade6531930f",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 7,
+            "created_time": "2024-08-13T15:38:14.513029Z",
+            "yes_price": 57,
+            "no_price": 43,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ff93cdbe-2c38-4176-bc68-304c550d05e2",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 54,
+            "created_time": "2024-08-13T15:35:11.150919Z",
+            "yes_price": 54,
+            "no_price": 46,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "924405ee-be16-4407-a17b-47fe1cdf1d48",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 90,
+            "created_time": "2024-08-13T15:35:11.150919Z",
+            "yes_price": 58,
+            "no_price": 42,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7a53b7f9-194d-4422-a1c8-521ee1d0ec84",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 116,
+            "created_time": "2024-08-13T15:35:11.150919Z",
+            "yes_price": 57,
+            "no_price": 43,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5640479c-90b5-4961-99ed-911a7711b371",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 54,
+            "created_time": "2024-08-13T15:35:11.150919Z",
+            "yes_price": 55,
+            "no_price": 45,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7becd680-10dd-4d14-96eb-83c8aea761c2",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 35,
+            "created_time": "2024-08-13T15:26:21.70507Z",
+            "yes_price": 51,
+            "no_price": 49,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "cca439df-5446-4964-9440-92884dc8c502",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 54,
+            "created_time": "2024-08-13T15:25:58.048068Z",
+            "yes_price": 52,
+            "no_price": 48,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "18a4e388-1652-4645-ae37-2c60df3050d5",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 44,
+            "created_time": "2024-08-13T15:25:58.048068Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "ddacacd9-f4fe-4205-8adf-fe37f2640384",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 36,
+            "created_time": "2024-08-13T15:23:46.903135Z",
+            "yes_price": 60,
+            "no_price": 40,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0050b67c-7dc0-4cdc-ad74-eb851a308cbf",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 36,
+            "created_time": "2024-08-13T15:23:46.903135Z",
+            "yes_price": 61,
+            "no_price": 39,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5f2bab67-5d37-4d7b-b451-9f9e8c6a04a4",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 72,
+            "created_time": "2024-08-13T15:19:19.44217Z",
+            "yes_price": 57,
+            "no_price": 43,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "5af2601b-0c82-4bd3-a6a5-241604e64225",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 180,
+            "created_time": "2024-08-13T15:19:19.44217Z",
+            "yes_price": 56,
+            "no_price": 44,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "47c080cf-ab3f-4892-bb01-8bb636502e75",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 6,
+            "created_time": "2024-08-13T15:19:19.44217Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "cb0eb354-61c1-48c5-a2f7-93351339856f",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 6,
+            "created_time": "2024-08-13T15:07:50.028339Z",
+            "yes_price": 28,
+            "no_price": 72,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "6963bfde-52a4-4fe3-bbb5-222f4f4cbb04",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 68,
+            "created_time": "2024-08-13T15:01:15.457152Z",
+            "yes_price": 28,
+            "no_price": 72,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b07cacc9-5f20-42fe-811b-8d89eab35b03",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-13T15:00:26.829074Z",
+            "yes_price": 27,
+            "no_price": 73,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7c8aa344-705d-47f7-aafc-276097df397f",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 15,
+            "created_time": "2024-08-13T14:59:55.548471Z",
+            "yes_price": 63,
+            "no_price": 37,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "91b9e500-46d4-47ec-81bb-b576c949776e",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 7,
+            "created_time": "2024-08-13T14:54:05.264285Z",
+            "yes_price": 27,
+            "no_price": 73,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "8fd01d28-263d-4779-b420-c312c7ecce2c",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 7,
+            "created_time": "2024-08-13T14:53:55.203968Z",
+            "yes_price": 27,
+            "no_price": 73,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2ccbc871-b40e-4028-83d8-f097130bcfe0",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 21,
+            "created_time": "2024-08-13T13:48:21.352936Z",
+            "yes_price": 39,
+            "no_price": 61,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e658c7f7-f275-46f7-ab43-823dfd27ec50",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 21,
+            "created_time": "2024-08-13T13:48:20.952576Z",
+            "yes_price": 39,
+            "no_price": 61,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b32bd30d-af7c-46c0-8aa4-46c3e9e53873",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-13T13:25:21.475344Z",
+            "yes_price": 41,
+            "no_price": 59,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "a5511b0d-8151-4945-b6c2-5a70e11fdc7c",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 36,
+            "created_time": "2024-08-13T13:21:37.59416Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "90766a2f-7c40-4829-a4e7-06129ec1d22d",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 3,
+            "created_time": "2024-08-13T13:21:37.59416Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1e08e3f1-142b-49eb-ab37-9e8e8b9cb857",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 18,
+            "created_time": "2024-08-13T13:17:07.942027Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "743bfe33-cb5b-40b1-bb74-f0725c7e728c",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 15,
+            "created_time": "2024-08-13T12:57:28.482863Z",
+            "yes_price": 56,
+            "no_price": 44,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "775651f2-834a-434f-ad2d-d79cd15879b9",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 20,
+            "created_time": "2024-08-13T12:41:28.356354Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "28010191-4cf6-4c87-8cc0-c865209e13bd",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 32,
+            "created_time": "2024-08-13T12:41:08.30643Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b2aa1963-ba13-4dd6-aa51-b0942ad0abed",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 35,
+            "created_time": "2024-08-13T12:40:48.267962Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "49b06199-4ff6-409b-9881-5dd0c3100784",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 3,
+            "created_time": "2024-08-13T12:40:45.115188Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8b2b75e1-61bd-4287-8a87-56973fbb3372",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 36,
+            "created_time": "2024-08-13T12:40:36.02283Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "dd099caa-99b1-4720-b7e4-be05f762a0df",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 43,
+            "created_time": "2024-08-13T12:30:08.29634Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3a2eba4a-61f3-4504-a056-438569e7429b",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 48,
+            "created_time": "2024-08-13T12:29:48.398396Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "df03f6ca-486b-4fe2-af0d-229ff7c22c70",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 53,
+            "created_time": "2024-08-13T12:29:28.361283Z",
+            "yes_price": 60,
+            "no_price": 40,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7064d2f2-4210-4882-a8e6-0dcb54e4795e",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 36,
+            "created_time": "2024-08-13T12:29:08.362472Z",
+            "yes_price": 61,
+            "no_price": 39,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "6dd82d32-3598-41e3-bca5-b7ca97a5ada6",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 23,
+            "created_time": "2024-08-13T12:29:08.362472Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "5a96398e-cf1b-431f-b2ef-713051b542ed",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 66,
+            "created_time": "2024-08-13T12:28:48.365162Z",
+            "yes_price": 61,
+            "no_price": 39,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f76ec82e-d3a0-40d3-b2a2-a28e508eeb8b",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 18,
+            "created_time": "2024-08-13T12:28:38.365665Z",
+            "yes_price": 63,
+            "no_price": 37,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "628d0779-248b-4aea-8a37-71e0aabe2544",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 75,
+            "created_time": "2024-08-13T12:28:38.334641Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "d3f1d061-5b9f-4498-b6e6-5c02555c2bdd",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 18,
+            "created_time": "2024-08-13T12:24:29.441404Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6d7f8bab-27f6-457e-9d49-06ba8196f6ce",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 18,
+            "created_time": "2024-08-13T12:21:13.860276Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "756c05dd-2317-41e0-ae20-b6f95097c082",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 33,
+            "created_time": "2024-08-13T12:21:08.373223Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "878033aa-fff9-4441-b27e-43fe61369127",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 56,
+            "created_time": "2024-08-13T12:21:04.188368Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "46e4d789-bede-4b78-88b9-87fa8320aa17",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T12:21:04.188368Z",
+            "yes_price": 58,
+            "no_price": 42,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "9031f914-f966-4640-8ce5-f5a5fc7503c8",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 35,
+            "created_time": "2024-08-13T12:20:54.572947Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5b1af3cc-fd48-4fa7-9b81-fc20a8ca5e8c",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T12:20:54.572947Z",
+            "yes_price": 58,
+            "no_price": 42,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "884a44a5-672f-44f3-be78-8c17706e31cf",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 5,
+            "created_time": "2024-08-13T12:05:00.796276Z",
+            "yes_price": 56,
+            "no_price": 44,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "60dc07e0-4931-4c95-99be-ee2043b27391",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 24,
+            "created_time": "2024-08-13T12:01:15.775768Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2afd36e7-14d5-4fa4-b7df-8eddf7fa3fc3",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 10,
+            "created_time": "2024-08-13T12:01:02.642637Z",
+            "yes_price": 55,
+            "no_price": 45,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f4b26fd4-ccee-48e0-bc56-4893575dc11d",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 180,
+            "created_time": "2024-08-13T12:00:43.850838Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "50fd2766-5eae-4958-a8b5-a7656f38d683",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 72,
+            "created_time": "2024-08-13T12:00:43.835887Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "77c828f0-e654-4157-b0b7-f30a1dc2c52c",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 180,
+            "created_time": "2024-08-13T12:00:43.816265Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "144d5095-6952-4fd3-a307-653a4c88ed92",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 4,
+            "created_time": "2024-08-13T12:00:35.528931Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "402753d8-dcc2-4abf-ba1b-7dddfab966e2",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 180,
+            "created_time": "2024-08-13T12:00:35.514219Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7e55b639-2d83-4e2e-9269-ee80cec18087",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 180,
+            "created_time": "2024-08-13T12:00:35.492299Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "db9c3f1c-bb92-4d26-9ae5-d04f0b0c228b",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 36,
+            "created_time": "2024-08-13T12:00:35.474439Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3da3a561-5d53-40e4-befa-d0fb2433c514",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 50,
+            "created_time": "2024-08-13T12:00:35.423826Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c9134d23-ee45-4974-90d3-aa6e799dab9c",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 39,
+            "created_time": "2024-08-13T03:56:36.571989Z",
+            "yes_price": 46,
+            "no_price": 54,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "1c941020-8c8f-4d3c-85bc-73c2cfc5d3e0",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 180,
+            "created_time": "2024-08-13T02:28:33.212816Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "cce16121-4874-4f27-983a-a6878d93983c",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 36,
+            "created_time": "2024-08-13T02:28:32.535908Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2ffe6c02-01f5-49ff-9074-426114e5cb67",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 54,
+            "created_time": "2024-08-13T02:28:21.952888Z",
+            "yes_price": 41,
+            "no_price": 59,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4da82ada-a6f5-4498-a4cb-4424ea96a08f",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T02:26:56.200708Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "ffb58da3-c44e-401c-ae2d-bc8b1bac3317",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-13T02:26:54.562509Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "91fa058a-5eb5-43cd-8a37-9ac7e73b4ad2",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-13T01:24:17.045741Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7c41d8d1-10f8-4b90-aab5-98cd1a869c68",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 10,
+            "created_time": "2024-08-13T01:24:17.045741Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "490806e1-6a6d-46de-b33e-14bd60235ab2",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 33,
+            "created_time": "2024-08-13T01:24:17.045741Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e298a67a-21d5-4b4e-a18c-b7e5e94bade2",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 3,
+            "created_time": "2024-08-13T00:54:25.977387Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "d6b4e2e3-b66e-4980-b591-bfb57aa05588",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-13T00:54:25.977387Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "89cfe20d-f431-4c2f-82cb-ebeff9f04747",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 15,
+            "created_time": "2024-08-13T00:54:25.977387Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "08c7d3b0-68cb-484f-9d77-1d0be9e9d967",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 31,
+            "created_time": "2024-08-12T23:09:43.805293Z",
+            "yes_price": 41,
+            "no_price": 59,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "85e2ed98-d48f-4068-a07c-11bf6d556981",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 18,
+            "created_time": "2024-08-12T23:09:34.886736Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "779644d1-b1f8-4b16-81d1-36b880a1eb21",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 5,
+            "created_time": "2024-08-12T23:09:34.886736Z",
+            "yes_price": 39,
+            "no_price": 61,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "c328531b-0122-420b-b857-e45daddd4d9f",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 6,
+            "created_time": "2024-08-12T22:54:44.527677Z",
+            "yes_price": 36,
+            "no_price": 64,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f0dbefa3-ef13-4526-966b-df09f22ebeb3",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 10,
+            "created_time": "2024-08-12T22:53:36.552807Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7ddaf69c-2327-4dbb-b14b-ddf8933bc533",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 76,
+            "created_time": "2024-08-12T22:53:36.552807Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ef99eb11-c0f0-41fc-b0ed-188e987f2d68",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 90,
+            "created_time": "2024-08-12T22:53:10.261328Z",
+            "yes_price": 36,
+            "no_price": 64,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "589ba0a2-20d6-48a2-9a08-87dfb8d5c8ca",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 14,
+            "created_time": "2024-08-12T22:53:10.261328Z",
+            "yes_price": 36,
+            "no_price": 64,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f6953e46-e31b-4cb8-bfec-b3c34aa57a3d",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 17,
+            "created_time": "2024-08-12T22:52:49.046337Z",
+            "yes_price": 34,
+            "no_price": 66,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e9c63683-1091-4e29-a3cd-82ab87ad6300",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 90,
+            "created_time": "2024-08-12T22:52:49.046337Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b9f2403e-9aff-43da-844a-362276191277",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 180,
+            "created_time": "2024-08-12T22:52:49.046337Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0d3585c5-a40f-4681-bc6b-7ee18ebf7adb",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 17,
+            "created_time": "2024-08-12T22:52:49.046337Z",
+            "yes_price": 32,
+            "no_price": 68,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "3ccb8d26-23f5-43f8-911e-28ff42a3bf10",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 2,
+            "created_time": "2024-08-12T20:01:32.047192Z",
+            "yes_price": 31,
+            "no_price": 69,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "caa9efe9-6a9b-491b-b424-e0d45f258d76",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 1,
+            "created_time": "2024-08-12T18:35:10.652008Z",
+            "yes_price": 27,
+            "no_price": 73,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "e30f19b4-26e2-4f42-b100-dfaa3bfce5b0",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 14,
+            "created_time": "2024-08-12T16:35:43.954457Z",
+            "yes_price": 30,
+            "no_price": 70,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6777c3f1-1c3c-49f7-a2cb-ca1d981c941b",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 17,
+            "created_time": "2024-08-12T16:35:43.954457Z",
+            "yes_price": 30,
+            "no_price": 70,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7b1a3e8d-15cc-4509-9876-e5cb78fce8d2",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 6,
+            "created_time": "2024-08-12T14:30:41.219956Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "1663f064-7b2f-41be-a3f2-2ccde3552118",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 30,
+            "created_time": "2024-08-12T14:30:41.219956Z",
+            "yes_price": 32,
+            "no_price": 68,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "175a4bfb-7329-42e8-8a07-8717e31455e9",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 18,
+            "created_time": "2024-08-12T14:27:43.696757Z",
+            "yes_price": 32,
+            "no_price": 68,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "cdb2c3b4-b085-4047-bc0c-42e05665b3d5",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 41,
+            "created_time": "2024-08-12T14:27:11.275172Z",
+            "yes_price": 32,
+            "no_price": 68,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "bee7f802-8c52-4517-8d7b-e84e266deb43",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 9,
+            "created_time": "2024-08-12T14:27:11.275172Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b3d30620-9d21-4b8a-840b-7b83afaa0fa2",
+            "ticker": "HIGHCHI-24AUG13-B85.5",
+            "count": 4,
+            "created_time": "2024-08-12T14:27:11.275172Z",
+            "yes_price": 32,
+            "no_price": 68,
+            "taker_side": "yes"
+        }
+    ],
+    "HIGHCHI-24AUG13-T86": [
+        {
+            "trade_id": "fb2b7385-4e41-4534-89ce-467d7009f1df",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 487,
+            "created_time": "2024-08-14T01:18:30.495833Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "9021ffdf-0442-473d-811c-fe78ee199d26",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 6,
+            "created_time": "2024-08-14T00:42:53.934909Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "25e9a4af-3ca1-42dc-8ef4-6d73e1006270",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 440,
+            "created_time": "2024-08-13T20:49:07.920422Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "552b16a9-64f2-4e29-9afe-76f77d5e362e",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 50,
+            "created_time": "2024-08-13T18:07:09.520615Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "30a1169c-2705-4861-ab11-0f1cba26bc2b",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 6,
+            "created_time": "2024-08-13T17:36:29.124012Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "04a62335-85f7-4491-851b-ed4bc2ee19d6",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 35,
+            "created_time": "2024-08-13T15:26:21.715796Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "fe10ee13-4333-448f-af17-d456aafa8515",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 100,
+            "created_time": "2024-08-13T15:17:40.393574Z",
+            "yes_price": 4,
+            "no_price": 96,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4faca05d-085f-4b75-b6ff-20a0299255e5",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 250,
+            "created_time": "2024-08-13T15:01:26.3665Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2c8cc877-ba23-451e-8a18-5f6467810d08",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 7,
+            "created_time": "2024-08-13T14:53:55.199263Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "387e2c7c-e272-4a87-b2ce-17ea35fd9d2e",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 18,
+            "created_time": "2024-08-13T13:17:07.952171Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "90bfe64b-e5c9-4bd7-afc5-9e2674b5bedf",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 45,
+            "created_time": "2024-08-13T12:37:27.920637Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "fff5f989-6573-4f1a-8646-e295b31661a1",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 3,
+            "created_time": "2024-08-13T12:36:57.398584Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2cc54cce-2691-4e85-b0eb-688a0b912dbb",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 2,
+            "created_time": "2024-08-13T12:36:13.270089Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "242df8be-36fb-4ed2-982a-4a1254ed2432",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 4,
+            "created_time": "2024-08-13T12:00:35.527667Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "33075e2d-fb25-4977-9fa3-1499dc9841ba",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 50,
+            "created_time": "2024-08-13T12:00:35.424557Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a883f6d0-fd63-43c8-a102-76299e9865bd",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 18,
+            "created_time": "2024-08-13T02:24:33.311576Z",
+            "yes_price": 9,
+            "no_price": 91,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "dbbda40b-3a5c-4f8a-8e6e-3b3937e466da",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 180,
+            "created_time": "2024-08-13T02:24:29.444565Z",
+            "yes_price": 9,
+            "no_price": 91,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0b2455f0-c008-41b1-824b-0945c7401b5a",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 18,
+            "created_time": "2024-08-13T02:24:13.605297Z",
+            "yes_price": 9,
+            "no_price": 91,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "66ceabdb-3f13-4a13-9d20-e06749b7c66c",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 180,
+            "created_time": "2024-08-13T02:24:02.190443Z",
+            "yes_price": 9,
+            "no_price": 91,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "5ac7b105-7ec7-42a4-883c-7869b940a44b",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 12,
+            "created_time": "2024-08-12T23:19:01.561947Z",
+            "yes_price": 11,
+            "no_price": 89,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "29f9adc1-75b6-424d-8c53-d68fcc5f4cb1",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 29,
+            "created_time": "2024-08-12T23:09:55.982659Z",
+            "yes_price": 16,
+            "no_price": 84,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "9d9592d5-2660-4348-aef2-3c757daa0466",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 144,
+            "created_time": "2024-08-12T22:12:13.18966Z",
+            "yes_price": 16,
+            "no_price": 84,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "cdff17b7-e797-40c3-a684-18dadf507145",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 41,
+            "created_time": "2024-08-12T16:41:10.102155Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c6b6a511-7c1d-4cd8-a2ae-ec2aa12bbfaf",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 180,
+            "created_time": "2024-08-12T16:41:10.102155Z",
+            "yes_price": 16,
+            "no_price": 84,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "949a7f71-2ce0-4039-8db0-5c1428b1500d",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 50,
+            "created_time": "2024-08-12T16:41:10.102155Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "75c59bb0-0ed7-4392-aea7-59607fc3310b",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 36,
+            "created_time": "2024-08-12T16:41:10.102155Z",
+            "yes_price": 18,
+            "no_price": 82,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0566fc9a-eb29-44cf-9f60-82c5130f2ad1",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 180,
+            "created_time": "2024-08-12T16:41:10.102155Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3bf94bdc-d1e0-444a-ab8c-c0ac7b00d279",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 23,
+            "created_time": "2024-08-12T16:28:32.696466Z",
+            "yes_price": 20,
+            "no_price": 80,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "06bdf232-e496-4c5e-a8ee-4cb2353d8639",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 18,
+            "created_time": "2024-08-12T16:24:36.257497Z",
+            "yes_price": 20,
+            "no_price": 80,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5c6dec92-6bb4-4bb7-8738-a1f3943395f8",
+            "ticker": "HIGHCHI-24AUG13-T86",
+            "count": 25,
+            "created_time": "2024-08-12T14:44:30.415147Z",
+            "yes_price": 17,
+            "no_price": 83,
+            "taker_side": "yes"
+        }
+    ]
+}

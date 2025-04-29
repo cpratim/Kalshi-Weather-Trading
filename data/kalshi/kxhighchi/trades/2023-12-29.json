@@ -1,0 +1,129 @@
+{
+    "HIGHCHI-23DEC29-T37": [],
+    "HIGHCHI-23DEC29-B37.5": [],
+    "HIGHCHI-23DEC29-B39.5": [
+        {
+            "trade_id": "715e5db5-6c3c-4e8a-a879-c0ccfb321193",
+            "ticker": "HIGHCHI-23DEC29-B39.5",
+            "count": 5,
+            "created_time": "2023-12-29T20:47:46.522905Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7c6711cb-9b6d-4639-bad9-a9dae362cd50",
+            "ticker": "HIGHCHI-23DEC29-B39.5",
+            "count": 5,
+            "created_time": "2023-12-28T19:41:45.767154Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "eddc230b-556e-473c-b816-feb5d7df641f",
+            "ticker": "HIGHCHI-23DEC29-B39.5",
+            "count": 1,
+            "created_time": "2023-12-28T15:19:13.297421Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHCHI-23DEC29-B41.5": [
+        {
+            "trade_id": "7305de4d-b3e1-4dc1-a3c7-14afc688ee2d",
+            "ticker": "HIGHCHI-23DEC29-B41.5",
+            "count": 1,
+            "created_time": "2023-12-28T15:19:13.312303Z",
+            "yes_price": 68,
+            "no_price": 32,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHCHI-23DEC29-B43.5": [
+        {
+            "trade_id": "e86ed51f-c472-4277-8372-31b7449751ef",
+            "ticker": "HIGHCHI-23DEC29-B43.5",
+            "count": 64,
+            "created_time": "2023-12-29T23:55:40.234721Z",
+            "yes_price": 69,
+            "no_price": 31,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "809331a2-f56a-4699-89f3-032d601af839",
+            "ticker": "HIGHCHI-23DEC29-B43.5",
+            "count": 5,
+            "created_time": "2023-12-29T20:45:49.846941Z",
+            "yes_price": 69,
+            "no_price": 31,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4bb0ef6a-cfd3-45c3-b0bc-89192f466ea5",
+            "ticker": "HIGHCHI-23DEC29-B43.5",
+            "count": 1,
+            "created_time": "2023-12-29T20:40:00.17476Z",
+            "yes_price": 64,
+            "no_price": 36,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4c8bc86a-4c43-4740-b006-a5b8157f2033",
+            "ticker": "HIGHCHI-23DEC29-B43.5",
+            "count": 4,
+            "created_time": "2023-12-29T13:51:36.716463Z",
+            "yes_price": 98,
+            "no_price": 2,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "322c7873-6f2c-4c70-a992-14ef330a5138",
+            "ticker": "HIGHCHI-23DEC29-B43.5",
+            "count": 1,
+            "created_time": "2023-12-29T13:51:20.514031Z",
+            "yes_price": 98,
+            "no_price": 2,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2be2be50-3b63-4793-9fef-e43a8ee2ed31",
+            "ticker": "HIGHCHI-23DEC29-B43.5",
+            "count": 1,
+            "created_time": "2023-12-28T15:19:13.314362Z",
+            "yes_price": 21,
+            "no_price": 79,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHCHI-23DEC29-T44": [
+        {
+            "trade_id": "45df9764-d8a4-4035-be78-255aa10260cc",
+            "ticker": "HIGHCHI-23DEC29-T44",
+            "count": 64,
+            "created_time": "2023-12-29T23:55:40.174394Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "881db019-084c-4eb0-b229-b2ac7fb98373",
+            "ticker": "HIGHCHI-23DEC29-T44",
+            "count": 1,
+            "created_time": "2023-12-29T15:18:48.239662Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "816a449c-6d78-4c96-9675-f745e62da4d0",
+            "ticker": "HIGHCHI-23DEC29-T44",
+            "count": 1,
+            "created_time": "2023-12-29T15:18:48.239662Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "yes"
+        }
+    ]
+}

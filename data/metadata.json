@@ -1,0 +1,56 @@
+{
+    "polymarket": [
+        "kxhighny"
+    ],
+    "weather": [
+        "kxhighny",
+        "kxhighden",
+        "kxhighmia",
+        "kxhighchi",
+        "kxhighaus"
+    ],
+    "city_map": {
+        "kxhighny": "New York",
+        "kxhighden": "Denver",
+        "kxhighmia": "Miami",
+        "kxhighchi": "Chicago",
+        "kxhighaus": "Austin"
+    },
+    "cities": {
+        "New York": {
+            "lat": 40.7127281,
+            "lon": -74.0060152,
+            "country": "US",
+            "state": "New York",
+            "ticker": "kxhighny"
+        },
+        "Chicago": {
+            "lat": 41.8755616,
+            "lon": -87.6244212,
+            "country": "US",
+            "state": "Illinois",
+            "ticker": "kxhighchi"
+        },
+        "Miami": {
+            "lat": 25.7741728,
+            "lon": -80.19362,
+            "country": "US",
+            "state": "Florida",
+            "ticker": "kxhighmia"
+        },
+        "Denver": {
+            "lat": 39.7392364,
+            "lon": -104.984862,
+            "country": "US",
+            "state": "Colorado",
+            "ticker": "kxhighden"
+        },
+        "Austin": {
+            "lat": 30.267153,
+            "lon": -97.743057,
+            "country": "US",
+            "state": "Texas",
+            "ticker": "kxhighaus"
+        }
+    }
+}

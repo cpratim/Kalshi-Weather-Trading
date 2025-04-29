@@ -1,0 +1,535 @@
+{
+    "HIGHMIA-24JAN08-T71": [
+        {
+            "trade_id": "5a857414-3854-46cb-88c9-9555e43e9ee7",
+            "ticker": "HIGHMIA-24JAN08-T71",
+            "count": 1,
+            "created_time": "2024-01-08T13:27:43.949462Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHMIA-24JAN08-B71.5": [],
+    "HIGHMIA-24JAN08-B73.5": [
+        {
+            "trade_id": "6784ec7a-5a39-4eb8-abd6-8d87c83185c2",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 102,
+            "created_time": "2024-01-09T00:06:15.554441Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f996bea9-8bef-4799-8410-9cab6b879108",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 33,
+            "created_time": "2024-01-08T14:57:34.794083Z",
+            "yes_price": 26,
+            "no_price": 74,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a5b4c095-9735-41a3-b77f-dfeadebc5b87",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 68,
+            "created_time": "2024-01-08T14:57:34.794083Z",
+            "yes_price": 22,
+            "no_price": 78,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "98f93ec3-927a-4b2a-8118-705e44f98dd6",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 68,
+            "created_time": "2024-01-08T14:57:34.794083Z",
+            "yes_price": 24,
+            "no_price": 76,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4bfd2bc6-0518-4d75-aec0-0c362aebf3a0",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 1,
+            "created_time": "2024-01-08T13:06:44.859536Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "05a9ab40-ed13-4712-8728-f034accc6bc4",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 23,
+            "created_time": "2024-01-08T13:06:44.859536Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f40dc9e1-71b0-480a-886d-698b47b9a1c9",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 42,
+            "created_time": "2024-01-08T13:06:39.872048Z",
+            "yes_price": 18,
+            "no_price": 82,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "495a8b37-8dd8-4783-b73e-36487ac86dfd",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 84,
+            "created_time": "2024-01-08T13:06:39.872048Z",
+            "yes_price": 16,
+            "no_price": 84,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2e62a096-d589-48ba-8b33-878b103aa9b2",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 50,
+            "created_time": "2024-01-07T19:58:18.918127Z",
+            "yes_price": 22,
+            "no_price": 78,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8a746eae-b42e-4c6a-a2e2-68932d7974bb",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 119,
+            "created_time": "2024-01-07T19:55:37.093798Z",
+            "yes_price": 21,
+            "no_price": 79,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6f664503-9ab0-47fb-9d9c-abcf119c7c2f",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 119,
+            "created_time": "2024-01-07T19:55:37.093798Z",
+            "yes_price": 22,
+            "no_price": 78,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0e23c716-1963-4493-b401-bfbee86beb8a",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 35,
+            "created_time": "2024-01-07T19:55:37.093798Z",
+            "yes_price": 19,
+            "no_price": 81,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5ca9de2d-63ae-4fe8-be60-d0959c56e4e6",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 2,
+            "created_time": "2024-01-07T17:30:04.823236Z",
+            "yes_price": 22,
+            "no_price": 78,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4582c83b-cc7e-4e66-bfc4-348d874ff328",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 100,
+            "created_time": "2024-01-07T17:30:04.823236Z",
+            "yes_price": 20,
+            "no_price": 80,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "ff89c337-cec1-476c-bd42-e1c3229d1340",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 20,
+            "created_time": "2024-01-07T17:09:19.119546Z",
+            "yes_price": 23,
+            "no_price": 77,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "152eb356-414d-4a16-955c-0b43b89a6a30",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 48,
+            "created_time": "2024-01-07T15:52:35.470808Z",
+            "yes_price": 22,
+            "no_price": 78,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7e3ed8bd-d346-41b7-8c68-f47c1d3c4985",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 11,
+            "created_time": "2024-01-07T15:19:00.801909Z",
+            "yes_price": 26,
+            "no_price": 74,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "537b62bd-0acc-44f7-a79f-dea5e1fdf0ef",
+            "ticker": "HIGHMIA-24JAN08-B73.5",
+            "count": 1,
+            "created_time": "2024-01-07T15:19:00.801909Z",
+            "yes_price": 26,
+            "no_price": 74,
+            "taker_side": "yes"
+        }
+    ],
+    "HIGHMIA-24JAN08-B75.5": [
+        {
+            "trade_id": "7118c367-a1cf-4177-9f1a-95a67241fd9b",
+            "ticker": "HIGHMIA-24JAN08-B75.5",
+            "count": 278,
+            "created_time": "2024-01-09T00:06:26.859594Z",
+            "yes_price": 97,
+            "no_price": 3,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "8c138a58-6511-45bf-8954-d805b59fc0e5",
+            "ticker": "HIGHMIA-24JAN08-B75.5",
+            "count": 32,
+            "created_time": "2024-01-08T21:54:25.313203Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "028ea1e1-1c8e-4756-a85b-e256b65e34a9",
+            "ticker": "HIGHMIA-24JAN08-B75.5",
+            "count": 1,
+            "created_time": "2024-01-07T17:30:25.067156Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c109c0fb-7b18-4619-ab72-8c19d25e1a42",
+            "ticker": "HIGHMIA-24JAN08-B75.5",
+            "count": 121,
+            "created_time": "2024-01-07T17:30:13.072676Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "9aa17ceb-84ee-4bb4-acad-ee6461f5e22d",
+            "ticker": "HIGHMIA-24JAN08-B75.5",
+            "count": 121,
+            "created_time": "2024-01-07T17:30:13.072676Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "95311759-438f-432b-bace-faeaeb3a05b8",
+            "ticker": "HIGHMIA-24JAN08-B75.5",
+            "count": 36,
+            "created_time": "2024-01-07T17:30:13.072676Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "a859c542-926f-4238-8de5-bb3a442f2cd5",
+            "ticker": "HIGHMIA-24JAN08-B75.5",
+            "count": 20,
+            "created_time": "2024-01-07T17:09:43.728291Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "102dad45-b16a-4414-8791-8fb7aae81211",
+            "ticker": "HIGHMIA-24JAN08-B75.5",
+            "count": 12,
+            "created_time": "2024-01-07T15:19:21.886851Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        }
+    ],
+    "HIGHMIA-24JAN08-B77.5": [
+        {
+            "trade_id": "cb54392e-0e18-4b65-a462-bf091c08e91a",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 401,
+            "created_time": "2024-01-09T00:06:35.213413Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0c2c0604-8f0b-4207-b5d5-be55ba1c81cf",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 178,
+            "created_time": "2024-01-08T21:54:13.254251Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "98c760da-f50d-4341-98a2-2ae559d1987c",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 100,
+            "created_time": "2024-01-08T21:54:08.558971Z",
+            "yes_price": 2,
+            "no_price": 98,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0b515fdd-83fe-4c34-a4bd-20009d4e8a5c",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 99,
+            "created_time": "2024-01-08T16:38:19.435109Z",
+            "yes_price": 11,
+            "no_price": 89,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "9f9a829e-79b0-4d36-aca9-aae7fcf7c0e5",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 20,
+            "created_time": "2024-01-08T16:05:45.508472Z",
+            "yes_price": 16,
+            "no_price": 84,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8257e16d-0446-4388-b284-6b5b46af1e67",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 16,
+            "created_time": "2024-01-08T16:05:45.508472Z",
+            "yes_price": 25,
+            "no_price": 75,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "9c74aa8b-20a5-4f84-954a-9c0cc5e15242",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 68,
+            "created_time": "2024-01-08T14:57:46.646572Z",
+            "yes_price": 18,
+            "no_price": 82,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "44a95680-15e1-44d4-bc74-381b4709474d",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 43,
+            "created_time": "2024-01-08T14:57:46.646572Z",
+            "yes_price": 16,
+            "no_price": 84,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "1947a9ba-7a11-48c9-ac31-ce0aa17ca7b5",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 62,
+            "created_time": "2024-01-08T14:57:46.646572Z",
+            "yes_price": 19,
+            "no_price": 81,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ef25ea20-89bd-4201-b662-61311dd9dfbd",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 12,
+            "created_time": "2024-01-08T14:20:35.911701Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "9029596a-afe3-4ea5-bd1b-6efa4dde4e8a",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 74,
+            "created_time": "2024-01-08T14:04:29.062307Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2e52a19a-46cc-4c4f-849d-804c202352aa",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 74,
+            "created_time": "2024-01-08T13:57:30.785932Z",
+            "yes_price": 17,
+            "no_price": 83,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "42e0c543-1b82-4dd5-9293-81952e3d9bb1",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 41,
+            "created_time": "2024-01-08T13:57:13.410139Z",
+            "yes_price": 16,
+            "no_price": 84,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "c94b3cf5-ecd8-4cf2-a0d4-1df668489882",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 73,
+            "created_time": "2024-01-08T13:53:02.761604Z",
+            "yes_price": 17,
+            "no_price": 83,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ffe7f5f4-8b8d-490d-b8bf-9841e16b0779",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 84,
+            "created_time": "2024-01-08T13:06:32.660517Z",
+            "yes_price": 19,
+            "no_price": 81,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7591c13e-2f73-496b-b387-337530fbefe5",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 58,
+            "created_time": "2024-01-08T13:06:32.660517Z",
+            "yes_price": 16,
+            "no_price": 84,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "303aa8f4-294a-45d1-91ab-1e5666da56e1",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 84,
+            "created_time": "2024-01-08T13:06:32.660517Z",
+            "yes_price": 18,
+            "no_price": 82,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "73d179ea-8662-433c-ab96-58d6f9f2c05c",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 9,
+            "created_time": "2024-01-08T03:14:38.800983Z",
+            "yes_price": 12,
+            "no_price": 88,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "648f2a16-eef5-476c-b2ea-49148fbe2972",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 81,
+            "created_time": "2024-01-07T22:55:29.746112Z",
+            "yes_price": 16,
+            "no_price": 84,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "d54ba897-22de-49d3-a0ef-e643744f75ab",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 58,
+            "created_time": "2024-01-07T22:05:14.055916Z",
+            "yes_price": 17,
+            "no_price": 83,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "9e0ac917-31dc-43ca-8852-3ba54fe37c02",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 20,
+            "created_time": "2024-01-07T19:52:27.979905Z",
+            "yes_price": 20,
+            "no_price": 80,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "d51addd2-f53e-4cb3-9ed9-91fc0c940af4",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 60,
+            "created_time": "2024-01-07T17:29:49.504121Z",
+            "yes_price": 23,
+            "no_price": 77,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "8dc5935a-d03d-4a70-af6f-e10f062b8e90",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 121,
+            "created_time": "2024-01-07T17:29:49.504121Z",
+            "yes_price": 21,
+            "no_price": 79,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4ba1876d-1ca6-4ae2-be40-7aa9468fc4d8",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 121,
+            "created_time": "2024-01-07T17:29:49.504121Z",
+            "yes_price": 20,
+            "no_price": 80,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a8888233-2f11-4c14-9927-b0aa408847be",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 65,
+            "created_time": "2024-01-07T17:10:44.512981Z",
+            "yes_price": 24,
+            "no_price": 76,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c5a6db65-486b-4c9a-a980-06dc38035f97",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 7,
+            "created_time": "2024-01-07T16:33:18.915312Z",
+            "yes_price": 24,
+            "no_price": 76,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0f693ad9-dd09-4306-89eb-05886068ad79",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 84,
+            "created_time": "2024-01-07T15:58:29.770058Z",
+            "yes_price": 25,
+            "no_price": 75,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "702d18e0-439f-476f-99ee-2636dafa6b88",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 10,
+            "created_time": "2024-01-07T15:52:35.550981Z",
+            "yes_price": 25,
+            "no_price": 75,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "67623996-db8b-4724-8d93-7bdb05259c79",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 1,
+            "created_time": "2024-01-07T15:48:35.429366Z",
+            "yes_price": 24,
+            "no_price": 76,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5936420b-da09-4223-859f-fb01216332c4",
+            "ticker": "HIGHMIA-24JAN08-B77.5",
+            "count": 28,
+            "created_time": "2024-01-07T15:18:11.500906Z",
+            "yes_price": 22,
+            "no_price": 78,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHMIA-24JAN08-T78": [
+        {
+            "trade_id": "60389e71-48e9-4604-9782-f9b4f0978045",
+            "ticker": "HIGHMIA-24JAN08-T78",
+            "count": 1,
+            "created_time": "2024-01-08T22:04:38.300444Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        }
+    ]
+}

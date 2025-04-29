@@ -1,0 +1,1085 @@
+{
+    "HIGHNY-24APR06-T49": [
+        {
+            "trade_id": "bd1e7d11-50d3-4e4a-a466-29fb30dcafbe",
+            "ticker": "HIGHNY-24APR06-T49",
+            "count": 100,
+            "created_time": "2024-04-06T13:53:36.051269Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c64bfc53-52e4-47ab-945f-c7ffc961eac2",
+            "ticker": "HIGHNY-24APR06-T49",
+            "count": 5,
+            "created_time": "2024-04-05T17:30:16.601946Z",
+            "yes_price": 14,
+            "no_price": 86,
+            "taker_side": "yes"
+        }
+    ],
+    "HIGHNY-24APR06-B49.5": [
+        {
+            "trade_id": "cbcc43a6-3a53-49cb-9156-c3cbd14f020c",
+            "ticker": "HIGHNY-24APR06-B49.5",
+            "count": 372,
+            "created_time": "2024-04-06T19:19:00.257294Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0128fa8a-1b09-47af-8763-23d756a15287",
+            "ticker": "HIGHNY-24APR06-B49.5",
+            "count": 9,
+            "created_time": "2024-04-06T15:53:34.497241Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0fe9907f-1285-4db9-94e2-6cb86b0f9ec6",
+            "ticker": "HIGHNY-24APR06-B49.5",
+            "count": 1,
+            "created_time": "2024-04-05T22:55:09.986135Z",
+            "yes_price": 13,
+            "no_price": 87,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b781e3c6-caf3-4dc3-b4bd-f8d791a64c5e",
+            "ticker": "HIGHNY-24APR06-B49.5",
+            "count": 3,
+            "created_time": "2024-04-05T22:00:10.575149Z",
+            "yes_price": 26,
+            "no_price": 74,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "9e599e50-89b3-450a-8b50-d6e723dea2f8",
+            "ticker": "HIGHNY-24APR06-B49.5",
+            "count": 162,
+            "created_time": "2024-04-05T20:11:48.582004Z",
+            "yes_price": 11,
+            "no_price": 89,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "9ca66f6d-27c6-4a46-84db-d5d45d5a07ae",
+            "ticker": "HIGHNY-24APR06-B49.5",
+            "count": 48,
+            "created_time": "2024-04-05T20:11:48.582004Z",
+            "yes_price": 12,
+            "no_price": 88,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7dbd295d-37c6-4e83-9ab3-39c95eacfa24",
+            "ticker": "HIGHNY-24APR06-B49.5",
+            "count": 162,
+            "created_time": "2024-04-05T20:11:48.582004Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHNY-24APR06-B51.5": [
+        {
+            "trade_id": "11f48f2b-6cc4-44db-a99b-dab6249ccccc",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 404,
+            "created_time": "2024-04-06T19:19:11.180646Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "12b4526b-f8fa-4122-8273-82359fa410fd",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 93,
+            "created_time": "2024-04-06T18:44:53.524633Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "cd363361-c71d-4e89-8733-b6125189feb6",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 2000,
+            "created_time": "2024-04-06T17:59:11.714913Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "9ead4d99-7721-4580-8f24-3ac447116fb2",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 850,
+            "created_time": "2024-04-06T17:56:06.753278Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e72fa26e-ae38-4e1b-bfbb-b3accabf2bef",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 4,
+            "created_time": "2024-04-06T17:55:11.49148Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7f0c74e4-416e-480e-8711-38827d462dd9",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 10,
+            "created_time": "2024-04-06T17:53:06.49529Z",
+            "yes_price": 2,
+            "no_price": 98,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2a4bb6ea-5f14-4910-b7f5-416e47120a3e",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 88,
+            "created_time": "2024-04-06T17:53:06.49529Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "e595ca07-8180-42c0-b7c3-8c557a87a6c8",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 11,
+            "created_time": "2024-04-06T16:53:05.203518Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a6aa3b26-408f-4bad-9546-9c3c474f7c7e",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-06T16:29:54.453673Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "229b6cb2-6bff-4250-9578-23a2693836da",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 10,
+            "created_time": "2024-04-06T15:05:44.006725Z",
+            "yes_price": 17,
+            "no_price": 83,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "94aa65d6-12bb-4bb9-8233-9b33c556bb37",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 4,
+            "created_time": "2024-04-06T14:42:23.886065Z",
+            "yes_price": 21,
+            "no_price": 79,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "59c7cd97-ad66-4c85-80ee-be3e1cddf686",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:36:42.896813Z",
+            "yes_price": 26,
+            "no_price": 74,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4daa8024-e4f2-46e8-a4d1-d2eff9f9d2da",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 2,
+            "created_time": "2024-04-06T14:36:42.896813Z",
+            "yes_price": 25,
+            "no_price": 75,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "ac9a169b-e9bd-48b1-8c92-fda49ebf317a",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 3,
+            "created_time": "2024-04-06T14:24:53.29968Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "93f222a4-f624-4003-89eb-900952068f25",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 8,
+            "created_time": "2024-04-06T14:06:28.554261Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "fa9cfc72-40e8-4388-8656-797e263ac787",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 10,
+            "created_time": "2024-04-06T12:30:10.823812Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b6b717bb-4324-48f2-9af3-13340b70b55a",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 7,
+            "created_time": "2024-04-06T12:19:38.134737Z",
+            "yes_price": 41,
+            "no_price": 59,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f09b8b46-67e1-44bd-a915-6cf4020af9da",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 23,
+            "created_time": "2024-04-06T12:08:29.042047Z",
+            "yes_price": 41,
+            "no_price": 59,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "77ca9506-4b13-4d56-9d11-d84d790066a1",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 11,
+            "created_time": "2024-04-06T12:06:19.687661Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "eb0cdb45-eed3-4bfa-9b60-6e030d247315",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 145,
+            "created_time": "2024-04-06T03:46:25.213805Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c058f325-565b-4d36-a33b-0f639f2a1ac8",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 28,
+            "created_time": "2024-04-06T03:46:25.213805Z",
+            "yes_price": 39,
+            "no_price": 61,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c1c75c35-834d-4ad1-8969-6d3bb9db56ae",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-06T03:45:13.576834Z",
+            "yes_price": 39,
+            "no_price": 61,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "19c219e5-d5bc-4033-846b-40a60db639c8",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-06T03:44:38.569847Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "86fcadbc-3ffb-416a-b240-80302a6f365d",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-06T03:43:30.760436Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2c2bb32a-3fd0-4f90-b4a8-bd50a7605210",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-06T03:42:16.596195Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f1d3628d-3dcc-4391-8d9a-a472766b2ecb",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-06T02:50:51.130064Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4e5e97cc-be25-46a2-9347-7058b522e1c1",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 3,
+            "created_time": "2024-04-06T02:50:18.184307Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4dc1f5a8-c7f2-4261-8bff-5479db8fbac7",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 23,
+            "created_time": "2024-04-06T01:34:48.114481Z",
+            "yes_price": 38,
+            "no_price": 62,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b10e7c6f-239d-4f33-8c3d-27ed2cfd9ddb",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 21,
+            "created_time": "2024-04-06T01:21:18.520316Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "1f41841b-b06b-4ade-b36c-ab4fb47a6828",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-05T22:51:07.647796Z",
+            "yes_price": 36,
+            "no_price": 64,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "d8c17043-e5c7-452d-9ad5-594fb8d00895",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-05T22:50:21.915979Z",
+            "yes_price": 36,
+            "no_price": 64,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "aee2dbc4-7c47-4b72-8571-a81e9dcd3674",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-05T22:50:14.135584Z",
+            "yes_price": 36,
+            "no_price": 64,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "6942e476-5186-43af-aaf1-4fc0ba072cb3",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 1,
+            "created_time": "2024-04-05T22:50:09.087964Z",
+            "yes_price": 36,
+            "no_price": 64,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f8e94b6c-ef13-419c-85a5-2000a1ac8c04",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 3,
+            "created_time": "2024-04-05T22:00:10.701695Z",
+            "yes_price": 29,
+            "no_price": 71,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ec691c87-1bea-42d3-966b-fe4be16b824b",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 162,
+            "created_time": "2024-04-05T21:23:13.457961Z",
+            "yes_price": 19,
+            "no_price": 81,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "c447d897-81fc-40ea-871f-250825e141d6",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 162,
+            "created_time": "2024-04-05T21:23:13.457961Z",
+            "yes_price": 20,
+            "no_price": 80,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "49c0a173-fab0-4866-97c2-bd82cdd1635b",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 97,
+            "created_time": "2024-04-05T21:23:13.457961Z",
+            "yes_price": 17,
+            "no_price": 83,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e29c3b57-6c15-4d18-b00b-89af422af12c",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 48,
+            "created_time": "2024-04-05T21:23:01.177921Z",
+            "yes_price": 14,
+            "no_price": 86,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "741739d9-6e09-40f1-952e-01a13bc3075e",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 162,
+            "created_time": "2024-04-05T21:23:01.177921Z",
+            "yes_price": 17,
+            "no_price": 83,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "52343172-f482-4e20-bdf3-4850a193daa8",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 162,
+            "created_time": "2024-04-05T21:23:01.177921Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7dc19cd6-a779-410b-abf1-a84d904ab0c7",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 4,
+            "created_time": "2024-04-05T20:56:49.474574Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "48ae0e71-648c-4f42-874e-02a76869493d",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 16,
+            "created_time": "2024-04-05T20:16:26.741855Z",
+            "yes_price": 31,
+            "no_price": 69,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1677915d-f3bf-49f1-90a3-ff2c55199c02",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 16,
+            "created_time": "2024-04-05T20:12:27.861316Z",
+            "yes_price": 31,
+            "no_price": 69,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f846d911-636d-4dc2-8fcb-6d3c0ddac042",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 48,
+            "created_time": "2024-04-05T20:11:35.656373Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "bf7ddfb3-72da-46e8-b410-0b98cb29bf8f",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 162,
+            "created_time": "2024-04-05T20:11:35.656373Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4da4ad97-eb72-4046-be2c-e51fcde28e68",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 162,
+            "created_time": "2024-04-05T20:11:35.656373Z",
+            "yes_price": 31,
+            "no_price": 69,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "5804a7c6-ae4b-4ff1-93ba-9f323ea0d334",
+            "ticker": "HIGHNY-24APR06-B51.5",
+            "count": 10,
+            "created_time": "2024-04-05T14:18:04.961288Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHNY-24APR06-B53.5": [
+        {
+            "trade_id": "d7c5d4ec-33b0-4af7-8824-8a705751401d",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 7,
+            "created_time": "2024-04-06T23:07:45.315413Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4b9c31b4-17ad-4f14-86b9-a3dd7ec23e4d",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 2,
+            "created_time": "2024-04-06T21:37:16.970183Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "69272fd4-71be-4ab4-9117-119eccb4b797",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 1,
+            "created_time": "2024-04-06T16:29:54.400417Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "871f65c5-dc41-4485-8a52-bc345988b809",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 6,
+            "created_time": "2024-04-06T15:07:07.83712Z",
+            "yes_price": 79,
+            "no_price": 21,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "84430235-1b29-4556-b2d6-5db03d4f4e21",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 32,
+            "created_time": "2024-04-06T14:53:47.818212Z",
+            "yes_price": 75,
+            "no_price": 25,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5a6ec43f-a088-466e-8576-163765ca1de3",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 54,
+            "created_time": "2024-04-06T14:53:47.818212Z",
+            "yes_price": 79,
+            "no_price": 21,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "3af3dcd9-6a64-41ba-82e7-66f3c8e0d2de",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 54,
+            "created_time": "2024-04-06T14:53:47.818212Z",
+            "yes_price": 77,
+            "no_price": 23,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "db476877-4d6d-4cd0-bc11-b54eabfc3230",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 54,
+            "created_time": "2024-04-06T14:53:39.43002Z",
+            "yes_price": 74,
+            "no_price": 26,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b80b0fe9-4595-43cc-b5cc-28f62588125a",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 27,
+            "created_time": "2024-04-06T14:53:39.43002Z",
+            "yes_price": 70,
+            "no_price": 30,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b7ed6c03-65f3-4934-bceb-5c3210716813",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 63,
+            "created_time": "2024-04-06T14:53:39.43002Z",
+            "yes_price": 72,
+            "no_price": 28,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "1a32b2c4-b346-43c0-bb3d-ad80f5c35b62",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 6,
+            "created_time": "2024-04-06T14:29:02.855869Z",
+            "yes_price": 67,
+            "no_price": 33,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "125d2572-cb32-4e02-8213-ef0b71f4e307",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:29:02.855869Z",
+            "yes_price": 65,
+            "no_price": 35,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4d628e87-0da7-464e-8fd8-88045a113902",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 10,
+            "created_time": "2024-04-06T14:27:40.6653Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "d2b7c971-2bfb-4911-aeab-abb957162920",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 36,
+            "created_time": "2024-04-06T14:25:01.369589Z",
+            "yes_price": 63,
+            "no_price": 37,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b4f444ab-dd0c-4b91-a22a-8e0203faed0c",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 17,
+            "created_time": "2024-04-06T14:25:01.369589Z",
+            "yes_price": 67,
+            "no_price": 33,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "3d1bfbd3-d94c-4121-ad2f-05460b637e28",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 72,
+            "created_time": "2024-04-06T14:25:01.369589Z",
+            "yes_price": 65,
+            "no_price": 35,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "85bb9076-fab4-4e74-a3cb-a4f416c9ab23",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 72,
+            "created_time": "2024-04-06T14:24:45.031227Z",
+            "yes_price": 60,
+            "no_price": 40,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "01b04742-21b6-4bf5-9439-fba8bf9456b5",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 72,
+            "created_time": "2024-04-06T14:24:45.031227Z",
+            "yes_price": 63,
+            "no_price": 37,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ef05c801-f607-4f3e-878d-34fae15a0edd",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 1,
+            "created_time": "2024-04-06T13:36:43.401043Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "c1e4e125-44e9-4abe-a661-cfe10256c101",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 9,
+            "created_time": "2024-04-06T13:35:33.827898Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "a7395cc0-908e-4bf2-8b7f-a10910e55fdc",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 18,
+            "created_time": "2024-04-06T12:04:35.01658Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "a6d2942a-d705-4fb1-b10e-9b3628d4b239",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 10,
+            "created_time": "2024-04-06T12:02:16.639516Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3189937c-fa15-474d-9c61-871846eb05d2",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 25,
+            "created_time": "2024-04-06T01:40:14.581537Z",
+            "yes_price": 34,
+            "no_price": 66,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "79f93517-d628-4f68-856e-9fb2ddb7f838",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 24,
+            "created_time": "2024-04-06T01:21:29.550685Z",
+            "yes_price": 39,
+            "no_price": 61,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8c6adc62-af4a-4ae3-bac0-790eb7d969f2",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 1,
+            "created_time": "2024-04-05T22:00:10.848818Z",
+            "yes_price": 37,
+            "no_price": 63,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f652c231-708a-4f5b-852c-8d13c5fefa07",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 32,
+            "created_time": "2024-04-05T20:12:18.785847Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e4fc0100-c1f3-472f-82eb-1474c8a771dc",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 162,
+            "created_time": "2024-04-05T20:12:18.785847Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "39b26642-62c6-44cd-a28b-202173f9d2de",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 162,
+            "created_time": "2024-04-05T20:12:18.785847Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8b6eb81a-dbe0-479b-a2a6-0c47c9d9f82a",
+            "ticker": "HIGHNY-24APR06-B53.5",
+            "count": 10,
+            "created_time": "2024-04-05T14:18:05.2128Z",
+            "yes_price": 30,
+            "no_price": 70,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHNY-24APR06-B55.5": [
+        {
+            "trade_id": "23c66fb3-85be-4994-bd9c-9bf58f786bd8",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 500,
+            "created_time": "2024-04-06T19:31:22.767743Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "dd4fc89a-1575-418a-977e-1b314cec4dc7",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 10,
+            "created_time": "2024-04-06T19:31:14.841152Z",
+            "yes_price": 4,
+            "no_price": 96,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "194aee2a-602e-41a9-a557-48a301a8130c",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 10,
+            "created_time": "2024-04-06T18:54:23.608239Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "849ce7d3-3dab-4315-832f-cd8dc2a20b55",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 500,
+            "created_time": "2024-04-06T17:45:10.883176Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2e3b660b-f44a-4b16-ab0b-599036d8ad68",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 25,
+            "created_time": "2024-04-06T17:45:10.883176Z",
+            "yes_price": 4,
+            "no_price": 96,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4ac3c176-7ef1-4163-a381-ec1fcc17d2c7",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T16:29:54.454262Z",
+            "yes_price": 4,
+            "no_price": 96,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "bc5b3163-557c-4511-95c1-995f5a51b757",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T15:05:13.591174Z",
+            "yes_price": 8,
+            "no_price": 92,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "73ac8b32-3f88-4553-a5d5-509acd948ed3",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T15:04:41.248827Z",
+            "yes_price": 8,
+            "no_price": 92,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3e4a2462-368f-4178-981f-66548fec49bb",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T15:02:30.754644Z",
+            "yes_price": 8,
+            "no_price": 92,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "66ac5ab6-5baf-47df-abc6-7212bd0c8b21",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:59:13.052228Z",
+            "yes_price": 8,
+            "no_price": 92,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1ccb933d-4da6-4718-a8c4-2d11db214cf8",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:51:30.500881Z",
+            "yes_price": 12,
+            "no_price": 88,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "e4521dcc-4b96-4078-9ccd-5c00050cab80",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:50:19.194386Z",
+            "yes_price": 12,
+            "no_price": 88,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "bd3149aa-ba2e-4c14-8dc3-26c527430315",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:50:09.892509Z",
+            "yes_price": 12,
+            "no_price": 88,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c3cc7604-c49d-421c-a88f-edd8c0851872",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:48:56.451763Z",
+            "yes_price": 12,
+            "no_price": 88,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0f6d66c1-1212-4a64-8560-c44f1fea73ae",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:46:59.962329Z",
+            "yes_price": 12,
+            "no_price": 88,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7a6606bb-571a-4d6a-82c1-ec6c991a336d",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:43:54.392888Z",
+            "yes_price": 13,
+            "no_price": 87,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "9891e072-ced0-48f7-aff5-f79a36b6460f",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:41:54.174045Z",
+            "yes_price": 13,
+            "no_price": 87,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "cec88f8f-815e-4cb7-9c7f-7e1f9376f4b3",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 5,
+            "created_time": "2024-04-06T14:41:49.483389Z",
+            "yes_price": 17,
+            "no_price": 83,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "70d9931f-25f3-45e2-8d66-a0f0857ad61a",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-06T14:39:55.849459Z",
+            "yes_price": 13,
+            "no_price": 87,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "26ff349e-2075-4595-bd9c-f79f65ce764d",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 200,
+            "created_time": "2024-04-06T12:52:06.510129Z",
+            "yes_price": 5,
+            "no_price": 95,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "fc154107-bf04-4f70-a17b-848c9ba18d6d",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 250,
+            "created_time": "2024-04-06T12:51:59.502272Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3fe6e56a-ab1e-4f79-ba8f-fefb1e74c34a",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 17,
+            "created_time": "2024-04-06T12:51:59.502272Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1183a044-3e3e-4fc8-aa06-35e61c60369f",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 250,
+            "created_time": "2024-04-06T12:51:48.441772Z",
+            "yes_price": 9,
+            "no_price": 91,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "06b397d9-da88-44c5-a861-7a61d887413d",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 1,
+            "created_time": "2024-04-05T22:00:10.97583Z",
+            "yes_price": 23,
+            "no_price": 77,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4d5cecaa-4797-4086-9d12-89f82de60b10",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 10,
+            "created_time": "2024-04-05T20:40:58.893277Z",
+            "yes_price": 26,
+            "no_price": 74,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e4286b46-bc8a-4f87-bfd2-0eff520861b9",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 16,
+            "created_time": "2024-04-05T20:12:04.887047Z",
+            "yes_price": 14,
+            "no_price": 86,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "8a20b95a-5541-421b-b6a2-c55bbf0189bb",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 162,
+            "created_time": "2024-04-05T20:12:04.887047Z",
+            "yes_price": 17,
+            "no_price": 83,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "3550bc9f-a470-462f-a140-72ff79262489",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 162,
+            "created_time": "2024-04-05T20:12:04.887047Z",
+            "yes_price": 15,
+            "no_price": 85,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b9eb6382-768d-4a68-ba00-aba50c404bce",
+            "ticker": "HIGHNY-24APR06-B55.5",
+            "count": 6,
+            "created_time": "2024-04-05T17:30:18.529345Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHNY-24APR06-T56": [
+        {
+            "trade_id": "a7412d8f-e8aa-489f-9a64-fa36fce17fd2",
+            "ticker": "HIGHNY-24APR06-T56",
+            "count": 100,
+            "created_time": "2024-04-06T16:15:49.334602Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4d95efc9-8f27-44d7-a4da-8bc1f75e307b",
+            "ticker": "HIGHNY-24APR06-T56",
+            "count": 1,
+            "created_time": "2024-04-06T14:49:47.096595Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f9d0e16a-5b20-4c4f-b24f-269bb87ddbb1",
+            "ticker": "HIGHNY-24APR06-T56",
+            "count": 499,
+            "created_time": "2024-04-06T14:48:42.303921Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "dfc5bf83-81a0-4f42-9230-84568e7049bc",
+            "ticker": "HIGHNY-24APR06-T56",
+            "count": 1,
+            "created_time": "2024-04-06T14:48:42.303921Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4d38a9b8-2f6a-4056-8552-dc5923aeaeb9",
+            "ticker": "HIGHNY-24APR06-T56",
+            "count": 1,
+            "created_time": "2024-04-05T22:00:11.091674Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        }
+    ]
+}

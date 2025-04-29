@@ -1,0 +1,1463 @@
+{
+    "HIGHAUS-24OCT01-T92": [
+        {
+            "trade_id": "2664b808-ebff-4aec-ae16-f44d26d62976",
+            "ticker": "HIGHAUS-24OCT01-T92",
+            "count": 50,
+            "created_time": "2024-09-30T14:38:41.282062Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHAUS-24OCT01-B92.5": [
+        {
+            "trade_id": "cbfb3a2f-0c91-41a7-86a5-55f866ebb313",
+            "ticker": "HIGHAUS-24OCT01-B92.5",
+            "count": 22,
+            "created_time": "2024-10-01T22:28:23.504638Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "3e33a692-bb20-4d05-9652-b023c95dfbef",
+            "ticker": "HIGHAUS-24OCT01-B92.5",
+            "count": 93,
+            "created_time": "2024-10-01T19:44:34.031045Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "d810bcf7-6a17-499d-b632-505a780e061b",
+            "ticker": "HIGHAUS-24OCT01-B92.5",
+            "count": 1,
+            "created_time": "2024-10-01T18:34:52.002143Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1698691b-fb58-4317-b64b-73a0bc183535",
+            "ticker": "HIGHAUS-24OCT01-B92.5",
+            "count": 50,
+            "created_time": "2024-09-30T14:38:52.315716Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHAUS-24OCT01-B94.5": [
+        {
+            "trade_id": "37760aab-1965-4b86-854e-85bb67792b42",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 93,
+            "created_time": "2024-10-01T21:26:19.384877Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b73a19c9-c3fc-4a76-b1e2-4bc3f9b05b99",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 3,
+            "created_time": "2024-10-01T19:46:56.297066Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "68ebac34-ae02-4aa5-b873-1ec40fda256d",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 1,
+            "created_time": "2024-10-01T19:46:56.297066Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0b7f53e1-cf41-4544-a571-8c2117af3149",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 23,
+            "created_time": "2024-10-01T19:46:56.297066Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2c6dba76-5ddf-4e13-bb1a-68a196ba8471",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 2,
+            "created_time": "2024-10-01T19:10:29.477961Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "133d3519-4eab-4cda-acb4-39e0f96c278e",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 25,
+            "created_time": "2024-10-01T18:05:01.747471Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b2ab33c2-9ed7-49a4-8168-57fe6f470aae",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 150,
+            "created_time": "2024-10-01T16:42:01.967002Z",
+            "yes_price": 11,
+            "no_price": 89,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "a8d9f774-8e2e-4398-8fe1-1b88b5a985e9",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 129,
+            "created_time": "2024-10-01T16:42:01.967002Z",
+            "yes_price": 12,
+            "no_price": 88,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4e416d33-c0b2-4e26-ab71-8b07f77b680e",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 150,
+            "created_time": "2024-10-01T16:42:01.967002Z",
+            "yes_price": 10,
+            "no_price": 90,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b3a9f5b3-9a02-4a83-885b-f7655282d235",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 150,
+            "created_time": "2024-10-01T15:36:25.7535Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c84ed3f0-e605-4698-b90f-4d9dc0e65a53",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 150,
+            "created_time": "2024-10-01T15:36:10.047924Z",
+            "yes_price": 7,
+            "no_price": 93,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4e05bb86-5309-4812-8eb5-8c3b94ea586b",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 3,
+            "created_time": "2024-10-01T15:36:10.047924Z",
+            "yes_price": 7,
+            "no_price": 93,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "83a7278f-0cdf-489d-9e3a-a09666101c77",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 50,
+            "created_time": "2024-10-01T13:03:39.124543Z",
+            "yes_price": 4,
+            "no_price": 96,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b84ed44e-a434-4abe-bcaf-42fd073e481f",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 50,
+            "created_time": "2024-10-01T12:55:42.528777Z",
+            "yes_price": 4,
+            "no_price": 96,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "db98e4bd-18b9-40e6-925c-c53730f16510",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 3,
+            "created_time": "2024-10-01T02:22:30.374781Z",
+            "yes_price": 11,
+            "no_price": 89,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0465fca2-c2c2-4b4c-850d-5eb8a269ca8b",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 22,
+            "created_time": "2024-10-01T02:22:30.374781Z",
+            "yes_price": 11,
+            "no_price": 89,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "bee55e41-8c72-4d69-a58e-769b1fd5f95a",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 235,
+            "created_time": "2024-09-30T23:55:31.603142Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "90cbf84c-665f-4010-9de7-aeae898f40a5",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 45,
+            "created_time": "2024-09-30T23:24:34.204191Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "964c0b31-e3ea-4a1f-9ab2-d97774c31df3",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 15,
+            "created_time": "2024-09-30T22:38:57.108556Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f570a4d1-e4cc-4a78-a0d5-7c52bfeb6c90",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 5,
+            "created_time": "2024-09-30T20:42:19.176448Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4a2c9b8a-4ed3-4f81-a466-0d8ecf0b7ab1",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 91,
+            "created_time": "2024-09-30T16:15:48.03601Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "05a0b894-a8b5-4843-a521-9a83198ac9f6",
+            "ticker": "HIGHAUS-24OCT01-B94.5",
+            "count": 50,
+            "created_time": "2024-09-30T14:39:15.204021Z",
+            "yes_price": 7,
+            "no_price": 93,
+            "taker_side": "no"
+        }
+    ],
+    "HIGHAUS-24OCT01-B96.5": [
+        {
+            "trade_id": "3a447920-3487-4aea-a766-e01431491804",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 7,
+            "created_time": "2024-10-02T00:50:36.235756Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "f1fb1cd8-90ad-434c-9266-27c7d136cf54",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 42,
+            "created_time": "2024-10-02T00:03:59.242768Z",
+            "yes_price": 97,
+            "no_price": 3,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "19af91bf-95c4-45fc-a5c0-b3d97b9f1b2e",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 50,
+            "created_time": "2024-10-01T23:56:15.903423Z",
+            "yes_price": 99,
+            "no_price": 1,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "13408b20-5b44-4241-a595-5c0e45e52251",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 155,
+            "created_time": "2024-10-01T23:56:15.903423Z",
+            "yes_price": 98,
+            "no_price": 2,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6bd7a670-42c4-4494-820b-19a47f7da504",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 7,
+            "created_time": "2024-10-01T23:44:03.128245Z",
+            "yes_price": 76,
+            "no_price": 24,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f00db21e-c456-4b22-9804-eef270d352c9",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 25,
+            "created_time": "2024-10-01T22:52:28.284564Z",
+            "yes_price": 97,
+            "no_price": 3,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ebb17a2e-cf4b-47be-9654-bc485c5d2cdb",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 10,
+            "created_time": "2024-10-01T22:52:28.284564Z",
+            "yes_price": 95,
+            "no_price": 5,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "d6d9700b-030f-4a01-a9c9-a349f29fe567",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 20,
+            "created_time": "2024-10-01T22:52:28.284564Z",
+            "yes_price": 98,
+            "no_price": 2,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "c06466ab-1725-4613-aa13-878cdc018547",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 10,
+            "created_time": "2024-10-01T22:52:12.868292Z",
+            "yes_price": 94,
+            "no_price": 6,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "097667d2-d640-4e1b-a66a-41bbc2203daa",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 10,
+            "created_time": "2024-10-01T21:24:13.981416Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4e7e6b82-3a3b-4aa6-b2ca-4c1558f5bdc5",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 10,
+            "created_time": "2024-10-01T21:09:59.483744Z",
+            "yes_price": 5,
+            "no_price": 95,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "89dd6956-533c-462d-bb4a-bd31ccac2be3",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 5,
+            "created_time": "2024-10-01T20:33:01.610789Z",
+            "yes_price": 93,
+            "no_price": 7,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5e867106-87be-4586-a8c2-7e90465c1c9b",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 21,
+            "created_time": "2024-10-01T20:33:01.610789Z",
+            "yes_price": 94,
+            "no_price": 6,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "98308a80-644a-4b79-a9cd-dfec88c96095",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 50,
+            "created_time": "2024-10-01T19:26:37.695095Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "394cb3ef-3497-4b10-9799-77b6a858fa8a",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 150,
+            "created_time": "2024-10-01T19:11:19.125103Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f0ac3275-2681-42d8-b6d6-23bffff8cf29",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 2,
+            "created_time": "2024-10-01T19:10:29.394312Z",
+            "yes_price": 94,
+            "no_price": 6,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "36ee1cd6-2224-4910-9cc4-06d76535f895",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 21,
+            "created_time": "2024-10-01T18:30:44.452993Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "23f33ab3-f736-4caf-9598-c31038db02de",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 2,
+            "created_time": "2024-10-01T17:50:50.322602Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f78e1fec-799a-4b91-bf80-767176753726",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 40,
+            "created_time": "2024-10-01T16:07:28.689821Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "9d0e4069-2d6c-47af-bb9f-1d07fe372a97",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 60,
+            "created_time": "2024-10-01T16:07:28.689821Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "62b3efe7-4c81-4a89-b1eb-712cdfa67c1d",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 45,
+            "created_time": "2024-10-01T15:56:22.840482Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "54e242cb-6331-49f0-ae21-51fb02ddb926",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 150,
+            "created_time": "2024-10-01T15:56:22.840482Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "1af2948a-924b-4b3c-860d-7273f9a209e9",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 500,
+            "created_time": "2024-10-01T15:56:22.840482Z",
+            "yes_price": 49,
+            "no_price": 51,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "bd1b728f-b2e0-4ca8-bbd3-f3ac61f618fd",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 60,
+            "created_time": "2024-10-01T15:36:18.831627Z",
+            "yes_price": 41,
+            "no_price": 59,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f12963f8-6501-4f1e-af8c-0b819b802905",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 5,
+            "created_time": "2024-10-01T15:20:56.376745Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "56797b90-fb2f-41b5-ae36-b9e2a741b3fc",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 60,
+            "created_time": "2024-10-01T14:39:53.431846Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b417456c-22a0-49e9-9021-f99af131d539",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 150,
+            "created_time": "2024-10-01T14:39:28.878241Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "991a245c-95bf-4904-bf75-0f1c0bb8910d",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 2,
+            "created_time": "2024-10-01T14:39:28.878241Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1fabc76b-25c6-4ad3-ba53-05910d2b4d75",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 75,
+            "created_time": "2024-10-01T14:39:28.878241Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1fcb70ae-d802-4519-a97d-1fb8a1b93234",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 45,
+            "created_time": "2024-10-01T13:56:12.450747Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "eee35abd-5cc4-4c32-8c73-f1f2d36f745c",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 185,
+            "created_time": "2024-10-01T13:55:47.26834Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "966b6a46-c4d8-4f1b-b322-56b5b2f658ca",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 45,
+            "created_time": "2024-10-01T13:55:47.26834Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "cb8d7367-d0e1-4ca1-b447-39bda82d4635",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 5,
+            "created_time": "2024-10-01T13:43:28.602299Z",
+            "yes_price": 52,
+            "no_price": 48,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "bb591bd2-f317-45b9-b560-a57d7d3adeea",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 20,
+            "created_time": "2024-10-01T12:36:36.007744Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "362f57eb-7277-48ad-879c-ce9f63e9f0cc",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 150,
+            "created_time": "2024-10-01T03:57:39.149176Z",
+            "yes_price": 34,
+            "no_price": 66,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "1d9f687e-e4ab-47cb-bbba-3c551c04b959",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 15,
+            "created_time": "2024-10-01T03:57:39.149176Z",
+            "yes_price": 32,
+            "no_price": 68,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "92886000-4ae7-4dec-a6e6-35f5fbd208a8",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 50,
+            "created_time": "2024-10-01T02:48:29.459545Z",
+            "yes_price": 27,
+            "no_price": 73,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c7885d22-16e1-43f9-b9ff-5b5553a30a22",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 268,
+            "created_time": "2024-10-01T02:43:13.44804Z",
+            "yes_price": 29,
+            "no_price": 71,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "76e4f049-c9d5-4a1d-873b-fa5187207169",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 15,
+            "created_time": "2024-10-01T02:43:13.44804Z",
+            "yes_price": 29,
+            "no_price": 71,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6e6325cc-f951-40b2-9f8d-be38ae2f3001",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 32,
+            "created_time": "2024-10-01T02:21:48.20065Z",
+            "yes_price": 29,
+            "no_price": 71,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ada33e06-8eba-4068-89bb-57c48f15905d",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 100,
+            "created_time": "2024-10-01T01:54:43.492125Z",
+            "yes_price": 30,
+            "no_price": 70,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "1f02dc15-3d00-45f3-a0e9-ce5f4b65f939",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 45,
+            "created_time": "2024-10-01T01:36:54.447045Z",
+            "yes_price": 30,
+            "no_price": 70,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "a579c5d5-6989-49a0-9d7c-066e801d64ae",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 15,
+            "created_time": "2024-10-01T01:36:47.458365Z",
+            "yes_price": 31,
+            "no_price": 69,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "9e2440db-dca6-473c-b4de-7e173afcb19f",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 90,
+            "created_time": "2024-10-01T01:36:47.458365Z",
+            "yes_price": 31,
+            "no_price": 69,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "dea0d81a-0121-4d52-b52b-16af171bd839",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 15,
+            "created_time": "2024-10-01T01:36:42.535211Z",
+            "yes_price": 32,
+            "no_price": 68,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "c721f8e2-eb4e-4410-8e18-ccb657a80b6c",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 123,
+            "created_time": "2024-10-01T01:36:42.535211Z",
+            "yes_price": 31,
+            "no_price": 69,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "31a2e5fa-21bd-43af-96cf-7e1e64bde08e",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 15,
+            "created_time": "2024-10-01T01:36:38.394996Z",
+            "yes_price": 32,
+            "no_price": 68,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "894588c5-9b54-4fac-9920-49cc07bda34e",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 60,
+            "created_time": "2024-09-30T23:55:16.677179Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1a300596-212a-4bd4-ada8-f6c29b4f352f",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 150,
+            "created_time": "2024-09-30T23:55:16.677179Z",
+            "yes_price": 33,
+            "no_price": 67,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3518d912-29a8-45a7-97c9-ca7382979204",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 38,
+            "created_time": "2024-09-30T23:24:34.286059Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2ee6e1ae-3be7-4445-b0d8-f62f28325a0c",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 45,
+            "created_time": "2024-09-30T23:24:34.12742Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "d5489099-c1f4-4340-836c-994a9dc0d996",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 15,
+            "created_time": "2024-09-30T22:24:40.37083Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "e00a5d63-de8c-4e08-bb69-a646a7199d9f",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 202,
+            "created_time": "2024-09-30T21:06:12.311802Z",
+            "yes_price": 42,
+            "no_price": 58,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "5850545a-24bd-4cc1-b4bd-bf18eab55cb6",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 45,
+            "created_time": "2024-09-30T21:04:53.555989Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0fa8f121-2fb5-4041-b53b-9076fb974c53",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 8,
+            "created_time": "2024-09-30T21:04:53.555989Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "6117aa9e-51a7-47d6-8bd0-be65263f3d40",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 25,
+            "created_time": "2024-09-30T19:01:08.893473Z",
+            "yes_price": 46,
+            "no_price": 54,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "ac34dc20-5c07-4a01-b0ad-ec74b75d7390",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 75,
+            "created_time": "2024-09-30T19:00:40.574925Z",
+            "yes_price": 46,
+            "no_price": 54,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "51774fb9-aa52-4922-92cd-c1a10414de8c",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 60,
+            "created_time": "2024-09-30T19:00:11.719289Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "74125c3f-610e-4201-80a0-65f6fe03e0c3",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 15,
+            "created_time": "2024-09-30T18:57:12.113638Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f9cfdc0d-59dc-45bd-824b-84e21d3c9084",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 65,
+            "created_time": "2024-09-30T18:54:52.997762Z",
+            "yes_price": 49,
+            "no_price": 51,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "5ae107f4-5ebb-4108-ad0a-0fc70d3f3952",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 140,
+            "created_time": "2024-09-30T18:54:40.431385Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "3a04fb76-dd39-443b-ae88-544938f02f0b",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 60,
+            "created_time": "2024-09-30T18:54:35.74841Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "962ce5ef-ed0c-4244-85dd-d4ffce9d4d0a",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 75,
+            "created_time": "2024-09-30T18:54:15.995438Z",
+            "yes_price": 49,
+            "no_price": 51,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "ad156268-f99c-4838-94b8-b9eb8d9d1136",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 60,
+            "created_time": "2024-09-30T18:53:59.712945Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "b356a81b-0162-4bb3-9898-08d658267aa5",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 30,
+            "created_time": "2024-09-30T18:51:53.964181Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "4f54a1ec-66f0-478b-8a70-653a9e6d133a",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 150,
+            "created_time": "2024-09-30T18:51:39.86202Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2291d381-cf25-49bd-9ab3-d88f31207b44",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 45,
+            "created_time": "2024-09-30T18:51:39.86202Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0fee9905-bd2d-4051-89f1-f91a954e7632",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 140,
+            "created_time": "2024-09-30T18:51:39.86202Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "de0020f8-2586-4a91-9faf-70da580252f8",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 96,
+            "created_time": "2024-09-30T18:12:43.301078Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "d8c1a343-8bd1-4e44-ad83-257c3cd795e9",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 8,
+            "created_time": "2024-09-30T18:12:43.301078Z",
+            "yes_price": 79,
+            "no_price": 21,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "cf51aec3-630c-464a-aebf-8d91f03dd3c6",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 22,
+            "created_time": "2024-09-30T18:12:43.301078Z",
+            "yes_price": 57,
+            "no_price": 43,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "ba0fe94e-de24-4f49-bd82-6421c847a4c2",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 150,
+            "created_time": "2024-09-30T18:12:43.301078Z",
+            "yes_price": 50,
+            "no_price": 50,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "91e536bb-7958-4db3-a402-bbb4d4a5ea52",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 150,
+            "created_time": "2024-09-30T18:12:43.301078Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4ba0ef4b-48ef-43ce-9c68-bff7fea90534",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 30,
+            "created_time": "2024-09-30T18:12:43.301078Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "43856fbe-ab5e-418e-af5e-32b1d71c503b",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 75,
+            "created_time": "2024-09-30T18:08:46.489731Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "e8bdf56f-1340-4b23-8c88-4521cd4495d2",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 15,
+            "created_time": "2024-09-30T18:08:33.936475Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "9210763f-02c9-473c-8078-3aed66d60263",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 75,
+            "created_time": "2024-09-30T18:01:05.664793Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "9bc2f52e-50fe-4a2b-a18c-077854bae55d",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 60,
+            "created_time": "2024-09-30T18:00:56.765992Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "e6d7ab0e-fa18-4e75-a2f4-454e52752435",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 60,
+            "created_time": "2024-09-30T18:00:47.455574Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "5d970129-3718-440d-8c80-399549d7f51a",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 75,
+            "created_time": "2024-09-30T17:56:30.377133Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1be36ac4-3d60-4b66-bd52-411daad14b0a",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 15,
+            "created_time": "2024-09-30T16:00:49.929225Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "e6e80a8f-abc2-4913-85fe-89a01c47fcea",
+            "ticker": "HIGHAUS-24OCT01-B96.5",
+            "count": 50,
+            "created_time": "2024-09-30T14:40:34.650111Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "yes"
+        }
+    ],
+    "HIGHAUS-24OCT01-B98.5": [
+        {
+            "trade_id": "5ddae3f6-4974-4ce7-8819-d542c008498a",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 22,
+            "created_time": "2024-10-02T00:04:16.262113Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "daea24db-b9f5-4abf-a853-dacbedc2e42c",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 3,
+            "created_time": "2024-10-01T23:56:56.067438Z",
+            "yes_price": 2,
+            "no_price": 98,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "2483fd66-f291-4e26-b502-280bf404290d",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 50,
+            "created_time": "2024-10-01T23:56:56.067438Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "1a6edc6a-b76d-4bee-aacb-b229320e33a5",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 155,
+            "created_time": "2024-10-01T23:56:56.067438Z",
+            "yes_price": 2,
+            "no_price": 98,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b942f783-2bc1-4f17-ac3b-59a815338ac9",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 34,
+            "created_time": "2024-10-01T21:56:35.094943Z",
+            "yes_price": 28,
+            "no_price": 72,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "78a8b06a-4ef9-404d-8c5d-b5ab195180ad",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 1,
+            "created_time": "2024-10-01T21:54:32.773934Z",
+            "yes_price": 35,
+            "no_price": 65,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "931b7e5c-7713-46f2-8405-ea7d79df972f",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 2,
+            "created_time": "2024-10-01T21:11:28.061126Z",
+            "yes_price": 85,
+            "no_price": 15,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0229b177-ceaf-4a9c-96eb-85d679ff628e",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 4,
+            "created_time": "2024-10-01T21:11:09.285468Z",
+            "yes_price": 85,
+            "no_price": 15,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "4d01719b-0b89-4221-a1e3-75002dc55160",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 7,
+            "created_time": "2024-10-01T21:09:49.203713Z",
+            "yes_price": 85,
+            "no_price": 15,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "bd132858-8b6f-46fd-ab5b-7cdf74cf4bd8",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 10,
+            "created_time": "2024-10-01T20:46:31.54712Z",
+            "yes_price": 30,
+            "no_price": 70,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b5d80473-09ec-4d76-acf9-6eb7fa0ca904",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 10,
+            "created_time": "2024-10-01T20:46:31.54712Z",
+            "yes_price": 31,
+            "no_price": 69,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "e747077e-85fb-40f9-aaff-34394e5a8444",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 5,
+            "created_time": "2024-10-01T20:33:01.69302Z",
+            "yes_price": 29,
+            "no_price": 71,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "09cbd6cf-b9b6-4576-b668-0ed9964a13b4",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 14,
+            "created_time": "2024-10-01T20:23:02.205538Z",
+            "yes_price": 85,
+            "no_price": 15,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6592da7e-e4b6-43a2-83b3-7082134f610e",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 2,
+            "created_time": "2024-10-01T19:10:29.471508Z",
+            "yes_price": 29,
+            "no_price": 71,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "462933fc-7ad8-4d20-bd54-027146f4e71f",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 1,
+            "created_time": "2024-10-01T16:20:08.772839Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "d8e17c50-7f95-40af-bd83-ab18c09fd9c8",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 37,
+            "created_time": "2024-10-01T16:07:44.296005Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "2d42457b-88ae-47c5-909d-a2f3d4f2fd20",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 45,
+            "created_time": "2024-10-01T16:07:44.296005Z",
+            "yes_price": 52,
+            "no_price": 48,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "1d11a1e3-9824-4a73-8c40-edfa69aaaf72",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 6,
+            "created_time": "2024-10-01T16:07:44.296005Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "fb262b54-fac2-4ee2-b9f7-995966ecb634",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 20,
+            "created_time": "2024-10-01T14:40:51.488743Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "76525702-e2ea-48ab-a559-ac2910ab5b3c",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 21,
+            "created_time": "2024-10-01T14:14:09.696029Z",
+            "yes_price": 44,
+            "no_price": 56,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7ed018a6-0c41-4cf1-9e09-d40aaaf09203",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 15,
+            "created_time": "2024-10-01T13:59:40.455572Z",
+            "yes_price": 45,
+            "no_price": 55,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "7417d46b-2c2e-4b96-ad41-f044d5916b42",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 14,
+            "created_time": "2024-10-01T13:59:40.455572Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "3249f08c-b074-4563-94c5-5d82f3fc40e5",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 5,
+            "created_time": "2024-10-01T13:07:01.672786Z",
+            "yes_price": 51,
+            "no_price": 49,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "5f77382a-51ce-4dde-acdf-4ba2271a675f",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 29,
+            "created_time": "2024-10-01T12:06:47.42208Z",
+            "yes_price": 53,
+            "no_price": 47,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "f2e7d904-5108-4d37-98a8-8528630840ba",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 100,
+            "created_time": "2024-10-01T03:49:47.821993Z",
+            "yes_price": 57,
+            "no_price": 43,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a8708a09-bb6a-4e78-9c31-3f819daa8b95",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 45,
+            "created_time": "2024-10-01T03:46:32.497435Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "903e324d-1545-49dd-8001-5971421d8439",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 22,
+            "created_time": "2024-10-01T02:21:24.943377Z",
+            "yes_price": 57,
+            "no_price": 43,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "40507218-d555-453c-9ea7-c2a25077cbe6",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 120,
+            "created_time": "2024-10-01T02:10:24.369935Z",
+            "yes_price": 59,
+            "no_price": 41,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "915d2dd7-0597-46be-ac9d-4d2842759e95",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 22,
+            "created_time": "2024-10-01T01:37:18.835618Z",
+            "yes_price": 55,
+            "no_price": 45,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "628dca87-337b-48d4-987e-abfb90970d99",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 75,
+            "created_time": "2024-10-01T00:18:22.915817Z",
+            "yes_price": 48,
+            "no_price": 52,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "45a124d4-4500-42f4-a137-2bc3a8c20d1f",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 45,
+            "created_time": "2024-10-01T00:16:43.508702Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "64b909d8-d317-4720-9448-7f37fa4c4299",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 75,
+            "created_time": "2024-10-01T00:12:47.15601Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "26f32876-c860-4e3c-abd5-c68867d2fec0",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 15,
+            "created_time": "2024-10-01T00:12:34.815366Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "7b5cdec1-6812-4711-a951-acc1c19d3ddd",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 45,
+            "created_time": "2024-10-01T00:08:35.899931Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "a0852d98-4ce6-4c36-a0c2-59947d07984f",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 45,
+            "created_time": "2024-09-30T23:24:34.178371Z",
+            "yes_price": 47,
+            "no_price": 53,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "502d7b76-88af-4b43-85c7-4767c9f0c664",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 60,
+            "created_time": "2024-09-30T23:00:35.221268Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b3e689fd-be25-4697-89de-7646ffe2d1f2",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 88,
+            "created_time": "2024-09-30T22:32:12.490866Z",
+            "yes_price": 43,
+            "no_price": 57,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "6efea8bb-a1b6-45c6-bbde-78a45c0bb859",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 75,
+            "created_time": "2024-09-30T17:08:46.210711Z",
+            "yes_price": 34,
+            "no_price": 66,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "68904142-2072-4ebc-b1f1-6cc68f90ba3f",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 150,
+            "created_time": "2024-09-30T17:08:39.281774Z",
+            "yes_price": 34,
+            "no_price": 66,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "076eefcc-5c04-4bf2-9e58-85564d9a54cc",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 30,
+            "created_time": "2024-09-30T17:08:39.254646Z",
+            "yes_price": 34,
+            "no_price": 66,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "e28792ff-c148-4f21-840c-3bb0d099b75c",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 10,
+            "created_time": "2024-09-30T16:01:22.020454Z",
+            "yes_price": 34,
+            "no_price": 66,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b32aebea-a249-431b-b1e9-4a0bcbe81302",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 15,
+            "created_time": "2024-09-30T15:58:03.287278Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "yes"
+        },
+        {
+            "trade_id": "0e50a280-379d-4e72-8179-4bac9ee89db4",
+            "ticker": "HIGHAUS-24OCT01-B98.5",
+            "count": 40,
+            "created_time": "2024-09-30T14:41:03.129616Z",
+            "yes_price": 40,
+            "no_price": 60,
+            "taker_side": "yes"
+        }
+    ],
+    "HIGHAUS-24OCT01-T99": [
+        {
+            "trade_id": "b9901abf-7c0b-4b2f-b7fc-9346396465a3",
+            "ticker": "HIGHAUS-24OCT01-T99",
+            "count": 3,
+            "created_time": "2024-10-01T18:17:21.509779Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "950ba8c1-339e-4ab3-9310-ba24a4b099bf",
+            "ticker": "HIGHAUS-24OCT01-T99",
+            "count": 50,
+            "created_time": "2024-10-01T18:17:21.509779Z",
+            "yes_price": 1,
+            "no_price": 99,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "0e0cf733-57d7-401b-b93e-098cb05eb6ba",
+            "ticker": "HIGHAUS-24OCT01-T99",
+            "count": 50,
+            "created_time": "2024-10-01T13:03:50.154402Z",
+            "yes_price": 2,
+            "no_price": 98,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "917e27fc-b71d-4812-a766-28585c7c9b5f",
+            "ticker": "HIGHAUS-24OCT01-T99",
+            "count": 50,
+            "created_time": "2024-10-01T12:56:02.09631Z",
+            "yes_price": 2,
+            "no_price": 98,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "89eaa7d4-a9ac-4385-9913-4ec5b86025ac",
+            "ticker": "HIGHAUS-24OCT01-T99",
+            "count": 45,
+            "created_time": "2024-09-30T23:24:34.211705Z",
+            "yes_price": 6,
+            "no_price": 94,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "b9c3c811-dd8f-4cba-bc32-7d15b895c798",
+            "ticker": "HIGHAUS-24OCT01-T99",
+            "count": 60,
+            "created_time": "2024-09-30T18:54:22.665266Z",
+            "yes_price": 5,
+            "no_price": 95,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "64fb3602-a277-4f45-bb64-9d53d1853ae7",
+            "ticker": "HIGHAUS-24OCT01-T99",
+            "count": 150,
+            "created_time": "2024-09-30T18:54:22.665266Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "63794c99-a7cf-4a0f-a99d-1cd98f41a265",
+            "ticker": "HIGHAUS-24OCT01-T99",
+            "count": 150,
+            "created_time": "2024-09-30T18:54:22.665266Z",
+            "yes_price": 4,
+            "no_price": 96,
+            "taker_side": "no"
+        },
+        {
+            "trade_id": "295dd639-573c-4a01-b3e3-82336d522a18",
+            "ticker": "HIGHAUS-24OCT01-T99",
+            "count": 50,
+            "created_time": "2024-09-30T14:38:27.190036Z",
+            "yes_price": 3,
+            "no_price": 97,
+            "taker_side": "no"
+        }
+    ]
+}
