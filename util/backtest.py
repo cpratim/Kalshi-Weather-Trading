@@ -180,7 +180,8 @@ class Backtest(object):
                 algo.start()
 
                 results = algo.kernel.stream.get_results()
-                # portfolio = algo.get_portfolio()
+                portfolio = algo.get_portfolio()
+                print(portfolio)
                 day_results = algo.kernel.exchange.settle_day(results)
                 print(
                     f"[{date}] - Profit: {day_results['profit']:8.2f}  | Quantity: {day_results['quantity']:8.2f} | Volume: {day_results['volume']:8.2f} | Fees: {day_results['fees_paid']:8.2f}"

@@ -2,6 +2,7 @@ from trade.algorithm import Algorithm, Signal
 import numpy as np
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
+from sklearn.preprocessing import QuantileTransformer
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import VotingRegressor
 from sklearn.preprocessing import RobustScaler
@@ -25,6 +26,10 @@ class FollowSignal(Signal):
         pipeline = Pipeline(
             [
                 ("robust_scaler", RobustScaler(unit_variance=True)),
+                # (
+                #     "quantile_transformer",
+                #     QuantileTransformer(n_quantiles=100, output_distribution="normal"),
+                # ),
                 (
                     "voting",
                     VotingRegressor(
@@ -47,7 +52,7 @@ class FollowSignal(Signal):
                                 ),
                             ),
                             ("lasso", LinearRegression()),
-                            ("knn", KNeighborsRegressor(n_neighbors=1)),
+                            ("knn_10", KNeighborsRegressor(n_neighbors=1)),
                         ],
                         n_jobs=-1,
                     ),

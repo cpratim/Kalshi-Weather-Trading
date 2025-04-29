@@ -59,7 +59,7 @@ class Algorithm(object):
             self.log_runtime_data = True
         else:
             self.kernel = HistoricalKernel(
-                self.ticker, date, on_signal_callback=self._on_signal_callback, **self.kwargs
+                self.ticker, self.date, on_signal_callback=self._on_signal_callback, **self.kwargs
             )
             self.logger = None
             self.log_runtime_data = False
