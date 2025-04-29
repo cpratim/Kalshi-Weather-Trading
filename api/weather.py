@@ -7,6 +7,7 @@ from warnings import filterwarnings
 from tqdm import tqdm
 from datetime import timedelta, datetime
 from pprint import pprint
+
 filterwarnings("ignore")
 load_dotenv()
 
@@ -29,7 +30,9 @@ class OpenMeteoAPI(WeatherAPI):
     def __init__(self, data_dir: str = "../data"):
         super().__init__(data_dir=data_dir)
         self.forecast_url = "https://api.open-meteo.com/v1/forecast"
-        self.historical_url = "https://historical-forecast-api.open-meteo.com/v1/forecast"
+        self.historical_url = (
+            "https://historical-forecast-api.open-meteo.com/v1/forecast"
+        )
         with open(os.path.join(self.data_dir, "metadata.json"), "r") as f:
             self.metadata = json.load(f)
         self.daily_features = [
@@ -53,6 +56,7 @@ class OpenMeteoAPI(WeatherAPI):
             "showers",
             "snowfall",
         ]
+
     def get_historical_forecast_data(
         self, ticker: str, city: str, start_date: str, end_date: str
     ) -> dict:
@@ -162,7 +166,7 @@ class OpenMeteoAPI(WeatherAPI):
         for key in response["daily"]:
             day_forecast[key] = response["daily"][key][0]
         hourly_forecast = {}
-        for i, hour in enumerate(response["hourly"]['time']):
+        for i, hour in enumerate(response["hourly"]["time"]):
             hourly_forecast[hour] = {}
             for key in response["hourly"]:
                 if key == "time":
@@ -184,7 +188,5 @@ class TomorrowAPI(WeatherAPI):
 
 if __name__ == "__main__":
     openmeteo = OpenMeteoAPI(data_dir="../data")
-    # openmeteo.update_historical_forecast_data(max_days=255, verbose=True)
     current_forecast = openmeteo.get_current_forecast("kxhighny")
     pprint(current_forecast)
-

@@ -374,7 +374,8 @@ class DataLoader(object):
             "time_to_strike": time_to_strike,
             "day_forecast_strike_dev": day_forecast["temperature_2m_max"] - strike,
             "current_forecast_strike_dev": hour_forecast["temperature_2m"] - strike,
-            "day_current_forecast_dev": day_forecast["temperature_2m_max"] - hour_forecast["temperature_2m"],
+            "day_current_forecast_dev": day_forecast["temperature_2m_max"]
+            - hour_forecast["temperature_2m"],
             "kalshi_strike_dev": kalshi_fair - strike,
             "polymk_strike_dev": polymk_fair - strike,
             "kalshi_polymk_dev": kalshi_fair - polymk_fair,
@@ -390,9 +391,9 @@ class DataLoader(object):
             "shift": strike - mean_strike,
         }
         return features
-    
+
     def process_poly_signal_trade_data(
-        self, 
+        self,
         trades_data: dict,
         polymk_data: dict,
         events_data: dict,
@@ -425,9 +426,7 @@ class DataLoader(object):
                 trade["time"].replace("Z", "+00:00")
             ).timestamp()
             while p_idx < len(prices) and prices[p_idx]["time"] < trade_ts:
-                polymk_dist[float(prices[p_idx]["strike"])] = prices[p_idx][
-                    "yes_price"
-                ]
+                polymk_dist[float(prices[p_idx]["strike"])] = prices[p_idx]["yes_price"]
                 p_idx += 1
             strike = strikes[trade_ticker]
             kalshi_dist[strike] = trade["yes_price"]
@@ -460,7 +459,7 @@ class DataLoader(object):
                         if results[trade_ticker] == "yes"
                         else -trade["yes_price"]
                     )
-                    features['outcome'] = int(results[trade_ticker] == "yes")
+                    features["outcome"] = int(results[trade_ticker] == "yes")
                 else:
                     features["impact"] = (
                         100 - trades_post_average[trade_ticker][trade_idx]
@@ -470,7 +469,7 @@ class DataLoader(object):
                         if results[trade_ticker] == "yes"
                         else (100 - trade["no_price"])
                     )
-                    features['outcome'] = int(results[trade_ticker] == "yes")
+                    features["outcome"] = int(results[trade_ticker] == "yes")
             trade_data.append(features)
         if len(trade_data) == 0:
             return pd.DataFrame()
@@ -658,7 +657,7 @@ class DataLoader(object):
                     trade_data_flattened.append(features)
             trade_data_flattened.sort(key=lambda x: x["time"])
             trade_data_flattened = pd.DataFrame(trade_data_flattened)
-            
+
             trade_data_flattened["time"] = pd.to_datetime(trade_data_flattened["time"])
             trade_data_flattened = self.add_window_features(trade_data_flattened)
             if not os.path.exists(os.path.join(self.data_dir, "processed", ticker)):
@@ -749,11 +748,16 @@ class DataLoader(object):
         return trade_data_flattened
 
     def load_consolidated_daily_data(
-        self, ticker: str, max_days: int = 200, type_: str = "processed"
+        self, ticker: str, max_days: int = 200, type_: str = "processed", verbose: bool = True
     ) -> pd.DataFrame:
         dates = self.get_valid_dates(ticker, max_days=max_days, type_=type_)
         result_df = pd.DataFrame()
-        for date in tqdm(sorted(dates)):
+        iterator = (
+            tqdm(sorted(dates), desc=f"Loading {ticker} for {sorted(dates)[0]}")
+            if verbose
+            else sorted(dates)
+        )
+        for date in iterator:
             df = pd.read_csv(os.path.join(self.data_dir, type_, ticker, f"{date}.csv"))
             result_df = pd.concat([result_df, df])
         result_df = result_df.fillna(0)

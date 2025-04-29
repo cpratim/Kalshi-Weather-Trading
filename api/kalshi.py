@@ -1,12 +1,7 @@
 import requests
-from pprint import pprint
 import json
 import os
-from tqdm import tqdm
-import numpy as np
 from datetime import datetime, timedelta
-from tqdm import tqdm
-import websocket
 from dotenv import load_dotenv
 from cryptography.hazmat.primitives.asymmetric import padding, rsa
 from cryptography.hazmat.primitives import hashes
@@ -17,7 +12,7 @@ import time
 from typing import Dict, Any
 import websockets
 import asyncio
-import uuid
+
 
 load_dotenv()
 
@@ -152,7 +147,7 @@ class KalshiAPI(KalshiAuth):
                     trades.extend(response["trades"])
             trade_data[ticker] = trades
         return trade_data
-    
+
     def get_current_trade_data(self, event_data: dict):
         return self._get_trade_data(event_data, datetime.now())
 
@@ -263,7 +258,6 @@ class KalshiWS(KalshiAuth):
         self.on_message_callback = on_message_callback
 
     async def on_open(self):
-        print("Connection opened, subscribing to channels...")
         command = {
             "id": self.idx,
             "cmd": "subscribe",

@@ -31,7 +31,7 @@ class PolyMarketAPI(object):
         s = title.split("°")[0]
         t = [int(x) for x in s.split("-")]
         return sum(t) / len(t)
-    
+
     def get_polymarket_markets(self, date_ptr: datetime):
         month_lower = date_ptr.strftime("%B").lower()
         day_lower = str(int(date_ptr.strftime("%d"))).lower()
@@ -43,7 +43,7 @@ class PolyMarketAPI(object):
         if len(response) == 0:
             return {}
         return response[0]["markets"]
-    
+
     def get_polymarket_data(self, date_ptr: datetime):
         poly_markets = self.get_polymarket_markets(date_ptr)
 
@@ -63,9 +63,7 @@ class PolyMarketAPI(object):
                 ).json()
                 for h in data["history"]:
                     trades[h["t"]] = h["p"]
-            trade_data[strike] = [
-                {"t": t, "p": p} for t, p in sorted(trades.items())
-            ]
+            trade_data[strike] = [{"t": t, "p": p} for t, p in sorted(trades.items())]
         return trade_data
 
     def update_current_poly_signal_data(
@@ -111,11 +109,9 @@ class PolyMarketAPI(object):
             market_tokens = json.loads(market["clobTokenIds"])
             token_map[market["groupItemTitle"]] = market_tokens[0]
         return token_map
-        
+
     def get_polymarket_dist(self, token_map: dict):
-        params = [
-            BookParams(token_id=v) for v in token_map.values()
-        ]
+        params = [BookParams(token_id=v) for v in token_map.values()]
         data = self.client.get_midpoints(params=params)
         dist = {}
         for title, token in token_map.items():
@@ -133,49 +129,6 @@ class PolyMarketWS(object):
 
 
 if __name__ == "__main__":
-    # api = PolyMarketAPI()
-    # api.get_market_data(max_days=100, verbose=True)
-    # event_slug = "highest-temperature-in-nyc-on-april-6"
-    # response = requests.get(
-    #     "https://gamma-api.polymarket.com/events", params={"slug": event_slug}
-    # ).json()
-    # pprint(response)
     api = PolyMarketAPI()
     poly_markets = api.get_polymarket_markets(datetime.now() + timedelta(days=1))
     poly_token_map = api.get_market_token_map(poly_markets)
-    # print(poly_markets)
-    start = time()
-    dist = api.get_polymarket_dist(poly_token_map)
-    end = time()
-    print(dist)
-    print(sum(dist.values()))
-    print(end - start)
-    
-
-# tokens = []
-# for market in data[0]["markets"]:
-
-#     title = market['groupItemTitle']
-#     strike = get_strike(title)
-#     print(strike)
-
-#     # print(market["clobTokenIds"])token
-#     tokens.extend(json.loads(market["clobTokenIds"]))
-
-# timestamps = set()
-# for token in tokens:
-#     print(token)
-#     response = requests.get(f"{host}/prices-history", params={
-#         "market": token,
-#         'interval': 'max',
-#         'fidelity': '1'
-#     }).json()
-#     print(response)
-#     for h in response['history']:
-#         timestamps.add(h['t'])
-
-# print(len(timestamps))
-# timestamps = list(timestamps)
-# timestamps.sort()
-
-# print(timestamps)

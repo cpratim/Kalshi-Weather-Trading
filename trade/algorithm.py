@@ -7,6 +7,7 @@ from pprint import pprint
 import logging
 from datetime import datetime
 import json
+import os
 
 
 date = datetime.now().strftime("%Y-%m-%d")
@@ -26,7 +27,7 @@ class Signal(object):
 
     def __call__(self, trade_data: pd.DataFrame):
         return self.pipeline.predict([trade_data[self.features]])[0]
-    
+
     def set_features(self, train_columns: list[str]):
         return train_columns
 
@@ -42,35 +43,39 @@ class Algorithm(object):
         self.signal = signal
         self.ticker = ticker
         self.date = date
+        self.kwargs = kwargs
         self.data_dir = kwargs.get("data_dir", "../data")
-        self.loader = DataLoader(self.data_dir)
-        if date == "realtime":
-            context = self.loader.load_consolidated_daily_data(
-                self.ticker, kwargs.get("train_window", 20), type_="polysignal"
+
+    def init_algorithm(self):
+        if self.date == "realtime":
+            context = DataLoader(self.data_dir).load_consolidated_daily_data(
+                self.ticker, self.kwargs.get("train_window", 20), type_="polysignal", verbose=False
             )
             self.fit_signal(context)
-            self.kernel = RealTimeKernel(ticker, on_signal_callback=self._on_signal_callback, **kwargs)
+            self.kernel = RealTimeKernel(
+                self.ticker, on_signal_callback=self._on_signal_callback, **self.kwargs
+            )
             self.logger = logging.getLogger(__name__)
             self.log_runtime_data = True
         else:
-            self.kernel = HistoricalKernel(ticker, date, on_signal_callback=self._on_signal_callback, **kwargs)
+            self.kernel = HistoricalKernel(
+                self.ticker, date, on_signal_callback=self._on_signal_callback, **self.kwargs
+            )
             self.logger = None
             self.log_runtime_data = False
-
-        self.runtime_data_file = f"../runtime/{datetime.now().strftime('%Y-%m-%d')}.jsonl"
-        if self.log_runtime_data:
+        self.runtime_data_file = (
+            f"../runtime/{datetime.now().strftime('%Y-%m-%d')}.jsonl"
+        )
+        if self.log_runtime_data and not os.path.exists(self.runtime_data_file):
             open(self.runtime_data_file, "w")
-        
+
     def fit_signal(self, context: pd.DataFrame):
         self.signal.fit(context)
 
     def save_runtime_data(self, signal_trade: pd.Series, result: dict):
         signal_dict = signal_trade.to_dict()
-        signal_dict['time'] = str(signal_dict['time'])
-        event = {
-            "trade": signal_dict,
-            "result": result
-        }
+        signal_dict["time"] = str(signal_dict["time"])
+        event = {"trade": signal_dict, "result": result}
         with open(self.runtime_data_file, "a") as f:
             f.write(json.dumps(event) + "\n")
 

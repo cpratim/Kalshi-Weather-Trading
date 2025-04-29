@@ -14,17 +14,20 @@ class Exchange(object):
         self.portfolio = {}
         self.max_exposure = kwargs.get("max_exposure", 50)
 
+    def _clip_price(self, price: float):
+        return max(min(price, 0.99), 0.01)
+
     def buy_yes(self, ticker: str, count: int, price: float, slack: float = 0.01):
         exposure = self.get_exposure(ticker)
         if abs(exposure) + count > self.max_exposure:
             return {"status": "rejected", "reason": "max_exposure"}
         if exposure >= 0:
             action = "buy"
-            limit_price = price + slack
+            limit_price = self._clip_price(price + slack)
             side = "yes"
         else:
             action = "sell"
-            limit_price = (1 - price) - slack
+            limit_price = self._clip_price((1 - price) - slack)
             side = "no"
             count = min(count, abs(exposure))
         return self.submit_order(ticker, action, side, limit_price, count)
@@ -35,20 +38,20 @@ class Exchange(object):
             return {"status": "rejected", "reason": "max_exposure"}
         if exposure <= 0:
             action = "buy"
-            limit_price = price + slack
+            limit_price = self._clip_price(price + slack)
             side = "no"
         else:
             action = "sell"
-            limit_price = (1 - price) - slack
+            limit_price = self._clip_price((1 - price) - slack)
             side = "yes"
             count = min(count, abs(exposure))
         return self.submit_order(ticker, action, side, limit_price, count)
 
     def get_portfolio(self):
         return {}
-    
+
     def get_exposure(self, ticker: str):
-        return self.get_portfolio().get(ticker, 0) 
+        return self.get_portfolio().get(ticker, 0)
 
     def submit_order(
         self, ticker: str, action: str, side: str, limit_price: float, count: int
@@ -92,14 +95,14 @@ class RealTimeExchange(Exchange):
             json=order_json,
         ).json()
         if "order" in response:
-            if response['order']['status'] == "executed":
+            if response["order"]["status"] == "executed":
                 logging.info(f"EXECUTED - {response['order']}")
             else:
                 logging.info(f"CANCELLED - {response['order']}")
         else:
             logging.error(f"ERROR - {response}")
             return {"status": "rejected", "reason": "error"}
-        return response['order']
+        return response["order"]
 
     def get_portfolio(self):
         response = requests.get(
@@ -109,8 +112,8 @@ class RealTimeExchange(Exchange):
             ),
         )
         portfolio = {}
-        for position in response.json()['market_positions']:
-            portfolio[position['ticker']] = position['position']
+        for position in response.json()["market_positions"]:
+            portfolio[position["ticker"]] = position["position"]
         return portfolio
 
 

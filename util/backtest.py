@@ -13,7 +13,12 @@ from util.load import DataLoader
 class Backtest(object):
 
     def __init__(
-        self, ticker: str, data_dir: str = "../data", backtest_window: int = 30, min_window_size: int = 15, max_window_size: int = 20
+        self,
+        ticker: str,
+        data_dir: str = "../data",
+        backtest_window: int = 30,
+        min_window_size: int = 15,
+        max_window_size: int = 20,
     ):
         self.ticker = ticker
         self.data_dir = data_dir
@@ -71,14 +76,20 @@ class Backtest(object):
                 train_data = self.concat_data(rolling_df)
                 input_data = self.data[date]
                 if scaler is not None:
-                    train_data[output_metric] = self.normalize_feature(train_data[output_metric], scaler)
-                    input_data[output_metric] = self.normalize_feature(input_data[output_metric], scaler)
+                    train_data[output_metric] = self.normalize_feature(
+                        train_data[output_metric], scaler
+                    )
+                    input_data[output_metric] = self.normalize_feature(
+                        input_data[output_metric], scaler
+                    )
                 input_outputs = self.data[date][output_metric]
                 train_outputs = train_data[output_metric]
                 train_predictions, input_predictions = pipeline(train_data, input_data)
 
                 # merge input_data and input_predictions
-                input_predictions_df = pd.DataFrame({f"{output_metric}_pred": input_predictions})
+                input_predictions_df = pd.DataFrame(
+                    {f"{output_metric}_pred": input_predictions}
+                )
                 day_pred = pd.concat([input_data, input_predictions_df], axis=1)
                 day_pred.columns = [*input_data.columns, *input_predictions_df.columns]
                 predictions = pd.concat([predictions, day_pred])
@@ -100,7 +111,12 @@ class Backtest(object):
 
             rolling_df.append(self.data[date])
 
-        return pd.DataFrame(stats_df), pd.DataFrame(predictions_df), day_predictions, predictions
+        return (
+            pd.DataFrame(stats_df),
+            pd.DataFrame(predictions_df),
+            day_predictions,
+            predictions,
+        )
 
     def run_backtest(
         self,
@@ -157,8 +173,9 @@ class Backtest(object):
                 rolling_df.popleft()
             if len(rolling_df) >= self.min_window_size:
                 train_data = self.concat_data(rolling_df)
-                signal.fit(train_data)
+                # signal.fit(train_data)
                 algo = Algorithm(self.ticker, date, signal)
+                algo.init_algorithm()
                 algo.fit_signal(train_data)
                 algo.start()
 
