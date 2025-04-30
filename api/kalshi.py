@@ -238,6 +238,18 @@ class KalshiAPI(KalshiAuth):
                 date_ptr -= timedelta(days=1)
                 iter += 1
 
+    def get_market_results(self, ticker: str, date: str):
+        with open(os.path.join(self.data_dir, "kalshi", ticker, "trades", f"{date}.json"), "r") as f:
+            trade_data = json.load(f)
+        results = {}
+        for market, trades in trade_data.items():
+            no_price, yes_price = trades[0]["no_price"], trades[0]["yes_price"]
+            if no_price > yes_price:
+                results[market] = "no"
+            else:
+                results[market] = "yes"
+        return results
+
 
 class KalshiWS(KalshiAuth):
 
@@ -302,4 +314,5 @@ class KalshiWS(KalshiAuth):
 
 if __name__ == "__main__":
     kalshi_api = KalshiAPI()
-    kalshi_api.update_current_weather_event_data(max_days=250, verbose=True)
+    # kalshi_api.update_current_weather_event_data(max_days=250, verbose=True)
+    print(kalshi_api.get_market_results("kxhighny", "2025-04-29"))

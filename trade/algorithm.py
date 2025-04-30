@@ -23,7 +23,7 @@ class Signal(object):
     def __init__(self, pipeline: Pipeline, **kwargs):
         self.pipeline = pipeline
         self.features = kwargs.get("features", None)
-        self.metric = kwargs.get("metric", "result")
+        self.metric = kwargs.get("metric", "impact")
 
     def __call__(self, trade_data: pd.DataFrame):
         return self.pipeline.predict([trade_data[self.features]])[0]

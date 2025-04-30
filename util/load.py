@@ -16,12 +16,12 @@ class DataLoader(object):
 
     def __init__(self, data_dir: str):
         self.data_dir = data_dir
+        self.kalshi = KalshiAPI(data_dir=data_dir)
         with open(os.path.join(data_dir, "metadata.json"), "r") as f:
             self.metadata = json.load(f)
 
     def get_valid_date_range(self, ticker: str, max_days: int = 365) -> list[str]:
-        kalshi = KalshiAPI(data_dir=self.data_dir)
-        return kalshi.get_valid_date_range(ticker, max_days=max_days)
+        return self.kalshi.get_valid_date_range(ticker, max_days=max_days)
 
     def _add_agg_features(self, df, row, feature, window):
         rows = df[
@@ -501,7 +501,6 @@ class DataLoader(object):
         daily_forecast, hourly_forecast = self.load_weather_forecast(ticker)
         if dates is None:
             dates = self._get_dates("polymarket", ticker)
-        dates = sorted(dates)
         idx = 0
         iterator = (
             tqdm(dates, desc=f"Processing {ticker} for {dates[idx]}")
@@ -519,9 +518,7 @@ class DataLoader(object):
             trades_post_average = {
                 k: self._get_trade_post_average(v) for k, v in trades_data.items()
             }
-            results = {
-                event["ticker"]: event["result"] for event in events_data["markets"]
-            }
+            results = self.kalshi.get_market_results(ticker, date)
             df = self.process_poly_signal_trade_data(
                 trades_data,
                 polymk_data,

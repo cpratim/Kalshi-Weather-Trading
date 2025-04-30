@@ -4,7 +4,7 @@ from api.kalshi import KalshiAPI
 from api.weather import OpenMeteoAPI
 import pandas as pd
 from datetime import datetime
-from api.kalshi import KalshiWS
+from api.kalshi import KalshiWS, KalshiAPI
 from api.polymarket import PolyMarketAPI
 from api.weather import OpenMeteoAPI
 import os
@@ -32,6 +32,7 @@ class HistoricalDataStream(object):
         self.data_dir = data_dir
         self.kwargs = kwargs
         self.date_ptr = datetime.strptime(date, "%Y-%m-%d")
+        self.kalshi = KalshiAPI()
         with open(
             os.path.join(self.data_dir, "kalshi", ticker, "events", f"{date}.json"), "r"
         ) as f:
@@ -47,16 +48,7 @@ class HistoricalDataStream(object):
         return self.events
 
     def get_results(self):
-        results = {}
-        for market in self.events["markets"]:
-            ticker = market["ticker"]
-            if len(market["result"]) > 0:
-                results[ticker] = market["result"]
-            else:
-                results[ticker] = (
-                    "no" if market["no_bid"] > market["yes_bid"] else "yes"
-                )
-        return results
+        return self.kalshi.get_market_results(self.ticker, self.date)
 
     def set_callbacks(self, **kwargs):
         self.callbacks = kwargs
