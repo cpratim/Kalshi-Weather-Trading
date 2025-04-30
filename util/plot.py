@@ -1,6 +1,8 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import Ridge
 import numpy as np
 
 
@@ -74,12 +76,10 @@ def plot_backtest_results(results, predictions):
         alpha=1,
         s=20,
     )
-
     axs[2].set_xlabel("Days")
     axs[2].set_ylabel(f"")
     axs[2].legend()
     axs[2].set_title(f"Corr / R2 vs Days")
-    # decrease the margin from y_label to the plot
     sns.scatterplot(
         x=predictions["y_pred"],
         y=predictions["y_real"],
@@ -94,3 +94,29 @@ def plot_backtest_results(results, predictions):
         f"R2: {round(r2_score(predictions["y_real"], predictions["y_pred"]), 3)} | Corr: {round(np.corrcoef(predictions["y_real"], predictions["y_pred"])[0, 1], 3)}"
     )
     plt.show()
+
+
+def plot_feature_importances(df, train_features, output_feature, tscv, top_n=10):
+    dates = df['time'].dt.date
+    linear_importances, rf_importances = (
+        np.zeros(len(train_features)),
+        np.zeros(len(train_features)),
+    )
+    for train_index, test_index in tscv.split(dates):
+        train_dates, test_dates = (
+            dates[train_index], 
+            dates[test_index]
+        )
+        train_df, test_df = (
+            df[df['time'].dt.date.isin(train_dates)], 
+            df[df['time'].dt.date.isin(test_dates)]
+        )
+        ridge = Ridge(alpha=0.1)
+        ridge.fit(train_df[train_features], train_df[output_feature])
+        linear_importances += ridge.coef_
+
+        rf = RandomForestRegressor(n_estimators=100, random_state=42)
+        rf.fit(train_df[train_features], train_df[output_feature])
+        rf_importances += rf.feature_importances_
+
+    

@@ -46,6 +46,12 @@ class OpenMeteoAPI(WeatherAPI):
             "precipitation_hours",
             "rain_sum",
             "precipitation_probability_max",
+            "wind_gusts_10m_max",
+            "wind_speed_10m_max",
+            "daylight_duration",
+            "sunshine_duration",
+            "cloud_cover_max",
+            "cloud_cover_min",
         ]
         self.hourly_features = [
             "temperature_2m",
@@ -55,6 +61,11 @@ class OpenMeteoAPI(WeatherAPI):
             "rain",
             "showers",
             "snowfall",
+            "cloud_cover_high",
+            "cloud_cover",
+            "wind_speed_10m",
+            "wind_gusts_10m",
+            "cloud_cover_mid",
         ]
 
     def get_historical_forecast_data(
@@ -188,5 +199,6 @@ class TomorrowAPI(WeatherAPI):
 
 if __name__ == "__main__":
     openmeteo = OpenMeteoAPI(data_dir="../data")
-    current_forecast = openmeteo.get_current_forecast("kxhighny")
-    pprint(current_forecast)
+    # current_forecast = openmeteo.get_current_forecast("kxhighny")
+    # pprint(current_forecast)
+    openmeteo.update_historical_forecast_data(max_days=100, verbose=True)

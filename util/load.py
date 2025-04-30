@@ -376,6 +376,15 @@ class DataLoader(object):
             "current_forecast_strike_dev": hour_forecast["temperature_2m"] - strike,
             "day_current_forecast_dev": day_forecast["temperature_2m_max"]
             - hour_forecast["temperature_2m"],
+            "day_wind_gusts_max": day_forecast["wind_gusts_10m_max"],
+            "day_wind_speed_max": day_forecast["wind_speed_10m_max"],
+            "day_cloud_cover_max": day_forecast["cloud_cover_max"],
+            "day_cloud_cover_min": day_forecast["cloud_cover_min"],
+            "day_sunshine_duration": day_forecast["sunshine_duration"],
+            "hour_wind_gusts": hour_forecast["wind_gusts_10m"],
+            "hour_wind_speed": hour_forecast["wind_speed_10m"],
+            "hour_cloud_cover": hour_forecast["cloud_cover"],
+            "hour_cloud_cover_high": hour_forecast["cloud_cover_high"],
             "kalshi_strike_dev": kalshi_fair - strike,
             "polymk_strike_dev": polymk_fair - strike,
             "kalshi_polymk_dev": kalshi_fair - polymk_fair,
@@ -402,7 +411,7 @@ class DataLoader(object):
         results: dict = None,
         trades_post_average: dict = None,
         threshold: int = 3,
-        max_tts: int = 3600 * 24,
+        max_tts: int = 3600 * 24 - 60,
     ):
         strike_time = self.get_strike_times(events_data)
         strikes, mean_strike = self.get_strikes(events_data)
@@ -762,6 +771,7 @@ class DataLoader(object):
             result_df = pd.concat([result_df, df])
         result_df = result_df.fillna(0)
         result_df = result_df.reset_index(drop=True)
+        result_df["time"] = pd.to_datetime(result_df["time"])
         return result_df
 
     def load_daily_data(
@@ -772,6 +782,7 @@ class DataLoader(object):
         for date in tqdm(sorted(dates)):
             df = pd.read_csv(os.path.join(self.data_dir, type_, ticker, f"{date}.csv"))
             df = df.fillna(0)
+            df["time"] = pd.to_datetime(df["time"])
             daily_data[date] = df
         return daily_data
 
