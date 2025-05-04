@@ -5,9 +5,12 @@ from pprint import pprint
 from datetime import datetime, timedelta
 from tqdm import tqdm
 from typing import Optional
+from collections import deque
 from api.kalshi import KalshiAPI
 from warnings import filterwarnings
 import pytz
+import numpy as np
+
 
 filterwarnings("ignore")
 
@@ -16,12 +19,11 @@ class DataLoader(object):
 
     def __init__(self, data_dir: str):
         self.data_dir = data_dir
-        self.kalshi = KalshiAPI(data_dir=data_dir)
         with open(os.path.join(data_dir, "metadata.json"), "r") as f:
             self.metadata = json.load(f)
 
     def get_valid_date_range(self, ticker: str, max_days: int = 365) -> list[str]:
-        return self.kalshi.get_valid_date_range(ticker, max_days=max_days)
+        return KalshiAPI().get_valid_date_range(ticker, max_days=max_days)
 
     def _add_agg_features(self, df, row, feature, window):
         rows = df[
@@ -518,7 +520,7 @@ class DataLoader(object):
             trades_post_average = {
                 k: self._get_trade_post_average(v) for k, v in trades_data.items()
             }
-            results = self.kalshi.get_market_results(ticker, date)
+            results = KalshiAPI().get_market_results(ticker, date)
             df = self.process_poly_signal_trade_data(
                 trades_data,
                 polymk_data,
@@ -754,7 +756,11 @@ class DataLoader(object):
         return trade_data_flattened
 
     def load_consolidated_daily_data(
-        self, ticker: str, max_days: int = 200, type_: str = "processed", verbose: bool = True
+        self,
+        ticker: str,
+        max_days: int = 200,
+        type_: str = "processed",
+        verbose: bool = True,
     ) -> pd.DataFrame:
         dates = self.get_valid_dates(ticker, max_days=max_days, type_=type_)
         result_df = pd.DataFrame()
@@ -783,6 +789,61 @@ class DataLoader(object):
             daily_data[date] = df
         return daily_data
 
+    def load_daily_sequence_data(
+        self,
+        ticker: str,
+        seq_len: int = 100,
+        look_ahead: int = 50,
+        max_days: int = 200,
+        type_: str = "polysignal",
+        p_bias: float = .3,
+        verbose: bool = True,
+    ):
+        daily_data = self.load_daily_data(ticker, max_days=max_days, type_=type_)
+        daily_sequences, daily_targets = [], []
+        iterator = (
+            tqdm(sorted(daily_data.keys()), desc=f"Loading {ticker} for {sorted(daily_data.keys())[0]}")
+            if verbose
+            else sorted(daily_data.keys())
+        )
+        for date in iterator:
+            df = daily_data[date]
+            exclude = [f for f in df.columns if f not in ["time", "result", "impact", "ticker", "trade_id", "outcome"]]
+            results = KalshiAPI().get_market_results(ticker, date)
+            sorted_keys = sorted(results.keys(), key=lambda x: x.split("-")[1:])
+            result_vector = np.array([int(results[k] == "yes") for k in sorted_keys])
+            window = []
+            dist = {k: 0 for k in sorted_keys}
+            
+            sequences, targets = [], []
+            for i, row in df.iterrows():
+                window.append(list(row[exclude].values))
+                dist[row["ticker"]] = row['yes_price']
+                if len(window) <= look_ahead:
+                    continue
+                targets.append(list(dist.values()))
+                sequence = window[:i-look_ahead + 1][-seq_len:]
+                if len(sequence) < seq_len:
+                    sequence = [[0] * len(sequence[0])] * (seq_len - len(sequence)) + sequence
+                sequences.append(sequence)
+
+            sequences = np.array(sequences)
+            targets = np.array(targets)
+
+            targets = targets / targets.sum(axis=1, keepdims=True)
+            for i in range(len(targets)):
+                targets[i] = targets[i] * (1 - p_bias) + result_vector * p_bias
+     
+            daily_sequences.extend(sequences)
+            daily_targets.extend(targets)
+
+        daily_sequences = np.array(daily_sequences)
+        daily_targets = np.array(daily_targets)
+        return daily_sequences, daily_targets
+        
+        
+
+
 
 if __name__ == "__main__":
     data_dir = "../data"
@@ -790,4 +851,5 @@ if __name__ == "__main__":
     # loader.process_current_weather_event_trade_data()
     # loader.process_poly_signal_trade_data("kxhighny", to_csv=True)
     # loader.process_poly_signal_trade_data("kxhighny", to_csv=True)
-    loader.process_historical_poly_signal_trade_data("kxhighny")
+    # loader.process_historical_poly_signal_trade_data("kxhighny")
+    loader.load_daily_sequence_data("kxhighny", verbose=True)

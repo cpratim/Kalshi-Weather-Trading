@@ -97,19 +97,16 @@ def plot_backtest_results(results, predictions):
 
 
 def plot_feature_importances(df, train_features, output_feature, tscv, top_n=10):
-    dates = df['time'].dt.date
+    dates = df["time"].dt.date
     linear_importances, rf_importances = (
         np.zeros(len(train_features)),
         np.zeros(len(train_features)),
     )
     for train_index, test_index in tscv.split(dates):
-        train_dates, test_dates = (
-            dates[train_index], 
-            dates[test_index]
-        )
+        train_dates, test_dates = (dates[train_index], dates[test_index])
         train_df, test_df = (
-            df[df['time'].dt.date.isin(train_dates)], 
-            df[df['time'].dt.date.isin(test_dates)]
+            df[df["time"].dt.date.isin(train_dates)],
+            df[df["time"].dt.date.isin(test_dates)],
         )
         ridge = Ridge(alpha=0.1)
         ridge.fit(train_df[train_features], train_df[output_feature])
@@ -118,5 +115,3 @@ def plot_feature_importances(df, train_features, output_feature, tscv, top_n=10)
         rf = RandomForestRegressor(n_estimators=100, random_state=42)
         rf.fit(train_df[train_features], train_df[output_feature])
         rf_importances += rf.feature_importances_
-
-    

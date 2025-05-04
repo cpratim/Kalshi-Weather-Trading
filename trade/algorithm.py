@@ -22,19 +22,12 @@ class Signal(object):
 
     def __init__(self, pipeline: Pipeline, **kwargs):
         self.pipeline = pipeline
-        self.features = kwargs.get("features", None)
-        self.metric = kwargs.get("metric", "impact")
 
     def __call__(self, trade_data: pd.DataFrame):
-        return self.pipeline.predict([trade_data[self.features]])[0]
-
-    def set_features(self, train_columns: list[str]):
-        return train_columns
+        return {"signal": 0}
 
     def fit(self, train_data: pd.DataFrame):
-        if self.features is None:
-            self.features = self.set_features(train_data.columns)
-        self.pipeline.fit(train_data[self.features], train_data[self.metric])
+        pass
 
 
 class Algorithm(object):
@@ -49,7 +42,10 @@ class Algorithm(object):
     def init_algorithm(self):
         if self.date == "realtime":
             context = DataLoader(self.data_dir).load_consolidated_daily_data(
-                self.ticker, self.kwargs.get("train_window", 20), type_="polysignal", verbose=False
+                self.ticker,
+                self.kwargs.get("train_window", 20),
+                type_="polysignal",
+                verbose=False,
             )
             self.fit_signal(context)
             self.kernel = RealTimeKernel(
@@ -59,7 +55,10 @@ class Algorithm(object):
             self.log_runtime_data = True
         else:
             self.kernel = HistoricalKernel(
-                self.ticker, self.date, on_signal_callback=self._on_signal_callback, **self.kwargs
+                self.ticker,
+                self.date,
+                on_signal_callback=self._on_signal_callback,
+                **self.kwargs,
             )
             self.logger = None
             self.log_runtime_data = False

@@ -239,7 +239,9 @@ class KalshiAPI(KalshiAuth):
                 iter += 1
 
     def get_market_results(self, ticker: str, date: str):
-        with open(os.path.join(self.data_dir, "kalshi", ticker, "trades", f"{date}.json"), "r") as f:
+        with open(
+            os.path.join(self.data_dir, "kalshi", ticker, "trades", f"{date}.json"), "r"
+        ) as f:
             trade_data = json.load(f)
         results = {}
         for market, trades in trade_data.items():

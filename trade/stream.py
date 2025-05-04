@@ -193,5 +193,7 @@ class RealTimeDataStream(object):
                 while True:
                     time.sleep(1)
             except KeyboardInterrupt:
-                print(f"Closing Kalshi WS | {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                print(
+                    f"Closing Kalshi WS | {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                )
                 self.kalshi_ws.ws.close()

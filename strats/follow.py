@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
 from sklearn.preprocessing import QuantileTransformer
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, Lasso
 from sklearn.ensemble import VotingRegressor
 from sklearn.preprocessing import RobustScaler
 from sklearn.neighbors import KNeighborsRegressor
@@ -26,10 +26,10 @@ class FollowSignal(Signal):
         pipeline = Pipeline(
             [
                 ("robust_scaler", RobustScaler(unit_variance=True)),
-                # (
-                #     "quantile_transformer",
-                #     QuantileTransformer(n_quantiles=100, output_distribution="normal"),
-                # ),
+                (
+                    "quantile_transformer",
+                    QuantileTransformer(n_quantiles=100, output_distribution="normal"),
+                ),
                 (
                     "voting",
                     VotingRegressor(
@@ -48,11 +48,11 @@ class FollowSignal(Signal):
                             (
                                 "rf",
                                 RandomForestRegressor(
-                                    n_estimators=50, max_depth=4, random_state=42
+                                    n_estimators=50, max_depth=3, random_state=42
                                 ),
                             ),
-                            ("lasso", LinearRegression()),
-                            ("knn_10", KNeighborsRegressor(n_neighbors=1)),
+                            ("lasso", Lasso(alpha=0.1)),
+                            ("knn_10", KNeighborsRegressor(n_neighbors=25)),
                         ],
                         n_jobs=-1,
                     ),
@@ -60,14 +60,22 @@ class FollowSignal(Signal):
             ]
         )
         super().__init__(pipeline, **kwargs)
+        self.features = None
+        self.metric = kwargs.get("metric", "impact")
 
-    def set_features(self, columns: pd.Index):
-        return [
-            f
-            for f in columns
-            if f not in ["time", "result", "impact", "ticker", "trade_id", "outcome"]
-            and not f[-1].isdigit()
-        ]
+    def __call__(self, trade_data: pd.DataFrame):
+        return {"signal": self.pipeline.predict([trade_data[self.features]])[0]}
+
+    def fit(self, train_data: pd.DataFrame):
+        if self.features is None:
+            self.features = [
+                f
+                for f in train_data.columns
+                if f
+                not in ["time", "result", "impact", "ticker", "trade_id", "outcome"]
+                and not f[-1].isdigit()
+            ]
+        self.pipeline.fit(train_data[self.features], train_data[self.metric])
 
 
 class FollowTrader(Algorithm):
@@ -86,23 +94,29 @@ class FollowTrader(Algorithm):
         return qty
 
     def on_signal_callback(self, signal_trade: pd.Series, trade: dict):
-        signal = self.signal(signal_trade)
+        signal = self.signal(signal_trade)["signal"]
         qty = self.decision_function(signal)
-        
+
         max_tts = 12 * 3600
         response = {}
-        if signal_trade['time_to_strike'] < max_tts:
+        if signal_trade["time_to_strike"] < max_tts:
             if (trade["taker_side"] == "yes" and qty >= 1) or (
                 trade["taker_side"] == "no" and qty <= -1
             ):
                 response = self.kernel.buy_yes(
-                    trade["ticker"], abs(qty), (trade["yes_price"] / 100), slack=self.slack
+                    trade["ticker"],
+                    abs(qty),
+                    (trade["yes_price"] / 100),
+                    slack=self.slack,
                 )
             if (trade["taker_side"] == "no" and qty >= 1) or (
                 trade["taker_side"] == "yes" and qty <= -1
             ):
                 response = self.kernel.buy_no(
-                    trade["ticker"], abs(qty), (trade["no_price"] / 100), slack=self.slack
+                    trade["ticker"],
+                    abs(qty),
+                    (trade["no_price"] / 100),
+                    slack=self.slack,
                 )
         return {"signal": signal, "response": response}
 
