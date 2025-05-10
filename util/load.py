@@ -217,17 +217,20 @@ class DataLoader(object):
         return features
 
     def get_strikes(self, event_data: dict, mean_center: bool = False):
-        strikes = {}
+        strikes = []
         for i, event in enumerate(event_data["markets"]):
             lines = [event[k] for k in event if k.endswith("strike")]
-            strikes[event["ticker"]] = sum(lines) / max(1, len(lines))
+            k = sum(lines) / max(1, len(lines))
             if i == 0:
-                strikes[event["ticker"]] -= 1.5
+                k -= 1.5
             if i == len(event_data["markets"]) - 1:
-                strikes[event["ticker"]] += 1.5
-        mean_strike = sum(strikes.values()) / len(strikes)
+                k += 1.5
+            strikes.append((event["ticker"], k))
+        mean_strike = sum([k for _, k in strikes]) / len(strikes)
+        strikes.sort(key=lambda x: x[1])
+        strikes = {ticker: k for ticker, k in strikes}
         if mean_center:
-            for ticker in strikes:
+            for ticker, k in strikes:
                 strikes[ticker] = strikes[ticker] - mean_strike
         return strikes, mean_strike
 
@@ -401,6 +404,11 @@ class DataLoader(object):
             "count": trade["count"],
             "shift": strike - mean_strike,
         }
+        for k, v in kalshi_dist.items():
+            if k - mean_strike < 0:
+                features[f'strike_m_{abs(k - mean_strike)}'] = v
+            else:
+                features[f'strike_p_{k - mean_strike}'] = v
         return features
 
     def process_poly_signal_trade_data(
@@ -421,7 +429,8 @@ class DataLoader(object):
             self._load_trades(trades_data, type_="kalshi"),
             self._load_trades(polymk_data, type_="polymarket"),
         )
-        kalshi_dist, polymk_dist = {}, {}
+        k_values = [s for s in strikes.values()]
+        kalshi_dist, polymk_dist = {k: 0 for k in k_values}, {}
         trade_data, p_idx = [], 0
         for i, trade in enumerate(trades):
             trade_ticker, trade_idx = trade["ticker"], trade["idx"]
@@ -490,6 +499,7 @@ class DataLoader(object):
         df = self.add_window_features(df)
         df = df.fillna(0)
         df = df.round(3)
+        print(df.shape)
         return df
 
     def process_historical_poly_signal_trade_data(
@@ -539,7 +549,7 @@ class DataLoader(object):
                 index=False,
             )
             idx += 1
-            if idx < len(dates):
+            if idx < len(dates) and verbose:
                 iterator.set_description(f"Processing {ticker} for {dates[idx]}")
 
     def process_consolidated_trade_data(
@@ -675,7 +685,7 @@ class DataLoader(object):
                 index=False,
             )
             idx += 1
-            if idx < len(dates):
+            if idx < len(dates) and verbose:
                 iterator.set_description(f"Processing {ticker} for {dates[idx]}")
 
     def process_current_weather_event_trade_data(self, verbose: bool = True):
@@ -851,5 +861,5 @@ if __name__ == "__main__":
     # loader.process_current_weather_event_trade_data()
     # loader.process_poly_signal_trade_data("kxhighny", to_csv=True)
     # loader.process_poly_signal_trade_data("kxhighny", to_csv=True)
-    # loader.process_historical_poly_signal_trade_data("kxhighny")
+    loader.process_historical_poly_signal_trade_data("kxhighny")
     loader.load_daily_sequence_data("kxhighny", verbose=True)
