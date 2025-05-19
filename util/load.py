@@ -520,11 +520,14 @@ class DataLoader(object):
             else dates
         )
         for date in iterator:
-            events_data, trades_data, polymk_data = (
-                self._get_data(ticker, date, "kalshi", "events"),
-                self._get_data(ticker, date, "kalshi", "trades"),
-                self._get_data(ticker, date, "polymarket", ""),
-            )
+            try:
+                events_data, trades_data, polymk_data = (
+                    self._get_data(ticker, date, "kalshi", "events"),
+                    self._get_data(ticker, date, "kalshi", "trades"),
+                    self._get_data(ticker, date, "polymarket", ""),
+                )
+            except Exception as e:
+                continue
             strike_time = self.get_strike_times(events_data)
             day_forecast = daily_forecast[strike_time.strftime("%Y-%m-%d")]
             trades_post_average = {

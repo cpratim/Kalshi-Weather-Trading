@@ -29,7 +29,7 @@ class PolyMarketAPI(object):
 
     def get_strike(self, title):
         s = title.split("°")[0]
-        t = [int(x) for x in s.split("-")]
+        t = [int(x) for x in s.split("–")]
         return sum(t) / len(t)
 
     def get_polymarket_markets(self, date_ptr: datetime):
@@ -130,5 +130,6 @@ class PolyMarketWS(object):
 
 if __name__ == "__main__":
     api = PolyMarketAPI()
-    poly_markets = api.get_polymarket_markets(datetime.now() + timedelta(days=1))
-    poly_token_map = api.get_market_token_map(poly_markets)
+    # poly_markets = api.get_polymarket_markets(datetime.now() + timedelta(days=1))
+    # poly_token_map = api.get_market_token_map(poly_markets)
+    api.get_polymarket_data(datetime.strptime("2025-05-09", "%Y-%m-%d"))

@@ -83,7 +83,7 @@ class FollowTrader(Algorithm):
     def __init__(self, ticker: str, date: str, signal: Signal, **kwargs):
         super().__init__(ticker, date, signal, **kwargs)
         self.alpha = kwargs.get("alpha", 0.1)
-        self.slack = kwargs.get("slack", 0.01)
+        self.slack = kwargs.get("slack", 0.0)
 
     def __name__(self):
         return "FollowTrader"
