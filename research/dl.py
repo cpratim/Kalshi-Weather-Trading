@@ -44,7 +44,6 @@ class OnlineModel(nn.Module):
             nn.LeakyReLU(dropout),
             # nn.LayerNorm(hidden_dim),
             nn.Linear(hidden_dim, output_dim),
-            nn.LayerNorm(output_dim),
             # nn.Softmax(dim=-1),
         )
 
@@ -138,7 +137,7 @@ def train_model(
         final_dist = np.zeros(len(dist_cols))
         final_dist[result] = 1
 
-        if i == 2:
+        if i == 10:
 
             y_pred, y_true = [], []
             for i in range(len(df) - look_ahead):
@@ -219,7 +218,7 @@ if __name__ == "__main__":
     output_dim = 6
     look_ahead = 50
     look_ahead_bias = 0
-    num_epochs = 50
+    num_epochs = 10
     learning_rate = 1e-4
 
     model = OnlineModel(

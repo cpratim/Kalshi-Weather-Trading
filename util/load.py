@@ -499,7 +499,6 @@ class DataLoader(object):
         df = self.add_window_features(df)
         df = df.fillna(0)
         df = df.round(3)
-        print(df.shape)
         return df
 
     def process_historical_poly_signal_trade_data(
