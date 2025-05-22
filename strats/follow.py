@@ -83,7 +83,7 @@ class FollowTrader(Algorithm):
     def __init__(self, ticker: str, date: str, signal: Signal, **kwargs):
         super().__init__(ticker, date, signal, **kwargs)
         self.alpha = kwargs.get("alpha", 0.1)
-        self.slack = kwargs.get("slack", 0.0)
+        self.slack = kwargs.get("slack", 0.01)
 
     def __name__(self):
         return "FollowTrader"
@@ -97,7 +97,7 @@ class FollowTrader(Algorithm):
         signal = self.signal(signal_trade)["signal"]
         qty = self.decision_function(signal)
 
-        max_tts = 12 * 3600
+        max_tts = 16 * 3600
         response = {}
         if signal_trade["time_to_strike"] < max_tts:
             if (trade["taker_side"] == "yes" and qty >= 1) or (
