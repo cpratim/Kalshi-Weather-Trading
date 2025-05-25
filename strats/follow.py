@@ -97,7 +97,7 @@ class FollowTrader(Algorithm):
         signal = self.signal(signal_trade)["signal"]
         qty = self.decision_function(signal)
 
-        max_tts = 16 * 3600
+        max_tts = 25 * 3600
         response = {}
         if signal_trade["time_to_strike"] < max_tts:
             if (trade["taker_side"] == "yes" and qty >= 1) or (
@@ -122,12 +122,12 @@ class FollowTrader(Algorithm):
 
 
 def backtest_algorithm(ticker: str, **kwargs):
-    signal = FollowSignal(metric="result")
+    signal = FollowSignal(metric="impact")
     backtest = Backtest(
         ticker,
         data_dir="../data",
         backtest_window=kwargs.get("backtest_window", 10),
-        min_window_size=kwargs.get("min_window_size", 15),
+        min_window_size=kwargs.get("min_window_size", 30),
         max_window_size=kwargs.get("max_window_size", 30),
     )
     backtest.run_backtest(

@@ -273,7 +273,7 @@ class DataLoader(object):
 
     def _get_fair(self, dist: dict):
         total_p = sum(dist.values())
-        probabilities = [k / total_p for k in dist.values()]
+        probabilities = [k / max(1, total_p) for k in dist.values()]
         values = list(dist.keys())
         return sum([p * v for p, v in zip(probabilities, values)])
 
@@ -311,6 +311,10 @@ class DataLoader(object):
                 )
         trades = sorted(trades, key=lambda x: x["time"])
         return trades
+    
+    def get_polymarket_dist(self, trade_data: dict):
+        dist = [float(x) for x in sorted(list(trade_data.keys()))]
+        return dist
 
     def _get_trade_post_average(self, trade_data: list[dict]):
         trade_price_postfix, trade_count_postfix = [0], [0]
@@ -332,7 +336,7 @@ class DataLoader(object):
         return trade_price_average
 
     def process_current_poly_signal_trade_data(
-        self, verbose: bool = True, max_days: int = 50
+        self, verbose: bool = True, max_days: int = 100
     ):
         for ticker in self.metadata["polymarket"]:
             trade_dates = set(
@@ -404,11 +408,26 @@ class DataLoader(object):
             "count": trade["count"],
             "shift": strike - mean_strike,
         }
+        feature_names = []
         for k, v in kalshi_dist.items():
             if k - mean_strike < 0:
                 features[f'strike_m_{abs(k - mean_strike)}'] = v
+                feature_names.append(f'strike_m_{abs(k - mean_strike)}')
             else:
                 features[f'strike_p_{k - mean_strike}'] = v
+                feature_names.append(f'strike_p_{k - mean_strike}')
+
+        p_market_values = sorted(list(polymk_dist.values()))
+        if len(p_market_values) > 6:
+            if p_market_values[0] < p_market_values[-1]:
+                p_market_values = p_market_values[0:6]
+            else:
+                p_market_values = p_market_values[-6:]
+        
+        for i, v in enumerate(p_market_values):
+            fname = f'polymk_{i}_{feature_names[i]}'
+            features[fname] = v
+
         return features
 
     def process_poly_signal_trade_data(
@@ -430,7 +449,7 @@ class DataLoader(object):
             self._load_trades(polymk_data, type_="polymarket"),
         )
         k_values = [s for s in strikes.values()]
-        kalshi_dist, polymk_dist = {k: 0 for k in k_values}, {}
+        kalshi_dist, polymk_dist = {k: 0 for k in k_values}, {k: 0 for k in self.get_polymarket_dist(polymk_data)}
         trade_data, p_idx = [], 0
         for i, trade in enumerate(trades):
             trade_ticker, trade_idx = trade["ticker"], trade["idx"]

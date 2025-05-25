@@ -46,7 +46,6 @@ class PolyMarketAPI(object):
 
     def get_polymarket_data(self, date_ptr: datetime):
         poly_markets = self.get_polymarket_markets(date_ptr)
-
         trade_data = {}
         for market in poly_markets:
             strike = self.get_strike(market["groupItemTitle"])
