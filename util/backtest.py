@@ -104,10 +104,7 @@ class Backtest(object):
                 stats_df["corr_test"].append(corr_test)
                 predictions_df["y_real"].extend(input_outputs)
                 predictions_df["y_pred"].extend(input_predictions)
-                day_predictions[date] = {
-                    "y_real": input_outputs,
-                    "y_pred": input_predictions,
-                }
+                day_predictions[date] = day_pred
 
             rolling_df.append(self.data[date])
 
@@ -115,7 +112,6 @@ class Backtest(object):
             pd.DataFrame(stats_df),
             pd.DataFrame(predictions_df),
             day_predictions,
-            predictions,
         )
 
     def run_backtest(
