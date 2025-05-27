@@ -22,127 +22,6 @@ class DataLoader(object):
         with open(os.path.join(data_dir, "metadata.json"), "r") as f:
             self.metadata = json.load(f)
 
-    def get_valid_date_range(self, ticker: str, max_days: int = 365) -> list[str]:
-        return KalshiAPI().get_valid_date_range(ticker, max_days=max_days)
-
-    def _add_agg_features(self, df, row, feature, window):
-        rows = df[
-            (df["time"] <= row["time"])
-            & (df["time"] > row["time"] - timedelta(minutes=window))
-        ]
-        agg_count = rows[feature].sum()
-        return agg_count
-
-    def _add_vol_features(self, df, row, feature, window):
-        rows = df[
-            (df["time"] <= row["time"])
-            & (df["time"] > row["time"] - timedelta(minutes=window))
-            & (df["shift"] == row["shift"])
-        ]
-        vol = rows[feature].std()
-        return vol
-
-    def _add_trend_features(self, df, row, feature, window):
-        rows = df[
-            (df["time"] <= row["time"])
-            & (df["time"] > row["time"] - timedelta(minutes=window))
-            & (df["shift"] == row["shift"])
-        ]
-        diff = rows[feature].iloc[0] - rows[feature].iloc[-1]
-        return diff
-
-    def _add_sentiment_features(self, df, row, feature, window):
-        rows = df[
-            (df["time"] <= row["time"])
-            & (df["time"] > row["time"] - timedelta(minutes=window))
-            & (df["shift"] == row["shift"])
-        ]
-        sentiment = rows[feature].mean()
-        return sentiment
-
-    def get_valid_dates(
-        self, ticker: str, max_days: int = 200, type_: str = "processed"
-    ) -> list[str]:
-        return sorted(
-            [
-                x.split(".")[0]
-                for x in os.listdir(os.path.join(self.data_dir, type_, ticker))
-            ]
-        )[-max_days:]
-
-    def add_window_features(
-        self,
-        df,
-        windows=[2, 5, 15, 60, 120],
-        agg_features=["count"],
-        vol_features=["yes_price", "count"],
-        sentiment_features=["taker_side", "yes_price", "count"],
-        trend_features=["yes_price"],
-    ):
-
-        for window in windows:
-            for feature in agg_features:
-                df[f"{feature}_agg_{window}"] = df.apply(
-                    lambda row: self._add_agg_features(df, row, feature, window=window),
-                    axis=1,
-                )
-            for feature in vol_features:
-                df[f"{feature}_vol_{window}"] = df.apply(
-                    lambda row: self._add_vol_features(df, row, feature, window=window),
-                    axis=1,
-                )
-            for feature in sentiment_features:
-                df[f"{feature}_sentiment_{window}"] = df.apply(
-                    lambda row: self._add_sentiment_features(
-                        df, row, feature, window=window
-                    ),
-                    axis=1,
-                )
-            for feature in trend_features:
-                df[f"{feature}_trend_{window}"] = df.apply(
-                    lambda row: self._add_trend_features(
-                        df, row, feature, window=window
-                    ),
-                    axis=1,
-                )
-        return df
-
-    def add_window_features_last_trade(
-        self,
-        df,
-        windows=[2, 5, 15, 60, 120],
-        agg_features=["count"],
-        vol_features=["yes_price", "count"],
-        sentiment_features=["taker_side", "yes_price", "count"],
-        trend_features=["yes_price"],
-    ):
-        for window in windows:
-            for feature in agg_features:
-                df[f"{feature}_agg_{window}"].iloc[-1] = self._add_agg_features(
-                    df, df.iloc[-1], feature, window=window
-                )
-            for feature in vol_features:
-                df[f"{feature}_vol_{window}"].iloc[-1] = self._add_vol_features(
-                    df, df.iloc[-1], feature, window=window
-                )
-            for feature in sentiment_features:
-                df[f"{feature}_sentiment_{window}"].iloc[-1] = (
-                    self._add_sentiment_features(
-                        df, df.iloc[-1], feature, window=window
-                    )
-                )
-            for feature in trend_features:
-                df[f"{feature}_trend_{window}"].iloc[-1] = self._add_trend_features(
-                    df, df.iloc[-1], feature, window=window
-                )
-        df = df.fillna(0)
-        return df
-
-    def normalize_features(self, df, features: list[str]):
-        for feature in features:
-            df[feature] = (df[feature] - df[feature].mean()) / df[feature].std()
-        return df
-
     def load_weather_forecast(self, ticker: str):
         daily_weather_forecast_df = pd.read_csv(
             f"{self.data_dir}/weather/{ticker}/daily_weather_forecast.csv"
@@ -217,21 +96,19 @@ class DataLoader(object):
         return features
 
     def get_strikes(self, event_data: dict, mean_center: bool = False):
-        strikes = []
-        for i, event in enumerate(event_data["markets"]):
-            lines = [event[k] for k in event if k.endswith("strike")]
-            k = sum(lines) / max(1, len(lines))
+        tickers = [event["ticker"] for event in event_data["markets"]]
+        strikes = {}
+        for i, t in enumerate(tickers):
+            v = t.split("-")[-1]
+            k = float(v[1:])
             if i == 0:
                 k -= 1.5
-            if i == len(event_data["markets"]) - 1:
+            if i == len(tickers) - 1:
                 k += 1.5
-            strikes.append((event["ticker"], k))
-        mean_strike = sum([k for _, k in strikes]) / len(strikes)
-        strikes.sort(key=lambda x: x[1])
-        strikes = {ticker: k for ticker, k in strikes}
+            strikes[t] = k
+        mean_strike = sum(strikes.values()) / len(strikes)
         if mean_center:
-            for ticker, k in strikes:
-                strikes[ticker] = strikes[ticker] - mean_strike
+            strikes = {ticker: strikes[ticker] - mean_strike for ticker in tickers}
         return strikes, mean_strike
 
     def parse_trade_time(self, timestamp: str, timezone: str = "US/Eastern"):
@@ -263,13 +140,13 @@ class DataLoader(object):
         ) as f:
             return json.load(f)
 
-    def _get_dates(self, data_dir: str, ticker: str):
+    def _get_dates(self, path: str, max_days: int = 300):
         return sorted(
             [
                 x.split(".")[0]
-                for x in os.listdir(os.path.join(self.data_dir, data_dir, ticker))
+                for x in os.listdir(os.path.join(self.data_dir, path))
             ]
-        )
+        )[-max_days:]
 
     def _get_fair(self, dist: dict):
         total_p = sum(dist.values())
@@ -277,44 +154,26 @@ class DataLoader(object):
         values = list(dist.keys())
         return sum([p * v for p, v in zip(probabilities, values)])
 
-    def _load_trades(self, trade_data: dict, type_: str = "kalshi"):
+    def _load_trades(self, trade_data: dict):
         trades = []
-        if type_ == "kalshi":
-            for series in trade_data:
-                trades.extend(
-                    [
-                        {
-                            "idx": i,
-                            "ticker": trade["ticker"],
-                            "trade_id": trade["trade_id"],
-                            "taker_side": trade["taker_side"],
-                            "time": trade["created_time"],
-                            "count": trade["count"],
-                            "no_price": trade["no_price"],
-                            "yes_price": trade["yes_price"],
-                        }
-                        for i, trade in enumerate(trade_data[series])
-                    ]
-                )
-        elif type_ == "polymarket":
-            for series in trade_data:
-                trades.extend(
-                    [
-                        {
-                            "idx": i,
-                            "strike": series,
-                            "time": trade["t"],
-                            "yes_price": trade["p"] * 100,
-                        }
-                        for i, trade in enumerate(trade_data[series])
-                    ]
-                )
+        for series in trade_data:
+            trades.extend(
+                [
+                    {
+                        "idx": i,
+                        "ticker": trade["ticker"],
+                        "trade_id": trade["trade_id"],
+                        "taker_side": trade["taker_side"],
+                        "time": trade["created_time"],
+                        "count": trade["count"],
+                        "no_price": trade["no_price"],
+                        "yes_price": trade["yes_price"],
+                    }
+                    for i, trade in enumerate(trade_data[series])
+                ]
+            )
         trades = sorted(trades, key=lambda x: x["time"])
         return trades
-    
-    def get_polymarket_dist(self, trade_data: dict):
-        dist = [float(x) for x in sorted(list(trade_data.keys()))]
-        return dist
 
     def _get_trade_post_average(self, trade_data: list[dict]):
         trade_price_postfix, trade_count_postfix = [0], [0]
@@ -335,7 +194,7 @@ class DataLoader(object):
             )
         return trade_price_average
 
-    def process_current_poly_signal_trade_data(
+    def process_current_trade_data(
         self, verbose: bool = True, max_days: int = 100
     ):
         for ticker in self.metadata["polymarket"]:
@@ -354,15 +213,14 @@ class DataLoader(object):
                 dates.append(date_ptr.strftime("%Y-%m-%d"))
                 date_ptr -= timedelta(days=1)
                 iter += 1
-            self.process_historical_poly_signal_trade_data(
+            self.process_historical_trade_data(
                 ticker, dates, verbose=verbose
             )
 
-    def process_poly_signal_trade(
+    def process_trade(
         self,
         trade: dict,
         kalshi_dist: dict,
-        polymk_dist: dict,
         day_forecast: dict,
         hour_forecast: dict,
         strike_time: datetime,
@@ -372,15 +230,19 @@ class DataLoader(object):
         trade_ticker = trade["ticker"]
         trade_time = self.parse_trade_time(trade["time"])
         time_to_strike = (strike_time - trade_time).total_seconds()
-        kalshi_fair, polymk_fair = (
-            self._get_fair(kalshi_dist),
-            self._get_fair(polymk_dist),
-        )
+        kalshi_fair = self._get_fair(kalshi_dist)
         features = {
             "time": trade_time,
             "trade_id": trade["trade_id"],
             "ticker": trade_ticker,
             "time_to_strike": time_to_strike,
+            "count": trade["count"],
+            "shift": strike - mean_strike,
+            "kalshi_fair": kalshi_fair,
+            "yes_price": trade["yes_price"],
+            "no_price": trade["no_price"],
+            "taker_side": int(trade["taker_side"] == "yes"),
+            "day_forecast_high": day_forecast["temperature_2m_max"],
             "day_forecast_strike_dev": day_forecast["temperature_2m_max"] - strike,
             "current_forecast_strike_dev": hour_forecast["temperature_2m"] - strike,
             "day_current_forecast_dev": day_forecast["temperature_2m_max"]
@@ -395,92 +257,51 @@ class DataLoader(object):
             "hour_cloud_cover": hour_forecast["cloud_cover"],
             "hour_cloud_cover_high": hour_forecast["cloud_cover_high"],
             "kalshi_strike_dev": kalshi_fair - strike,
-            "polymk_strike_dev": polymk_fair - strike,
-            "kalshi_polymk_dev": kalshi_fair - polymk_fair,
             "kalshi_day_forecast_dev": day_forecast["temperature_2m_max"] - kalshi_fair,
-            "polymk_day_forecast_dev": day_forecast["temperature_2m_max"] - polymk_fair,
             "day_forecast_percipitation": day_forecast["precipitation_probability_max"],
             "day_forecast_rain": day_forecast["rain_sum"],
             "hour_forecast_rain": hour_forecast["rain"],
-            "yes_price": trade["yes_price"],
-            "no_price": trade["no_price"],
-            "taker_side": int(trade["taker_side"] == "yes"),
-            "count": trade["count"],
-            "shift": strike - mean_strike,
         }
-        feature_names = []
         for k, v in kalshi_dist.items():
+            # if abs(k - mean_strike) not in [-5, -3, -1, 1, 3, 5]:
+            #     print(kalshi_dist)
             if k - mean_strike < 0:
                 features[f'strike_m_{abs(k - mean_strike)}'] = v
-                feature_names.append(f'strike_m_{abs(k - mean_strike)}')
             else:
                 features[f'strike_p_{k - mean_strike}'] = v
-                feature_names.append(f'strike_p_{k - mean_strike}')
-
-        p_market_values = sorted(list(polymk_dist.values()))
-        if len(p_market_values) > 6:
-            if p_market_values[0] < p_market_values[-1]:
-                p_market_values = p_market_values[0:6]
-            else:
-                p_market_values = p_market_values[-6:]
-        
-        for i, v in enumerate(p_market_values):
-            fname = f'polymk_{i}_{feature_names[i]}'
-            features[fname] = v
 
         return features
 
-    def process_poly_signal_trade_data(
+    def process_trade_data(
         self,
         trades_data: dict,
-        polymk_data: dict,
         events_data: dict,
         day_forecast: dict,
         hourly_forecast: dict,
         results: dict = None,
         trades_post_average: dict = None,
-        threshold: int = 3,
-        max_tts: int = 3600 * 24 - 60,
     ):
         strike_time = self.get_strike_times(events_data)
         strikes, mean_strike = self.get_strikes(events_data)
-        trades, prices = (
-            self._load_trades(trades_data, type_="kalshi"),
-            self._load_trades(polymk_data, type_="polymarket"),
-        )
+        if 0.0 in strikes.values():
+            print(strikes)
+        trades = self._load_trades(trades_data)
         k_values = [s for s in strikes.values()]
-        kalshi_dist, polymk_dist = {k: 0 for k in k_values}, {k: 0 for k in self.get_polymarket_dist(polymk_data)}
-        trade_data, p_idx = [], 0
+        kalshi_dist = {k: 0 for k in k_values}
+        trade_data = []
         for i, trade in enumerate(trades):
             trade_ticker, trade_idx = trade["ticker"], trade["idx"]
             trade_time = self.parse_trade_time(trade["time"])
-            tts = (strike_time - trade_time).total_seconds()
-            if (
-                min(trade["yes_price"], trade["no_price"]) < threshold
-                or tts < 0
-                or tts > max_tts
-            ):
-                continue
-            trade_ts = datetime.fromisoformat(
-                trade["time"].replace("Z", "+00:00")
-            ).timestamp()
-            while p_idx < len(prices) and prices[p_idx]["time"] < trade_ts:
-                polymk_dist[float(prices[p_idx]["strike"])] = prices[p_idx]["yes_price"]
-                p_idx += 1
             strike = strikes[trade_ticker]
             kalshi_dist[strike] = trade["yes_price"]
             trade_hour = trade_time.strftime("%Y-%m-%dT%H:00")
-            hour_forecast = hourly_forecast[trade_hour]
-            if (
-                min(trade["yes_price"], trade["no_price"]) < threshold
-                or tts < 0
-                or tts > max_tts
-            ):
+            try:
+                hour_forecast = hourly_forecast[trade_hour]
+            except Exception as e:
                 continue
-            features = self.process_poly_signal_trade(
+            features = self.process_trade(
                 trade,
                 kalshi_dist,
-                polymk_dist,
                 day_forecast,
                 hour_forecast,
                 strike_time,
@@ -515,22 +336,20 @@ class DataLoader(object):
         df = pd.DataFrame(trade_data)
         df["time"] = pd.to_datetime(df["time"])
         df = df.sort_values(by="time")
-        df = self.add_window_features(df)
         df = df.fillna(0)
         df = df.round(3)
         return df
 
-    def process_historical_poly_signal_trade_data(
+    def process_historical_trade_data(
         self,
         ticker: str,
         dates: Optional[list[str]] = None,
-        threshold: int = 3,
-        max_tts: int = 3600 * 24,
         verbose: bool = True,
+        max_days: int = 300,
     ):
         daily_forecast, hourly_forecast = self.load_weather_forecast(ticker)
         if dates is None:
-            dates = self._get_dates("polymarket", ticker)
+            dates = self._get_dates(f'{self.data_dir}/kalshi/{ticker}/trades', max_days=max_days)
         idx = 0
         iterator = (
             tqdm(dates, desc=f"Processing {ticker} for {dates[idx]}")
@@ -539,10 +358,9 @@ class DataLoader(object):
         )
         for date in iterator:
             try:
-                events_data, trades_data, polymk_data = (
+                events_data, trades_data = (
                     self._get_data(ticker, date, "kalshi", "events"),
                     self._get_data(ticker, date, "kalshi", "trades"),
-                    self._get_data(ticker, date, "polymarket", ""),
                 )
             except Exception as e:
                 continue
@@ -552,217 +370,23 @@ class DataLoader(object):
                 k: self._get_trade_post_average(v) for k, v in trades_data.items()
             }
             results = KalshiAPI().get_market_results(ticker, date)
-            df = self.process_poly_signal_trade_data(
+            df = self.process_trade_data(
                 trades_data,
-                polymk_data,
                 events_data,
                 day_forecast,
                 hourly_forecast,
                 results=results,
                 trades_post_average=trades_post_average,
-                threshold=threshold,
-                max_tts=max_tts,
             )
-            if ticker not in os.listdir(os.path.join(self.data_dir, "polysignal")):
-                os.makedirs(os.path.join(self.data_dir, "polysignal", ticker))
-            df.to_csv(
-                os.path.join(self.data_dir, "polysignal", ticker, f"{date}.csv"),
-                index=False,
-            )
-            idx += 1
-            if idx < len(dates) and verbose:
-                iterator.set_description(f"Processing {ticker} for {dates[idx]}")
-
-    def process_consolidated_trade_data(
-        self,
-        ticker: str,
-        dates: Optional[list[str]] = None,
-        threshold: int = 3,
-        verbose: bool = True,
-    ) -> pd.DataFrame:
-        daily_weather_forecast, hourly_weather_forecast = self.load_weather_forecast(
-            ticker
-        )
-        dates = sorted(dates)
-        idx = 0
-        iterator = (
-            tqdm(dates, desc=f"Processing {ticker} for {dates[idx]}")
-            if verbose
-            else dates
-        )
-        for date in iterator:
-            with open(
-                os.path.join(self.data_dir, "kalshi", ticker, "events", f"{date}.json"),
-                "r",
-            ) as f:
-                events_data = json.load(f)
-            with open(
-                os.path.join(self.data_dir, "kalshi", ticker, "trades", f"{date}.json"),
-                "r",
-            ) as f:
-                trades_data = json.load(f)
-            results = {
-                event["ticker"]: event["result"] for event in events_data["markets"]
-            }
-            if "strike_date" not in events_data["event"]:
-                strike_time = datetime.strptime(
-                    events_data["markets"][0]["close_time"], "%Y-%m-%dT%H:%M:%SZ"
-                )
-            else:
-                strike_time = datetime.strptime(
-                    events_data["event"]["strike_date"], "%Y-%m-%dT%H:%M:%SZ"
-                )
-            strike_date_obj = strike_time.date() - timedelta(days=1)
-            strike_date = strike_date_obj.strftime("%Y-%m-%d")
-            strikes, mean_strike = self.get_strikes(events_data)
-            trade_data_flattened = []
-            for series in trades_data:
-                trade_price_postfix, trade_count_postfix = [0], [0]
-                for i, trade in enumerate(
-                    sorted(trades_data[series], key=lambda x: x["created_time"])
-                ):
-                    trade_price_postfix.append(
-                        trade["yes_price"] * trade["count"] + trade_price_postfix[-1]
-                    )
-                    trade_count_postfix.append(trade["count"] + trade_count_postfix[-1])
-
-                total_trade_price, total_trade_count = (
-                    trade_price_postfix[-1],
-                    trade_count_postfix[-1],
-                )
-                trade_price_average = [0] * len(trades_data[series])
-                for i, trade in enumerate(trades_data[series]):
-                    trade_price_average[i] = (
-                        total_trade_price - trade_price_postfix[i]
-                    ) / (total_trade_count - trade_count_postfix[i])
-
-                for i, trade in enumerate(
-                    sorted(trades_data[series], key=lambda x: x["created_time"])
-                ):
-                    if (trade["yes_price"] < threshold) or (
-                        trade["no_price"] < threshold
-                    ):
-                        continue
-                    trade_time = datetime.strptime(
-                        trade["created_time"], "%Y-%m-%dT%H:%M:%S.%fZ"
-                    )
-                    short_term_hour = (trade_time + timedelta(hours=1)).strftime(
-                        "%Y-%m-%dT%H:00"
-                    )
-                    trade_hour = trade_time.strftime("%Y-%m-%dT%H:00")
-                    event_ticker = trade["ticker"]
-                    features = {
-                        "time": trade_time,
-                        "day_of_year": trade_time.timetuple().tm_yday,
-                        "time_to_strike": (strike_time - trade_time).total_seconds(),
-                        "time_of_day": trade_time.hour
-                        + trade_time.minute / 60
-                        + trade_time.second / 3600,
-                        "count": trade["count"],
-                        "yes_price": trade["yes_price"],
-                        "no_price": trade["no_price"],
-                        "taker_side": int(trade["taker_side"] == "yes"),
-                        "shift": strikes[event_ticker] - mean_strike,
-                    }
-                    try:
-                        features = self.add_weather_features(
-                            event_ticker,
-                            features,
-                            daily_weather_forecast,
-                            hourly_weather_forecast,
-                            strike_date,
-                            trade_hour,
-                            short_term_hour,
-                            strikes,
-                        )
-                    except Exception as e:
-                        continue
-                    if trade["taker_side"] == "yes":
-                        features["impact"] = trade_price_average[i] - trade["yes_price"]
-                        features["result"] = (
-                            (100 - trade["yes_price"])
-                            if results[event_ticker] == "yes"
-                            else -trade["yes_price"]
-                        )
-                    else:
-                        features["impact"] = trade["no_price"] - (
-                            (100 - trade_price_average[i])
-                        )
-                        features["result"] = (
-                            -trade["no_price"]
-                            if results[event_ticker] == "yes"
-                            else (100 - trade["no_price"])
-                        )
-                    trade_data_flattened.append(features)
-            trade_data_flattened.sort(key=lambda x: x["time"])
-            trade_data_flattened = pd.DataFrame(trade_data_flattened)
-
-            trade_data_flattened["time"] = pd.to_datetime(trade_data_flattened["time"])
-            trade_data_flattened = self.add_window_features(trade_data_flattened)
-            if not os.path.exists(os.path.join(self.data_dir, "processed", ticker)):
+            if ticker not in os.listdir(os.path.join(self.data_dir, "processed")):
                 os.makedirs(os.path.join(self.data_dir, "processed", ticker))
-            trade_data_flattened.to_csv(
+            df.to_csv(
                 os.path.join(self.data_dir, "processed", ticker, f"{date}.csv"),
                 index=False,
             )
             idx += 1
             if idx < len(dates) and verbose:
                 iterator.set_description(f"Processing {ticker} for {dates[idx]}")
-
-    def process_current_weather_event_trade_data(self, verbose: bool = True):
-        for ticker in self.metadata["weather"]:
-            if ticker not in os.listdir(os.path.join(self.data_dir, "processed")):
-                os.makedirs(os.path.join(self.data_dir, "processed", ticker))
-            event_dates = set(
-                [
-                    x.split(".")[0]
-                    for x in os.listdir(
-                        os.path.join(self.data_dir, "kalshi", ticker, "events")
-                    )
-                ]
-            )
-            processed_dates = set(
-                [
-                    x.split(".")[0]
-                    for x in os.listdir(
-                        os.path.join(self.data_dir, "processed", ticker)
-                    )
-                ]
-            )
-            valid_dates = list(event_dates - processed_dates)
-            if len(valid_dates) == 0:
-                continue
-            self.process_consolidated_trade_data(
-                ticker, sorted(list(valid_dates)), verbose=verbose
-            )
-
-    def get_basic_features(
-        self,
-        trade: dict,
-        strike_time: datetime,
-        strikes: dict,
-        mean_strike: float = None,
-    ):
-        trade_time = datetime.strptime(trade["created_time"], "%Y-%m-%dT%H:%M:%S.%fZ")
-        event_ticker = trade["ticker"]
-        features = {
-            "time": trade_time,
-            "day_of_year": trade_time.timetuple().tm_yday,
-            "time_to_strike": (strike_time - trade_time).total_seconds(),
-            "time_of_day": trade_time.hour
-            + trade_time.minute / 60
-            + trade_time.second / 3600,
-            "count": trade["count"],
-            "yes_price": trade["yes_price"],
-            "no_price": trade["no_price"],
-            "taker_side": int(trade["taker_side"] == "yes"),
-            "shift": (
-                (strikes[event_ticker] - mean_strike)
-                if mean_strike is not None
-                else strikes[event_ticker]
-            ),
-        }
-        return features
 
     def load_trade_data(self, event_data: dict, trade_data: dict):
         strike_time = datetime.strptime(
@@ -789,98 +413,52 @@ class DataLoader(object):
     def load_consolidated_daily_data(
         self,
         ticker: str,
-        max_days: int = 200,
         type_: str = "processed",
         verbose: bool = True,
+        max_days: int = 300,
     ) -> pd.DataFrame:
-        dates = self.get_valid_dates(ticker, max_days=max_days, type_=type_)
+        dates = self._get_dates(f'{self.data_dir}/{type_}/{ticker}', max_days=max_days)
         result_df = pd.DataFrame()
+        idx = 0
         iterator = (
-            tqdm(sorted(dates), desc=f"Loading {ticker} for {sorted(dates)[0]}")
+            tqdm(sorted(dates), desc=f"Loading {ticker} for {dates[idx]}")
             if verbose
             else sorted(dates)
         )
         for date in iterator:
             df = pd.read_csv(os.path.join(self.data_dir, type_, ticker, f"{date}.csv"))
             result_df = pd.concat([result_df, df])
+            idx += 1
+            if idx < len(dates) and verbose:
+                iterator.set_description(f"Loading {ticker} for {dates[idx]}")
         result_df = result_df.fillna(0)
         result_df = result_df.reset_index(drop=True)
         result_df["time"] = pd.to_datetime(result_df["time"])
         return result_df
 
     def load_daily_data(
-        self, ticker: str, max_days: int = 200, type_: str = "processed"
+        self, ticker: str, type_: str = "processed", max_days: int = 300, verbose: bool = True
     ) -> pd.DataFrame:
         daily_data = {}
-        dates = self.get_valid_dates(ticker, max_days=max_days, type_=type_)
-        for date in tqdm(sorted(dates)):
+        dates = self._get_dates(f'{self.data_dir}/{type_}/{ticker}', max_days=max_days)
+        idx = 0
+        iterator = (
+            tqdm(sorted(dates), desc=f"Loading {ticker} for {dates[idx]}")
+            if verbose
+            else sorted(dates)
+        )
+        for date in iterator:
             df = pd.read_csv(os.path.join(self.data_dir, type_, ticker, f"{date}.csv"))
             df = df.fillna(0)
             df["time"] = pd.to_datetime(df["time"])
             daily_data[date] = df
+            idx += 1
+            if idx < len(dates) and verbose:
+                iterator.set_description(f"Loading {ticker} for {dates[idx]}")
         return daily_data
-
-    def load_daily_sequence_data(
-        self,
-        ticker: str,
-        seq_len: int = 100,
-        look_ahead: int = 50,
-        max_days: int = 200,
-        type_: str = "polysignal",
-        p_bias: float = .3,
-        verbose: bool = True,
-    ):
-        daily_data = self.load_daily_data(ticker, max_days=max_days, type_=type_)
-        daily_sequences, daily_targets = [], []
-        iterator = (
-            tqdm(sorted(daily_data.keys()), desc=f"Loading {ticker} for {sorted(daily_data.keys())[0]}")
-            if verbose
-            else sorted(daily_data.keys())
-        )
-        for date in iterator:
-            df = daily_data[date]
-            exclude = [f for f in df.columns if f not in ["time", "result", "impact", "ticker", "trade_id", "outcome"]]
-            results = KalshiAPI().get_market_results(ticker, date)
-            sorted_keys = sorted(results.keys(), key=lambda x: x.split("-")[1:])
-            result_vector = np.array([int(results[k] == "yes") for k in sorted_keys])
-            window = []
-            dist = {k: 0 for k in sorted_keys}
-            
-            sequences, targets = [], []
-            for i, row in df.iterrows():
-                window.append(list(row[exclude].values))
-                dist[row["ticker"]] = row['yes_price']
-                if len(window) <= look_ahead:
-                    continue
-                targets.append(list(dist.values()))
-                sequence = window[:i-look_ahead + 1][-seq_len:]
-                if len(sequence) < seq_len:
-                    sequence = [[0] * len(sequence[0])] * (seq_len - len(sequence)) + sequence
-                sequences.append(sequence)
-
-            sequences = np.array(sequences)
-            targets = np.array(targets)
-
-            targets = targets / targets.sum(axis=1, keepdims=True)
-            for i in range(len(targets)):
-                targets[i] = targets[i] * (1 - p_bias) + result_vector * p_bias
-     
-            daily_sequences.extend(sequences)
-            daily_targets.extend(targets)
-
-        daily_sequences = np.array(daily_sequences)
-        daily_targets = np.array(daily_targets)
-        return daily_sequences, daily_targets
-        
-        
-
 
 
 if __name__ == "__main__":
     data_dir = "../data"
     loader = DataLoader(data_dir)
-    # loader.process_current_weather_event_trade_data()
-    # loader.process_poly_signal_trade_data("kxhighny", to_csv=True)
-    # loader.process_poly_signal_trade_data("kxhighny", to_csv=True)
-    loader.process_historical_poly_signal_trade_data("kxhighny")
-    loader.load_daily_sequence_data("kxhighny", verbose=True)
+    loader.process_historical_trade_data("kxhighny", max_days=250)

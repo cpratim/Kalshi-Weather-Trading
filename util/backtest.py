@@ -26,7 +26,7 @@ class Backtest(object):
         self.min_window_size = min_window_size
         self.max_window_size = max_window_size
         self.data = self.loader.load_daily_data(
-            self.ticker, max_days=backtest_window + min_window_size, type_="polysignal"
+            self.ticker, max_days=backtest_window + min_window_size, type_="processed"
         )
 
     def concat_data(self, data: Dict[str, pd.DataFrame]) -> pd.DataFrame:
@@ -164,6 +164,7 @@ class Backtest(object):
         dates = sorted(list(self.data.keys()))
         iterator = tqdm(dates) if verbose else dates
         rolling_df = deque(maxlen=self.max_window_size)
+        profits = []
         for date in iterator:
             if len(rolling_df) > self.max_window_size:
                 rolling_df.popleft()
@@ -177,14 +178,11 @@ class Backtest(object):
 
                 results = algo.kernel.stream.get_results()
                 portfolio = algo.get_portfolio()
-                print(portfolio)
+                # print(portfolio)
                 day_results = algo.kernel.exchange.settle_day(results)
+                profits.append(day_results['profit'])
                 print(
-                    f"[{date}] - Profit: {day_results['profit']:8.2f}  | Quantity: {day_results['quantity']:8.2f} | Volume: {day_results['volume']:8.2f} | Fees: {day_results['fees_paid']:8.2f}"
+                    f"[{date}] - Profit: {day_results['profit']:8.2f}  | Quantity: {day_results['quantity']:8.2f} | Volume: {day_results['volume']:8.2f} | Fees: {day_results['fees_paid']:8.2f} | Avg Profit: {np.mean(profits):8.2f}"
                 )
-                # for ticker in positions:
-                #     day[ticker] = {'p': positions[ticker], 'r': results[ticker]}
-                # print(day)
-                # print(profit)
-                # print()
+                
             rolling_df.append(self.data[date])

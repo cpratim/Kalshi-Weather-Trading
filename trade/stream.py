@@ -23,7 +23,7 @@ class HistoricalDataStream(object):
         ticker: str,
         date: str,
         data_dir: str = "../data",
-        process_type: str = "polysignal",
+        process_type: str = "processed",
         on_signal_callback: callable = None,
         **kwargs,
     ):
@@ -144,17 +144,15 @@ class RealTimeDataStream(object):
 
     def handle_trade(self, trade):
         day_forecast, hour_forecast = self.get_weather_forecast()
-        polymk_dist = self.get_polymk_dist()
         trade["ticker"] = trade["market_ticker"]
         trade["time"] = datetime.fromtimestamp(trade["ts"], tz=pytz.utc).strftime(
             "%Y-%m-%dT%H:%M:%S.%fZ"
         )
         strike = self.strikes[trade["ticker"]]
         self.kalshi_dist[float(strike)] = float(trade["yes_price"])
-        features = self.dataloader.process_poly_signal_trade(
+        features = self.dataloader.process_trade(
             trade,
             self.kalshi_dist,
-            polymk_dist,
             day_forecast,
             hour_forecast,
             self.strike_time,
@@ -162,9 +160,6 @@ class RealTimeDataStream(object):
             self.mean_strike,
         )
         self.signal_data = pd.concat([self.signal_data, pd.DataFrame([features])])
-        self.signal_data = self.dataloader.add_window_features_last_trade(
-            self.signal_data
-        )
         signal_trade = self.signal_data.iloc[-1]
         self.on_signal_callback(signal_trade, trade)
 

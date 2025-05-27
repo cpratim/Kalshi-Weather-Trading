@@ -15,12 +15,8 @@ def get_all_updates(data_dir: str = "../data"):
     print("UPDATED   | Kalshi     [trade data]")
     weather.update_historical_forecast_data(verbose=False)
     print("UPDATED   | OpenMeteo  [forecast data]")
-    polymarket.update_current_poly_signal_data(verbose=False)
-    print("UPDATED   | PolyMarket [trade data]")
-    loader.process_current_weather_event_trade_data(verbose=False)
-    print("PROCESSED | Kalshi     [event and trade data]")
-    loader.process_current_poly_signal_trade_data(verbose=False)
-    print("PROCESSED | PolyMarket [trade data]")
+    loader.process_current_trade_data(verbose=False)
+    print("PROCESSED | Kalshi     [trade data]")
     print("FINISHED  | All APIs   [updated and processed]")
 
 

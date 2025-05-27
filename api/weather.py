@@ -201,4 +201,4 @@ if __name__ == "__main__":
     openmeteo = OpenMeteoAPI(data_dir="../data")
     # current_forecast = openmeteo.get_current_forecast("kxhighny")
     # pprint(current_forecast)
-    openmeteo.update_historical_forecast_data(max_days=100, verbose=True)
+    openmeteo.update_historical_forecast_data(max_days=300, verbose=True)
