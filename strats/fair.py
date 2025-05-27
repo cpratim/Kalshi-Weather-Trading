@@ -18,7 +18,7 @@ class FairSignal(Signal):
             'kalshi_day_forecast_dev',
             'time_to_strike',
         ]
-        self.n_neighbors = kwargs.get("n_neighbors", 500)
+        self.n_neighbors = kwargs.get("n_neighbors", 250)
         self.pipeline = Pipeline([
             ('robust', RobustScaler(unit_variance=True)),
             ('scaler', StandardScaler()),
@@ -49,7 +49,7 @@ class FairTrader(Algorithm):
 
     def __init__(self, ticker: str, date: str, signal: Signal, **kwargs):
         super().__init__(ticker, date, signal, **kwargs)
-        self.alpha = kwargs.get("alpha", 0.1)
+        self.alpha = kwargs.get("alpha", 0.05)
         self.slack = kwargs.get("slack", 0.01)
         self.trades_between_signals = kwargs.get("trades_between_signals", 60)
         self.last_trade_times = {}
@@ -68,15 +68,8 @@ class FairTrader(Algorithm):
             self.signals[ticker] = self.signals[ticker] / T
 
     def on_signal_callback(self, signal_trade: pd.Series, trade: dict) -> dict:
-
         if signal_trade['time_to_strike'] > 60000:
             return {"signal": 0, "response": {}}
-        
-        if trade['ticker'] not in self.last_trade_times:
-            self.last_trade_times[trade['ticker']] = float('inf')
-
-        self.signals[trade['ticker']] = self.signal(signal_trade)["signal"]
-        self._normalize_signals()
 
         yes_signal = self.signal(signal_trade)["signal"]
         no_signal = 1 - yes_signal
@@ -111,9 +104,9 @@ def backtest_algorithm(ticker: str, **kwargs):
     backtest = Backtest(
         ticker,
         data_dir="../data",
-        backtest_window=kwargs.get("backtest_window", 50),
+        backtest_window=kwargs.get("backtest_window", 10),
         min_window_size=kwargs.get("min_window_size", 200),
-        max_window_size=kwargs.get("max_window_size", 200),
+        max_window_size=kwargs.get("max_window_size", 500),
     )
     backtest.run_backtest(
         FairTrader,

@@ -40,6 +40,7 @@ class OpenMeteoAPI(WeatherAPI):
             "temperature_2m_min",
             "apparent_temperature_max",
             "apparent_temperature_min",
+            "wet_bulb_temperature_2m_max",
             "showers_sum",
             "snowfall_sum",
             "precipitation_sum",

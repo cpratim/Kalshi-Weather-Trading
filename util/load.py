@@ -244,6 +244,7 @@ class DataLoader(object):
             "taker_side": int(trade["taker_side"] == "yes"),
             "day_forecast_high": day_forecast["temperature_2m_max"],
             "day_forecast_strike_dev": day_forecast["temperature_2m_max"] - strike,
+            "day_forecast_wet_bulb_strike_dev": day_forecast["wet_bulb_temperature_2m_max"] - strike,
             "current_forecast_strike_dev": hour_forecast["temperature_2m"] - strike,
             "day_current_forecast_dev": day_forecast["temperature_2m_max"]
             - hour_forecast["temperature_2m"],
@@ -263,12 +264,14 @@ class DataLoader(object):
             "hour_forecast_rain": hour_forecast["rain"],
         }
         for k, v in kalshi_dist.items():
-            # if abs(k - mean_strike) not in [-5, -3, -1, 1, 3, 5]:
-            #     print(kalshi_dist)
             if k - mean_strike < 0:
                 features[f'strike_m_{abs(k - mean_strike)}'] = v
             else:
                 features[f'strike_p_{k - mean_strike}'] = v
+        
+        dist = list(kalshi_dist.values())
+        entropy = -sum([p * np.log(p) for p in dist if p > 0])
+        features['kalshi_dist_entropy'] = entropy
 
         return features
 
@@ -461,4 +464,4 @@ class DataLoader(object):
 if __name__ == "__main__":
     data_dir = "../data"
     loader = DataLoader(data_dir)
-    loader.process_historical_trade_data("kxhighny", max_days=250)
+    loader.process_historical_trade_data("kxhighny", max_days=275)
