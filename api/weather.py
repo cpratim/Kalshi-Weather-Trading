@@ -53,6 +53,7 @@ class OpenMeteoAPI(WeatherAPI):
             "sunshine_duration",
             "cloud_cover_max",
             "cloud_cover_min",
+            'dew_point_2m_max'
         ]
         self.hourly_features = [
             "temperature_2m",
@@ -67,6 +68,8 @@ class OpenMeteoAPI(WeatherAPI):
             "wind_speed_10m",
             "wind_gusts_10m",
             "cloud_cover_mid",
+            'dew_point_2m',
+            'wet_bulb_temperature_2m'
         ]
 
     def get_historical_forecast_data(

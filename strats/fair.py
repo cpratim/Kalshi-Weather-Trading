@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import RobustScaler, StandardScaler, MinMaxScaler
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.decomposition import PCA
 from util.backtest import Backtest
 import pandas as pd
 import os
@@ -13,19 +14,25 @@ class FairSignal(Signal):
 
     def __init__(self, **kwargs):
         self.features = [
+            # 'day_forecast_strike_dev',
+            'kalshi_dist_entropy',
+            'day_forecast_wet_bulb_strike_dev',
+            # 'kalshi_day_forecast_dev',
+            # 'time_to_strike',
+            "day_forecast_dew_point_strike_dev",
+            # "day_sunshine_duration",
+            # "day_forecast_percipitation",
             'yes_price',
-            'day_forecast_strike_dev',
-            'kalshi_day_forecast_dev',
-            'time_to_strike',
         ]
         self.n_neighbors = kwargs.get("n_neighbors", 250)
         self.pipeline = Pipeline([
             ('robust', RobustScaler(unit_variance=True)),
             ('scaler', StandardScaler()),
+            # ('pca', PCA(n_components=0.95)),
             ('knn', KNeighborsClassifier(n_neighbors=self.n_neighbors)),
         ])
 
-    def remove_outliers(self, df, features, quantile_range=(0.05, 0.95)):
+    def remove_outliers(self, df, features, quantile_range=(0.01, 0.99)):
         return_df = df.copy()
         for f in features:
             return_df = return_df[
@@ -49,7 +56,7 @@ class FairTrader(Algorithm):
 
     def __init__(self, ticker: str, date: str, signal: Signal, **kwargs):
         super().__init__(ticker, date, signal, **kwargs)
-        self.alpha = kwargs.get("alpha", 0.05)
+        self.alpha = kwargs.get("alpha", 0.15)
         self.slack = kwargs.get("slack", 0.01)
         self.trades_between_signals = kwargs.get("trades_between_signals", 60)
         self.last_trade_times = {}
@@ -104,8 +111,8 @@ def backtest_algorithm(ticker: str, **kwargs):
     backtest = Backtest(
         ticker,
         data_dir="../data",
-        backtest_window=kwargs.get("backtest_window", 10),
-        min_window_size=kwargs.get("min_window_size", 200),
+        backtest_window=kwargs.get("backtest_window", 1),
+        min_window_size=kwargs.get("min_window_size", 250),
         max_window_size=kwargs.get("max_window_size", 500),
     )
     backtest.run_backtest(

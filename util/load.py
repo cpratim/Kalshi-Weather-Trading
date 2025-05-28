@@ -242,9 +242,11 @@ class DataLoader(object):
             "yes_price": trade["yes_price"],
             "no_price": trade["no_price"],
             "taker_side": int(trade["taker_side"] == "yes"),
-            "day_forecast_high": day_forecast["temperature_2m_max"],
-            "day_forecast_strike_dev": day_forecast["temperature_2m_max"] - strike,
+            "day_forecast_high": max(day_forecast["temperature_2m_max"], hour_forecast["temperature_2m"]),
+            "day_forecast_strike_dev": max(day_forecast["temperature_2m_max"], hour_forecast["temperature_2m"]) - strike,
             "day_forecast_wet_bulb_strike_dev": day_forecast["wet_bulb_temperature_2m_max"] - strike,
+            "day_forecast_apparent_temperature_strike_dev": day_forecast["apparent_temperature_max"] - strike,
+            "day_forecast_dew_point_strike_dev": day_forecast["dew_point_2m_max"] - strike,
             "current_forecast_strike_dev": hour_forecast["temperature_2m"] - strike,
             "day_current_forecast_dev": day_forecast["temperature_2m_max"]
             - hour_forecast["temperature_2m"],
