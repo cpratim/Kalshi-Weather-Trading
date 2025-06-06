@@ -1,4 +1,5 @@
 from strats.follow import FollowSignal, FollowTrader
+from strats.fair import FairSignal, FairTrader
 from util.update import get_all_updates
 from datetime import datetime
 import os
@@ -24,10 +25,10 @@ def start_algorithm(algorithm: any, **kwargs):
 
 
 if __name__ == "__main__":
-    algo = FollowTrader(
+    algo = FairTrader(
         ticker="kxhighny",
         date="realtime",
-        signal=FollowSignal(metric="result"),
+        signal=FairSignal(),
         rsa_private_key=os.getenv("KALSHI_API_KEY"),
         api_key_id=os.getenv("KALSHI_API_KEY_ID"),
         data_dir="../data",

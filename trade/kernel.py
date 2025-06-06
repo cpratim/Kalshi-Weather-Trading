@@ -4,11 +4,21 @@ import logging
 import pandas as pd
 
 
-class HistoricalKernel(object):
+class Kernel(object):
+
+    def __init__(self, **kwargs):
+        pass
+        
+    def get_strikes(self):
+        return self.stream.strikes, self.stream.mean_strike
+
+
+class HistoricalKernel(Kernel):
 
     def __init__(
         self, ticker: str, date: str, on_signal_callback: callable = None, **kwargs
     ):
+        super().__init__(**kwargs)
         self.ticker = ticker
         self.date = date
         self.exchange = HistoricalExchange(**kwargs)
@@ -34,10 +44,14 @@ class HistoricalKernel(object):
         if "on_signal_callback" in kwargs:
             self.on_signal_callback = kwargs["on_signal_callback"]
 
+    def get_existing_trades(self):
+        return None, None
 
-class RealTimeKernel(object):
+
+class RealTimeKernel(Kernel):
 
     def __init__(self, ticker: str, on_signal_callback: callable = None, **kwargs):
+        super().__init__(**kwargs)
         self.ticker = ticker
         self.exchange = RealTimeExchange(**kwargs)
         self.stream = RealTimeDataStream(
@@ -67,3 +81,6 @@ class RealTimeKernel(object):
 
     def start_stream(self):
         self.stream.start()
+
+    def get_existing_trades(self):
+        return self.stream.get_existing_trades()

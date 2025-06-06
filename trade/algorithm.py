@@ -38,14 +38,12 @@ class Algorithm(object):
         self.date = date
         self.kwargs = kwargs
         self.data_dir = kwargs.get("data_dir", "../data")
-
-    def init_algorithm(self):
         if self.date == "realtime":
             context = DataLoader(self.data_dir).load_consolidated_daily_data(
                 self.ticker,
-                self.kwargs.get("train_window", 20),
-                type_="polysignal",
+                type_="processed",
                 verbose=False,
+                max_days=275,
             )
             self.fit_signal(context)
             self.kernel = RealTimeKernel(
@@ -67,6 +65,10 @@ class Algorithm(object):
         )
         if self.log_runtime_data and not os.path.exists(self.runtime_data_file):
             open(self.runtime_data_file, "w")
+        self.strikes, self.mean_strike = self.kernel.get_strikes()
+
+    def init_algorithm(self):
+        pass
 
     def fit_signal(self, context: pd.DataFrame):
         self.signal.fit(context)

@@ -22,6 +22,15 @@ class DataLoader(object):
         with open(os.path.join(data_dir, "metadata.json"), "r") as f:
             self.metadata = json.load(f)
 
+    def _add_trend_features(self, df, row, feature, window):
+        rows = df[
+            (df["time"] <= row["time"])
+            & (df["time"] > row["time"] - timedelta(minutes=window))
+            & (df["shift"] == row["shift"])
+        ]
+        diff = rows[feature].iloc[-1] - rows[feature].iloc[0]
+        return diff
+
     def load_weather_forecast(self, ticker: str):
         daily_weather_forecast_df = pd.read_csv(
             f"{self.data_dir}/weather/{ticker}/daily_weather_forecast.csv"
@@ -29,74 +38,18 @@ class DataLoader(object):
         daily_weather_forecast_df["time"] = pd.to_datetime(
             daily_weather_forecast_df["time"]
         )
-        hourly_weather_forecast_df = pd.read_csv(
-            f"{self.data_dir}/weather/{ticker}/hourly_weather_forecast.csv"
-        )
-        hourly_weather_forecast_df["time"] = pd.to_datetime(
-            hourly_weather_forecast_df["time"]
-        )
         daily_weather_forecast = {}
         for i, row in daily_weather_forecast_df.iterrows():
             forecast = {k: v for k, v in row.to_dict().items()}
             daily_weather_forecast[forecast["time"].strftime("%Y-%m-%d")] = forecast
-
-        hourly_weather_forecast = {}
-        for i, row in hourly_weather_forecast_df.iterrows():
-            forecast = {k: v for k, v in row.to_dict().items()}
-            hourly_weather_forecast[forecast["time"].strftime("%Y-%m-%dT%H:00")] = (
-                forecast
-            )
-        return daily_weather_forecast, hourly_weather_forecast
-
-    def add_weather_features(
-        self,
-        ticker: str,
-        features,
-        daily_weather_forecast,
-        hourly_weather_forecast,
-        strike_date: str,
-        trade_hour: str,
-        short_term_hour: str,
-        strikes: dict,
-    ):
-        day_weather_forecast = daily_weather_forecast[strike_date]
-        current_weather = hourly_weather_forecast[trade_hour]
-        short_term_forecast = hourly_weather_forecast[short_term_hour]
-        for key in day_weather_forecast:
-            if "time" in key:
-                continue
-            if "temperature" in key:
-                features[f"DF_{key}"] = day_weather_forecast[key] - strikes[ticker]
-                features[f"DF_{key}_dev"] = (
-                    day_weather_forecast[key] - current_weather["temperature_2m"]
-                )
-            else:
-                features[f"DF_{key}"] = day_weather_forecast[key]
-        for key in current_weather:
-            if "time" in key:
-                continue
-            if "temperature" in key:
-                features[f"CF_{key}"] = current_weather[key] - strikes[ticker]
-                features[f"CF_{key}_dev"] = (
-                    day_weather_forecast["temperature_2m_max"] - current_weather[key]
-                )
-            else:
-                features[f"CF_{key}"] = current_weather[key]
-        for key in short_term_forecast:
-            if "time" in key:
-                continue
-            if "temperature" in key:
-                features[f"STF_{key}"] = short_term_forecast[key] - strikes[ticker]
-                features[f"STF_{key}_dev"] = (
-                    day_weather_forecast["temperature_2m_max"]
-                    - short_term_forecast[key]
-                )
-            else:
-                features[f"STF_{key}"] = short_term_forecast[key]
-        return features
+        return daily_weather_forecast
 
     def get_strikes(self, event_data: dict, mean_center: bool = False):
-        tickers = [event["ticker"] for event in event_data["markets"]]
+        tickers = sorted(
+            [event["ticker"] for event in event_data["markets"]],
+            key = lambda x: float(x.split("-")[-1][1:])
+        )
+        # print(tickers)
         strikes = {}
         for i, t in enumerate(tickers):
             v = t.split("-")[-1]
@@ -140,7 +93,8 @@ class DataLoader(object):
         ) as f:
             return json.load(f)
 
-    def _get_dates(self, path: str, max_days: int = 300):
+    def _get_dates(self, path: str, max_days: Optional[int] = 300):
+        max_days = len(os.listdir(os.path.join(self.data_dir, path))) if max_days is None else max_days
         return sorted(
             [
                 x.split(".")[0]
@@ -217,20 +171,32 @@ class DataLoader(object):
                 ticker, dates, verbose=verbose
             )
 
+    def get_best_forecast(self, forecast: dict, kalshi_fair: float):
+        min_dev, best_forecast = float('inf'), None
+        for k, v in forecast.items():
+            if not k.startswith('temperature'):
+                continue
+            dev = abs(v - kalshi_fair)
+            if dev < min_dev and not dev == 0:
+                min_dev = dev
+                best_forecast = v
+        return best_forecast
+
     def process_trade(
         self,
         trade: dict,
         kalshi_dist: dict,
-        day_forecast: dict,
-        hour_forecast: dict,
+        forecast: dict,
         strike_time: datetime,
         strike: float,
         mean_strike: float,
+        forecast_shift: float = -0.25,
     ):
         trade_ticker = trade["ticker"]
         trade_time = self.parse_trade_time(trade["time"])
         time_to_strike = (strike_time - trade_time).total_seconds()
         kalshi_fair = self._get_fair(kalshi_dist)
+        best_forecast = forecast['forecast'] + forecast_shift
         features = {
             "time": trade_time,
             "trade_id": trade["trade_id"],
@@ -239,31 +205,14 @@ class DataLoader(object):
             "count": trade["count"],
             "shift": strike - mean_strike,
             "kalshi_fair": kalshi_fair,
+            "forecast": best_forecast,
             "yes_price": trade["yes_price"],
             "no_price": trade["no_price"],
             "taker_side": int(trade["taker_side"] == "yes"),
-            "day_forecast_high": max(day_forecast["temperature_2m_max"], hour_forecast["temperature_2m"]),
-            "day_forecast_strike_dev": max(day_forecast["temperature_2m_max"], hour_forecast["temperature_2m"]) - strike,
-            "day_forecast_wet_bulb_strike_dev": day_forecast["wet_bulb_temperature_2m_max"] - strike,
-            "day_forecast_apparent_temperature_strike_dev": day_forecast["apparent_temperature_max"] - strike,
-            "day_forecast_dew_point_strike_dev": day_forecast["dew_point_2m_max"] - strike,
-            "current_forecast_strike_dev": hour_forecast["temperature_2m"] - strike,
-            "day_current_forecast_dev": day_forecast["temperature_2m_max"]
-            - hour_forecast["temperature_2m"],
-            "day_wind_gusts_max": day_forecast["wind_gusts_10m_max"],
-            "day_wind_speed_max": day_forecast["wind_speed_10m_max"],
-            "day_cloud_cover_max": day_forecast["cloud_cover_max"],
-            "day_cloud_cover_min": day_forecast["cloud_cover_min"],
-            "day_sunshine_duration": day_forecast["sunshine_duration"],
-            "hour_wind_gusts": hour_forecast["wind_gusts_10m"],
-            "hour_wind_speed": hour_forecast["wind_speed_10m"],
-            "hour_cloud_cover": hour_forecast["cloud_cover"],
-            "hour_cloud_cover_high": hour_forecast["cloud_cover_high"],
-            "kalshi_strike_dev": kalshi_fair - strike,
-            "kalshi_day_forecast_dev": day_forecast["temperature_2m_max"] - kalshi_fair,
-            "day_forecast_percipitation": day_forecast["precipitation_probability_max"],
-            "day_forecast_rain": day_forecast["rain_sum"],
-            "hour_forecast_rain": hour_forecast["rain"],
+            "kalshi_strike_delta": kalshi_fair - strike,
+            "forecast_strike_delta": best_forecast - strike,
+            "kalshi_forecast_delta": best_forecast - kalshi_fair,
+            
         }
         for k, v in kalshi_dist.items():
             if k - mean_strike < 0:
@@ -273,7 +222,7 @@ class DataLoader(object):
         
         dist = list(kalshi_dist.values())
         entropy = -sum([p * np.log(p) for p in dist if p > 0])
-        features['kalshi_dist_entropy'] = entropy
+        features['entropy'] = entropy
 
         return features
 
@@ -281,34 +230,29 @@ class DataLoader(object):
         self,
         trades_data: dict,
         events_data: dict,
-        day_forecast: dict,
-        hourly_forecast: dict,
+        forecast: dict,
         results: dict = None,
         trades_post_average: dict = None,
+        decay_rate: float = 0.1,
     ):
         strike_time = self.get_strike_times(events_data)
         strikes, mean_strike = self.get_strikes(events_data)
-        if 0.0 in strikes.values():
-            print(strikes)
+        S = sorted(list(strikes.values()))
+        
+        # print(S, [x - mean_strike for x in S], mean_strike)
         trades = self._load_trades(trades_data)
         k_values = [s for s in strikes.values()]
         kalshi_dist = {k: 0 for k in k_values}
         trade_data = []
         for i, trade in enumerate(trades):
             trade_ticker, trade_idx = trade["ticker"], trade["idx"]
-            trade_time = self.parse_trade_time(trade["time"])
             strike = strikes[trade_ticker]
+            kalshi_dist = {k: v * (1 - decay_rate) for k, v in kalshi_dist.items()}
             kalshi_dist[strike] = trade["yes_price"]
-            trade_hour = trade_time.strftime("%Y-%m-%dT%H:00")
-            try:
-                hour_forecast = hourly_forecast[trade_hour]
-            except Exception as e:
-                continue
             features = self.process_trade(
                 trade,
                 kalshi_dist,
-                day_forecast,
-                hour_forecast,
+                forecast,
                 strike_time,
                 strike,
                 mean_strike,
@@ -352,7 +296,7 @@ class DataLoader(object):
         verbose: bool = True,
         max_days: int = 300,
     ):
-        daily_forecast, hourly_forecast = self.load_weather_forecast(ticker)
+        daily_forecast = self.load_weather_forecast(ticker)
         if dates is None:
             dates = self._get_dates(f'{self.data_dir}/kalshi/{ticker}/trades', max_days=max_days)
         idx = 0
@@ -370,7 +314,7 @@ class DataLoader(object):
             except Exception as e:
                 continue
             strike_time = self.get_strike_times(events_data)
-            day_forecast = daily_forecast[strike_time.strftime("%Y-%m-%d")]
+            forecast = daily_forecast[strike_time.strftime("%Y-%m-%d")]
             trades_post_average = {
                 k: self._get_trade_post_average(v) for k, v in trades_data.items()
             }
@@ -378,8 +322,7 @@ class DataLoader(object):
             df = self.process_trade_data(
                 trades_data,
                 events_data,
-                day_forecast,
-                hourly_forecast,
+                forecast,
                 results=results,
                 trades_post_average=trades_post_average,
             )
@@ -461,9 +404,28 @@ class DataLoader(object):
             if idx < len(dates) and verbose:
                 iterator.set_description(f"Loading {ticker} for {dates[idx]}")
         return daily_data
+    
+    def get_all_market_results(self, ticker: str, max_days: int = 300):
+        dates = self._get_dates(f'{self.data_dir}/kalshi/{ticker}/trades', max_days=max_days)
+        results = {}
+        for date in dates:
+            res = KalshiAPI().get_market_results(ticker, date)
+            key, first = None, True
+            for k, v in res.items():
+                if v == 'yes':
+                    key = k
+                    break
+                first = False
+            key = key.split('-')[-1]
+            if key[0] == 'T':
+                val = float(key[1:]) - 1.5 if first else float(key[1:]) + 1.5
+            else:
+                val = float(key[1:])
+            results[date] = val
+        return results
 
 
 if __name__ == "__main__":
     data_dir = "../data"
     loader = DataLoader(data_dir)
-    loader.process_historical_trade_data("kxhighny", max_days=275)
+    loader.process_historical_trade_data("kxhighny", max_days=300, verbose=True)

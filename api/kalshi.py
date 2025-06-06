@@ -244,15 +244,24 @@ class KalshiAPI(KalshiAuth):
         ) as f:
             trade_data = json.load(f)
         results = {}
+        max_yes, max_market = 0, None
+        decided = False
         for market, trades in trade_data.items():
             if len(trades) == 0:
                 results[market] = "no"
                 continue
             no_price, yes_price = trades[0]["no_price"], trades[0]["yes_price"]
+            if yes_price > max_yes:
+                max_yes = yes_price
+                max_market = market
             if no_price > yes_price:
                 results[market] = "no"
             else:
                 results[market] = "yes"
+                decided = True
+        
+        if not decided:
+            results[max_market] = "yes"
         return results
 
 

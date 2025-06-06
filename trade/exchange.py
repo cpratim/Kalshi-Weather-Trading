@@ -12,7 +12,7 @@ class Exchange(object):
     def __init__(self, **kwargs):
         self.kwargs = kwargs
         self.portfolio = {}
-        self.max_exposure = kwargs.get("max_exposure", 200)
+        self.max_exposure = kwargs.get("max_exposure", 50)
 
     def _clip_price(self, price: float):
         return max(min(price, 0.99), 0.01)

@@ -1,7 +1,7 @@
 import json
 import os
 from api.kalshi import KalshiAPI
-from api.weather import OpenMeteoAPI
+from api.weather import OpenMeteoAPI, NWSAPI
 import pandas as pd
 from datetime import datetime
 from api.kalshi import KalshiWS, KalshiAPI
@@ -33,6 +33,7 @@ class HistoricalDataStream(object):
         self.kwargs = kwargs
         self.date_ptr = datetime.strptime(date, "%Y-%m-%d")
         self.kalshi = KalshiAPI()
+        self.dataloader = DataLoader(data_dir=data_dir)
         with open(
             os.path.join(self.data_dir, "kalshi", ticker, "events", f"{date}.json"), "r"
         ) as f:
@@ -41,6 +42,7 @@ class HistoricalDataStream(object):
             os.path.join(self.data_dir, process_type, ticker, f"{date}.csv"), "r"
         ) as f:
             self.trades = pd.read_csv(f)
+        self.strikes, self.mean_strike = self.dataloader.get_strikes(self.events)
         self.trades["time"] = pd.to_datetime(self.trades["time"])
         self.on_signal_callback = on_signal_callback
 
@@ -75,7 +77,6 @@ class RealTimeDataStream(object):
         self.logger = logging.getLogger(__name__)
         self.latest_update = None
         self.kalshi_api = KalshiAPI()
-        self.poly_api = PolyMarketAPI()
         self.dataloader = DataLoader(data_dir="../data")
         self.event_data = self.kalshi_api.get_current_weather_event_data(ticker)
         self.tickers = [event["ticker"] for event in self.event_data["markets"]]
@@ -87,13 +88,10 @@ class RealTimeDataStream(object):
             api_key_id=kwargs.get("api_key_id"),
             on_message_callback=self.on_kalshi_message,
         )
-        self.weather_api = OpenMeteoAPI()
+        self.weather_api = OpenMeteoAPI() if kwargs.get('use_openmeteo', False) else NWSAPI()
         self.on_signal_callback = on_signal_callback
-        self.poly_markets = self.poly_api.get_polymarket_markets(datetime.now())
-        self.poly_token_map = self.poly_api.get_market_token_map(self.poly_markets)
-        self.day_forecast, self.hourly_forecast = self.weather_api.get_current_forecast(
-            self.ticker
-        )
+        self.forecast = self.weather_api.get_current_forecast(self.ticker)
+        self.kalshi_trades = self.kalshi_api.get_current_trade_data(self.event_data)
         self.latest_forecast_update_time = None
         self.kalshi_dist = {}
         self.trade_idx = {}
@@ -105,23 +103,19 @@ class RealTimeDataStream(object):
     def set_just_executed(self):
         self.just_executed = True
 
-    def get_polymk_dist(self):
-        return self.poly_api.get_polymarket_dist(self.poly_token_map)
+    def get_existing_trades(self):
+        return self.signal_data, self.kalshi_trades
 
     def load_existing_trades(self):
-        polymk_prices = self.poly_api.get_polymarket_data(datetime.now())
-        kalshi_trades = self.kalshi_api.get_current_trade_data(self.event_data)
-        for ticker in kalshi_trades:
-            kalshi_trades[ticker] = kalshi_trades[ticker][::-1]
+        for ticker in self.kalshi_trades:
+            self.kalshi_trades[ticker] = self.kalshi_trades[ticker][::-1]
             strike = float(self.strikes[ticker])
-            self.trade_idx[ticker] = len(kalshi_trades[ticker])
-            self.kalshi_dist[strike] = float(kalshi_trades[ticker][-1]["yes_price"])
-        return self.dataloader.process_poly_signal_trade_data(
-            kalshi_trades,
-            polymk_prices,
+            self.trade_idx[ticker] = len(self.kalshi_trades[ticker])
+            self.kalshi_dist[strike] = float(self.kalshi_trades[ticker][-1]["yes_price"])
+        return self.dataloader.process_trade_data(
+            self.kalshi_trades,
             self.event_data,
-            self.day_forecast,
-            self.hourly_forecast,
+            self.forecast,
         )
 
     def get_trade_idx(self, ticker: str):
@@ -135,15 +129,14 @@ class RealTimeDataStream(object):
             or (datetime.now() - self.latest_forecast_update_time).total_seconds()
             > 3600
         ):
-            self.day_forecast, self.hourly_forecast = (
+            self.forecast = (
                 self.weather_api.get_current_forecast(self.ticker)
             )
             self.latest_forecast_update_time = datetime.now()
-        hour = datetime.now().strftime("%Y-%m-%dT%H:00")
-        return self.day_forecast, self.hourly_forecast[hour]
+        return self.forecast
 
     def handle_trade(self, trade):
-        day_forecast, hour_forecast = self.get_weather_forecast()
+        forecast = self.get_weather_forecast()
         trade["ticker"] = trade["market_ticker"]
         trade["time"] = datetime.fromtimestamp(trade["ts"], tz=pytz.utc).strftime(
             "%Y-%m-%dT%H:%M:%S.%fZ"
@@ -153,11 +146,11 @@ class RealTimeDataStream(object):
         features = self.dataloader.process_trade(
             trade,
             self.kalshi_dist,
-            day_forecast,
-            hour_forecast,
+            forecast,
             self.strike_time,
             strike,
             self.mean_strike,
+            forecast_shift=0.0,
         )
         self.signal_data = pd.concat([self.signal_data, pd.DataFrame([features])])
         signal_trade = self.signal_data.iloc[-1]

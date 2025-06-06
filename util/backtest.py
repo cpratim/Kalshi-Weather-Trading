@@ -16,12 +16,14 @@ class Backtest(object):
         self,
         ticker: str,
         data_dir: str = "../data",
+        backtest_dir: str = "../backtests",
         backtest_window: int = 30,
         min_window_size: int = 15,
         max_window_size: int = 20,
     ):
         self.ticker = ticker
         self.data_dir = data_dir
+        self.backtest_dir = backtest_dir
         self.loader = DataLoader(self.data_dir)
         self.min_window_size = min_window_size
         self.max_window_size = max_window_size
@@ -165,6 +167,15 @@ class Backtest(object):
         iterator = tqdm(dates) if verbose else dates
         rolling_df = deque(maxlen=self.max_window_size)
         profits = []
+        result_df = {
+            'date': [],
+            'profit': [],
+            'quantity': [],
+            'volume': [],
+            'fees_paid': [],
+            'avg_profit': [],
+            'sharpe': [],
+        }
         for date in iterator:
             if len(rolling_df) > self.max_window_size:
                 rolling_df.popleft()
@@ -178,11 +189,26 @@ class Backtest(object):
 
                 results = algo.kernel.stream.get_results()
                 portfolio = algo.get_portfolio()
-                # print(portfolio)
+                print(portfolio)
                 day_results = algo.kernel.exchange.settle_day(results)
                 profits.append(day_results['profit'])
+                sharpe = np.mean(profits) / max(np.std(profits), 1)
                 print(
-                    f"[{date}] - Profit: {day_results['profit']:8.2f}  | Quantity: {day_results['quantity']:8.2f} | Volume: {day_results['volume']:8.2f} | Fees: {day_results['fees_paid']:8.2f} | Avg Profit: {np.mean(profits):8.2f}"
+                    f"[{date}] - Profit: {day_results['profit']:8.2f}  | Quantity: {day_results['quantity']:8.2f} | Volume: {day_results['volume']:8.2f} | Fees: {day_results['fees_paid']:8.2f} | Avg Profit: {np.mean(profits):8.2f} | Sharpe: {sharpe:8.2f}"
                 )
-                
+                result_df['date'].append(date)
+                result_df['profit'].append(day_results['profit'])
+                result_df['quantity'].append(day_results['quantity'])
+                result_df['volume'].append(day_results['volume'])
+                result_df['fees_paid'].append(day_results['fees_paid'])
+                result_df['avg_profit'].append(np.mean(profits))
+                result_df['sharpe'].append(sharpe)
             rolling_df.append(self.data[date])
+                
+        result_df = pd.DataFrame(result_df)
+        
+        time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        result_df.to_csv(f'{self.backtest_dir}/{algo.__name__()}_{self.ticker}_{time}.csv', index=False)
+        
+        sharpe = np.mean(profits) / np.std(profits)
+        print(f'Sharpe Ratio: {sharpe:8.2f}')
