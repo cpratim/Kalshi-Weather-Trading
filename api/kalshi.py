@@ -110,6 +110,15 @@ class KalshiAPI(KalshiAuth):
     def get_current_weather_event_data(self, market: str):
         events = self._get_event_data(market, datetime.now(), with_nested_markets=False)
         return events
+    
+    def get_orderbook(self, ticker: str) -> None:
+        event_data = self.get_current_weather_event_data(ticker)
+        tickers = [event["ticker"] for event in event_data["markets"]]
+        orderbook = {}
+        for ticker in tickers:
+            response = self._make_request(f"markets/{ticker}/orderbook")
+            orderbook[ticker] = response
+        return orderbook
 
     def _get_event_data(
         self, ticker: str, date: str, with_nested_markets: bool = False
@@ -327,6 +336,8 @@ class KalshiWS(KalshiAuth):
 
 
 if __name__ == "__main__":
+    from pprint import pprint
     kalshi_api = KalshiAPI()
     # kalshi_api.update_current_weather_event_data(max_days=250, verbose=True)
-    print(kalshi_api.get_market_results("kxhighny", "2025-04-29"))
+    # print(kalshi_api.get_market_results("kxhighny", "2025-04-29"))
+    pprint(kalshi_api.get_orderbook('kxhighny'))

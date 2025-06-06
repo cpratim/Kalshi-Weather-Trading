@@ -234,6 +234,7 @@ class DataLoader(object):
         results: dict = None,
         trades_post_average: dict = None,
         decay_rate: float = 0.1,
+        forecast_shift: float = 0.0,
     ):
         strike_time = self.get_strike_times(events_data)
         strikes, mean_strike = self.get_strikes(events_data)
@@ -256,6 +257,7 @@ class DataLoader(object):
                 strike_time,
                 strike,
                 mean_strike,
+                forecast_shift,
             )
             if results:
                 if trade["taker_side"] == "yes":

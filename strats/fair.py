@@ -25,10 +25,14 @@ class FairSignal(Signal):
             'yes_price',
         ]
         
-        self.n_neighbors = kwargs.get("n_neighbors", 100)
+        self.n_neighbors = kwargs.get("n_neighbors", 125)
         self.pipeline = Pipeline([
             ('voting', VotingClassifier(estimators=[
-                ('knn', KNeighborsClassifier(n_neighbors=self.n_neighbors)),
+                ('knn', KNeighborsClassifier(
+                    n_neighbors=self.n_neighbors,
+                    weights='distance',
+                    p=2,
+                )),
             ], voting='soft')),
         ])
 
@@ -54,16 +58,16 @@ class FairTrader(Algorithm):
 
     def __init__(self, ticker: str, date: str, signal: Signal, **kwargs):
         super().__init__(ticker, date, signal, **kwargs)
-        self.alpha = kwargs.get("alpha", 0.075)
+        self.alpha = kwargs.get("alpha", 0.05)
         self.slack = kwargs.get("slack", 0.01)
         self.signals = {}
         self.price_threshold = kwargs.get("price_threshold", 10)
         self.signal_data, self.kalshi_trades = self.kernel.get_existing_trades()
         if self.signal_data is not None:
             for i in range(len(self.signal_data)):
-                self.on_signal_callback(self.signal_data.iloc[i], None, realtime=False)
+                super()._on_signal_callback(self.signal_data.iloc[i], None, realtime=False)
 
-        print(self.signals)
+        # print(self.signals)
 
     def __name__(self):
         return "FairTrader"
@@ -117,7 +121,7 @@ class FairTrader(Algorithm):
         self.signals = self._normalize(self.signals)
 
         if trade['time_to_strike'] > 60000 or not realtime or not self.check_regions(trade['yes_price']):
-            return {"signal": 0, "response": {}}
+            return {"signal": self.signals[trade['ticker']], "response": {}}
 
         yes_signal = self.signals[trade['ticker']]
         no_signal = 1 - yes_signal
@@ -154,7 +158,7 @@ def backtest_algorithm(ticker: str, **kwargs):
         ticker,
         data_dir="../data",
         backtest_window=kwargs.get("backtest_window", 1),
-        min_window_size=kwargs.get("min_window_size", 250),
+        min_window_size=kwargs.get("min_window_size", 275),
         max_window_size=kwargs.get("max_window_size", 500),
     )
     backtest.run_backtest(

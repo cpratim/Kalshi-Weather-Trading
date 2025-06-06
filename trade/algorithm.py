@@ -61,7 +61,7 @@ class Algorithm(object):
             self.logger = None
             self.log_runtime_data = False
         self.runtime_data_file = (
-            f"../runtime/{datetime.now().strftime('%Y-%m-%d')}.jsonl"
+            f"../runtime/execution/{datetime.now().strftime('%Y-%m-%d')}.jsonl"
         )
         if self.log_runtime_data and not os.path.exists(self.runtime_data_file):
             open(self.runtime_data_file, "w")
@@ -92,7 +92,7 @@ class Algorithm(object):
     def on_signal_callback(self, signal_trade: pd.Series, trade: dict):
         pass
 
-    def _on_signal_callback(self, signal_trade: pd.Series, trade: dict):
+    def _on_signal_callback(self, signal_trade: pd.Series, trade: dict, **kwargs):
         result = self.on_signal_callback(signal_trade, trade)
         if self.log_runtime_data:
             self.save_runtime_data(signal_trade, result)

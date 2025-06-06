@@ -82,6 +82,7 @@ class RealTimeDataStream(object):
         self.tickers = [event["ticker"] for event in self.event_data["markets"]]
         self.strikes, self.mean_strike = self.dataloader.get_strikes(self.event_data)
         self.strike_time = self.dataloader.get_strike_times(self.event_data)
+        self.orderbook_dir = '../runtime/orderbook'
         self.kalshi_ws = KalshiWS(
             tickers=self.tickers,
             private_key=kwargs.get("rsa_private_key"),
@@ -100,6 +101,13 @@ class RealTimeDataStream(object):
         self.log_interval = 100
         self.just_executed = False
 
+    def save_orderbook_state(self, orderbook: dict):
+        date = datetime.now().strftime('%Y-%m-%d')
+        if not os.path.exists(f'{self.orderbook_dir}/{date}.jsonl'):
+            open(f'{self.orderbook_dir}/{date}.jsonl', 'w')
+        with open(f'{self.orderbook_dir}/{date}.jsonl', 'a') as f:
+            f.write(json.dumps(orderbook) + '\n')
+
     def set_just_executed(self):
         self.just_executed = True
 
@@ -116,6 +124,7 @@ class RealTimeDataStream(object):
             self.kalshi_trades,
             self.event_data,
             self.forecast,
+            forecast_shift=0.0,
         )
 
     def get_trade_idx(self, ticker: str):
@@ -179,6 +188,14 @@ class RealTimeDataStream(object):
             print(f"Started Kalshi WS | {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
             try:
                 while True:
+                    state = self.kalshi_api.get_orderbook(self.ticker)
+                    ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    orderbook = {
+                        'time': ts,
+                        'orderbook': state,
+                    }
+                    self.save_orderbook_state(orderbook)
+
                     time.sleep(1)
             except KeyboardInterrupt:
                 print(
