@@ -118,47 +118,6 @@ class Backtest(object):
 
     def run_backtest(
         self,
-        algorithm: Any,
-        min_window_size: int,
-        max_window_size: int,
-        latest_n_days: int = None,
-        verbose: bool = False,
-    ):
-        dates = sorted(list(self.data.keys()))
-        if latest_n_days is not None:
-            dates = dates[-(latest_n_days + min_window_size) :]
-        iterator = tqdm(dates) if verbose else dates
-        rolling_df = deque(maxlen=max_window_size)
-
-        for date in iterator:
-            if len(rolling_df) > max_window_size:
-                rolling_df.popleft()
-            if (
-                len(rolling_df) >= min_window_size
-                and len(rolling_df) <= max_window_size
-            ):
-                train_data = self.concat_data(rolling_df)
-                input_data = self.data[date]
-                predictions = algorithm.predict(train_data, input_data)
-                trade_data = self.data[date]
-                trade_data["impact_prediction"] = predictions
-                for _, row in trade_data.iterrows():
-                    trade = row.to_dict()
-                    order = algorithm.on_trade(trade)
-                    # matched_orders, order_id = self.exchange.on_trade(trade, order)
-                    # if len(matched_orders):
-                    #     algorithm.on_matched_orders(matched_orders, order_id)
-            algorithm.reset_day(
-                date,
-                update=(
-                    len(rolling_df) >= min_window_size
-                    and len(rolling_df) <= max_window_size
-                ),
-            )
-            rolling_df.append(self.data[date])
-
-    def run_backtest(
-        self,
         Algorithm: Any,
         signal: Any,
         verbose: bool = False,

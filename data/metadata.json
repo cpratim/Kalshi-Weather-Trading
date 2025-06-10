@@ -14,43 +14,57 @@
         "kxhighden": "Denver",
         "kxhighmia": "Miami",
         "kxhighchi": "Chicago",
-        "kxhighaus": "Austin"
+        "kxhighaus": "Austin",
+        "kxhighlax": "Los Angeles"
     },
     "cities": {
         "New York": {
-            "lat": 40.785091,
-            "lon": -73.968285,
+            "lat": 40.7833,
+            "lon": -73.9667,
             "country": "US",
             "state": "New York",
-            "ticker": "kxhighny"
+            "ticker": "kxhighny",
+            "shift": -0.2
         },
         "Chicago": {
-            "lat": 41.8755616,
-            "lon": -87.6244212,
+            "lat": 41.7842,
+            "lon": -87.7553,
             "country": "US",
             "state": "Illinois",
-            "ticker": "kxhighchi"
+            "ticker": "kxhighchi",
+            "shift": 1.2
         },
         "Miami": {
-            "lat": 25.7741728,
-            "lon": -80.19362,
+            "lat": 25.7906,
+            "lon": -80.3164,
             "country": "US",
             "state": "Florida",
-            "ticker": "kxhighmia"
+            "ticker": "kxhighmia",
+            "shift": 2
         },
         "Denver": {
-            "lat": 39.7392364,
-            "lon": -104.984862,
+            "lat": 39.8466,
+            "lon": -104.6562,
             "country": "US",
             "state": "Colorado",
-            "ticker": "kxhighden"
+            "ticker": "kxhighden",
+            "shift": 0
         },
         "Austin": {
-            "lat": 30.267153,
-            "lon": -97.743057,
+            "lat": 30.1830,
+            "lon": -97.6799,
             "country": "US",
             "state": "Texas",
-            "ticker": "kxhighaus"
+            "ticker": "kxhighaus",
+            "shift": 1.3
+        },
+        "Los Angeles": {
+            "lat": 33.9381,
+            "lon": -118.3889,
+            "country": "US",
+            "state": "California",
+            "ticker": "kxhighlax",
+            "shift": 0
         }
     }
 }

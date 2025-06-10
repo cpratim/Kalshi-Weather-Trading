@@ -161,16 +161,20 @@ class KalshiAPI(KalshiAuth):
         return self._get_trade_data(event_data, datetime.now())
 
     def update_current_weather_event_data(
-        self, max_days: int = 200, verbose: bool = False
-    ):
-        for market in self.metadata["weather"]:
-            if market not in os.listdir(os.path.join(self.data_dir, "kalshi")):
-                os.makedirs(os.path.join(self.data_dir, "kalshi", market, "events"))
+        self, max_days: int = 200, verbose: bool = False, tickers: list[str] = None
+    ):  
+        if tickers is None:
+            tickers = self.metadata["weather"]
+        # print(tickers)
+         
+        for ticker in tickers:
+            ticker_name = ticker
+            if ticker not in os.listdir(os.path.join(self.data_dir, "kalshi")):
+                os.makedirs(os.path.join(self.data_dir, "kalshi", ticker, "events"))
             events_files = set(
-                os.listdir(os.path.join(self.data_dir, "kalshi", market, "events"))
+                os.listdir(os.path.join(self.data_dir, "kalshi", ticker, "events"))
             )
             date_ptr = datetime.now() - timedelta(days=1)
-            ticker = market
             iter = 0
             while (
                 date_ptr.strftime("%Y-%m-%d") + ".json"
@@ -185,7 +189,7 @@ class KalshiAPI(KalshiAuth):
                     os.path.join(
                         self.data_dir,
                         "kalshi",
-                        market,
+                        ticker_name,
                         "events",
                         f"{date_ptr.strftime('%Y-%m-%d')}.json",
                     ),
@@ -194,15 +198,17 @@ class KalshiAPI(KalshiAuth):
                     json.dump(events, f, indent=4)
                 if verbose:
                     self._log(
-                        f"Downloaded {market} for {date_ptr.strftime('%Y-%m-%d')}"
+                        f"Downloaded {ticker} for {date_ptr.strftime('%Y-%m-%d')}"
                     )
                 date_ptr -= timedelta(days=1)
                 iter += 1
 
     def update_current_weather_trade_data(
-        self, max_days: int = 200, verbose: bool = False
+        self, max_days: int = 200, verbose: bool = False, tickers: list[str] = None
     ):
-        for market in self.metadata["weather"]:
+        if tickers is None:
+            tickers = self.metadata["weather"]
+        for market in tickers:
             if "trades" not in os.listdir(
                 os.path.join(self.data_dir, "kalshi", market)
             ):
@@ -215,17 +221,21 @@ class KalshiAPI(KalshiAuth):
             while (
                 date_ptr.strftime("%Y-%m-%d") + ".json"
             ) not in trade_files and iter < max_days:
-                with open(
-                    os.path.join(
-                        self.data_dir,
-                        "kalshi",
-                        market,
-                        "events",
-                        f"{date_ptr.strftime('%Y-%m-%d')}.json",
-                    ),
-                    "r",
-                ) as f:
-                    event_data = json.load(f)
+                try:
+                    with open(
+                        os.path.join(
+                            self.data_dir,
+                            "kalshi",
+                            market,
+                            "events",
+                            f"{date_ptr.strftime('%Y-%m-%d')}.json",
+                        ),
+                        "r",
+                    ) as f:
+                        event_data = json.load(f)
+                except Exception as e:
+                    print(e)
+                    break
                 trade_data = self._get_trade_data(event_data, date_ptr)
                 if "error" in trade_data:
                     break
@@ -338,6 +348,8 @@ class KalshiWS(KalshiAuth):
 if __name__ == "__main__":
     from pprint import pprint
     kalshi_api = KalshiAPI()
-    # kalshi_api.update_current_weather_event_data(max_days=250, verbose=True)
+    kalshi_api.update_current_weather_event_data(max_days=300, verbose=True, tickers=["kxhighden"])
+    kalshi_api.update_current_weather_trade_data(max_days=300, verbose=True, tickers=["kxhighden"])
     # print(kalshi_api.get_market_results("kxhighny", "2025-04-29"))
-    pprint(kalshi_api.get_orderbook('kxhighny'))
+    # pprint(kalshi_api.get_orderbook('kxhighny'))
+ 

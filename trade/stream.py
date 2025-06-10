@@ -100,6 +100,7 @@ class RealTimeDataStream(object):
         self.n_messages = 0
         self.log_interval = 100
         self.just_executed = False
+        self.weather_forecast_interval = 60 * 1
 
     def save_orderbook_state(self, orderbook: dict):
         date = datetime.now().strftime('%Y-%m-%d')
@@ -119,7 +120,10 @@ class RealTimeDataStream(object):
             self.kalshi_trades[ticker] = self.kalshi_trades[ticker][::-1]
             strike = float(self.strikes[ticker])
             self.trade_idx[ticker] = len(self.kalshi_trades[ticker])
-            self.kalshi_dist[strike] = float(self.kalshi_trades[ticker][-1]["yes_price"])
+            if len(self.kalshi_trades[ticker]) > 0:
+                self.kalshi_dist[strike] = float(self.kalshi_trades[ticker][-1]["yes_price"])
+            else:
+                self.kalshi_dist[strike] = 0.0
         return self.dataloader.process_trade_data(
             self.kalshi_trades,
             self.event_data,
@@ -136,7 +140,7 @@ class RealTimeDataStream(object):
         if (
             self.latest_forecast_update_time is None
             or (datetime.now() - self.latest_forecast_update_time).total_seconds()
-            > 3600
+            > self.weather_forecast_interval
         ):
             self.forecast = (
                 self.weather_api.get_current_forecast(self.ticker)

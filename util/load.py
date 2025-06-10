@@ -55,9 +55,9 @@ class DataLoader(object):
             v = t.split("-")[-1]
             k = float(v[1:])
             if i == 0:
-                k -= 1.5
+                k -= 0
             if i == len(tickers) - 1:
-                k += 1.5
+                k += 0
             strikes[t] = k
         mean_strike = sum(strikes.values()) / len(strikes)
         if mean_center:
@@ -181,6 +181,23 @@ class DataLoader(object):
                 min_dev = dev
                 best_forecast = v
         return best_forecast
+    
+    def _get_bucket_delta(self, forecast_rounded: float, strike: float, mean_strike: float):
+        mid = strike + mean_strike
+        if mid != int(mid):
+            bucket = (mid - .5, mid + .5)
+        else:
+            if strike < 0:
+                bucket = (0, mid - 1)
+            else:
+                bucket = (mid + 1, 10e10)
+
+        delta = min(
+            abs(forecast_rounded - bucket[0]),
+            abs(forecast_rounded - bucket[1]),
+        )
+        return delta
+
 
     def process_trade(
         self,
@@ -190,13 +207,14 @@ class DataLoader(object):
         strike_time: datetime,
         strike: float,
         mean_strike: float,
-        forecast_shift: float = -0.25,
+        forecast_shift: float = 0,
     ):
         trade_ticker = trade["ticker"]
         trade_time = self.parse_trade_time(trade["time"])
         time_to_strike = (strike_time - trade_time).total_seconds()
         kalshi_fair = self._get_fair(kalshi_dist)
         best_forecast = forecast['forecast'] + forecast_shift
+        rounded_forecast = round(best_forecast, 2)
         features = {
             "time": trade_time,
             "trade_id": trade["trade_id"],
@@ -211,8 +229,8 @@ class DataLoader(object):
             "taker_side": int(trade["taker_side"] == "yes"),
             "kalshi_strike_delta": kalshi_fair - strike,
             "forecast_strike_delta": best_forecast - strike,
+            "forecast_bucket_delta": self._get_bucket_delta(rounded_forecast, strike, mean_strike),
             "kalshi_forecast_delta": best_forecast - kalshi_fair,
-            
         }
         for k, v in kalshi_dist.items():
             if k - mean_strike < 0:
@@ -232,11 +250,13 @@ class DataLoader(object):
         events_data: dict,
         forecast: dict,
         results: dict = None,
+        strike_time: datetime = None,
         trades_post_average: dict = None,
         decay_rate: float = 0.1,
         forecast_shift: float = 0.0,
     ):
-        strike_time = self.get_strike_times(events_data)
+        if strike_time is None:
+            strike_time = self.get_strike_times(events_data)
         strikes, mean_strike = self.get_strikes(events_data)
         S = sorted(list(strikes.values()))
         
@@ -315,18 +335,23 @@ class DataLoader(object):
                 )
             except Exception as e:
                 continue
-            strike_time = self.get_strike_times(events_data)
+            # strike_time = self.get_strike_times(events_data)
+            strike_time = datetime.strptime(date, '%Y-%m-%d') + timedelta(days=1) - timedelta(minutes=1)
+            # print(strike_time, date)
             forecast = daily_forecast[strike_time.strftime("%Y-%m-%d")]
             trades_post_average = {
                 k: self._get_trade_post_average(v) for k, v in trades_data.items()
             }
+            city = self.metadata['city_map'][ticker]
             results = KalshiAPI().get_market_results(ticker, date)
             df = self.process_trade_data(
                 trades_data,
                 events_data,
                 forecast,
                 results=results,
+                strike_time=strike_time,
                 trades_post_average=trades_post_average,
+                forecast_shift=self.metadata["cities"][city]["shift"],
             )
             if ticker not in os.listdir(os.path.join(self.data_dir, "processed")):
                 os.makedirs(os.path.join(self.data_dir, "processed", ticker))
@@ -371,7 +396,7 @@ class DataLoader(object):
         result_df = pd.DataFrame()
         idx = 0
         iterator = (
-            tqdm(sorted(dates), desc=f"Loading {ticker} for {dates[idx]}")
+            tqdm(sorted(dates), desc=f"Loading {ticker.ljust(9)} for {dates[idx]}")
             if verbose
             else sorted(dates)
         )
@@ -380,7 +405,7 @@ class DataLoader(object):
             result_df = pd.concat([result_df, df])
             idx += 1
             if idx < len(dates) and verbose:
-                iterator.set_description(f"Loading {ticker} for {dates[idx]}")
+                iterator.set_description(f"Loading {ticker.ljust(9)} for {dates[idx]}")
         result_df = result_df.fillna(0)
         result_df = result_df.reset_index(drop=True)
         result_df["time"] = pd.to_datetime(result_df["time"])
@@ -393,7 +418,7 @@ class DataLoader(object):
         dates = self._get_dates(f'{self.data_dir}/{type_}/{ticker}', max_days=max_days)
         idx = 0
         iterator = (
-            tqdm(sorted(dates), desc=f"Loading {ticker} for {dates[idx]}")
+            tqdm(sorted(dates), desc=f"Loading {ticker.ljust(9)} for {dates[idx]}")
             if verbose
             else sorted(dates)
         )
@@ -404,7 +429,7 @@ class DataLoader(object):
             daily_data[date] = df
             idx += 1
             if idx < len(dates) and verbose:
-                iterator.set_description(f"Loading {ticker} for {dates[idx]}")
+                iterator.set_description(f"Loading {ticker.ljust(9)} for {dates[idx]}")
         return daily_data
     
     def get_all_market_results(self, ticker: str, max_days: int = 300):

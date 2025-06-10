@@ -12,6 +12,7 @@ import pandas as pd
 import os
 from math import floor, ceil
 import scipy as sp
+from pprint import pprint
 
 
 class FairSignal(Signal):
@@ -23,9 +24,10 @@ class FairSignal(Signal):
             'forecast_strike_delta',
             "time_to_strike",
             'yes_price',
+            # 'entropy',
         ]
         
-        self.n_neighbors = kwargs.get("n_neighbors", 125)
+        self.n_neighbors = kwargs.get("n_neighbors", 100)
         self.pipeline = Pipeline([
             ('voting', VotingClassifier(estimators=[
                 ('knn', KNeighborsClassifier(
@@ -58,7 +60,7 @@ class FairTrader(Algorithm):
 
     def __init__(self, ticker: str, date: str, signal: Signal, **kwargs):
         super().__init__(ticker, date, signal, **kwargs)
-        self.alpha = kwargs.get("alpha", 0.05)
+        self.alpha = kwargs.get("alpha", 0.07)
         self.slack = kwargs.get("slack", 0.01)
         self.signals = {}
         self.price_threshold = kwargs.get("price_threshold", 10)
@@ -67,7 +69,7 @@ class FairTrader(Algorithm):
             for i in range(len(self.signal_data)):
                 super()._on_signal_callback(self.signal_data.iloc[i], None, realtime=False)
 
-        # print(self.signals)
+        pprint(self.signals)
 
     def __name__(self):
         return "FairTrader"
@@ -116,11 +118,11 @@ class FairTrader(Algorithm):
         return False
 
     def on_signal_callback(self, trade: pd.Series, _: dict, realtime: bool = True) -> dict:
-
+        
         self.signals[trade['ticker']] = float(self.signal(trade)["signal"])
         self.signals = self._normalize(self.signals)
 
-        if trade['time_to_strike'] > 60000 or not realtime or not self.check_regions(trade['yes_price']):
+        if trade['time_to_strike'] > 60000 or not realtime:
             return {"signal": self.signals[trade['ticker']], "response": {}}
 
         yes_signal = self.signals[trade['ticker']]
@@ -157,8 +159,8 @@ def backtest_algorithm(ticker: str, **kwargs):
     backtest = Backtest(
         ticker,
         data_dir="../data",
-        backtest_window=kwargs.get("backtest_window", 1),
-        min_window_size=kwargs.get("min_window_size", 275),
+        backtest_window=kwargs.get("backtest_window", 10),
+        min_window_size=kwargs.get("min_window_size", 144),
         max_window_size=kwargs.get("max_window_size", 500),
     )
     backtest.run_backtest(
@@ -168,4 +170,4 @@ def backtest_algorithm(ticker: str, **kwargs):
 
 
 if __name__ == "__main__":
-    backtest_algorithm("kxhighny")
+    backtest_algorithm("kxhighlax")

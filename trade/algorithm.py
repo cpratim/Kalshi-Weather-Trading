@@ -37,13 +37,14 @@ class Algorithm(object):
         self.ticker = ticker
         self.date = date
         self.kwargs = kwargs
+        self.max_days = kwargs.get('max_days', 250)
         self.data_dir = kwargs.get("data_dir", "../data")
         if self.date == "realtime":
             context = DataLoader(self.data_dir).load_consolidated_daily_data(
                 self.ticker,
                 type_="processed",
                 verbose=False,
-                max_days=275,
+                max_days=self.max_days,
             )
             self.fit_signal(context)
             self.kernel = RealTimeKernel(

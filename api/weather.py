@@ -162,9 +162,11 @@ class OpenMeteoAPI(WeatherAPI):
         return daily_df
 
     def update_historical_forecast_data(
-        self, max_days: int = 250, verbose: bool = False
+        self, max_days: int = 250, verbose: bool = False, tickers: list[str] = None
     ):
-        for ticker in self.metadata["city_map"]:
+        if tickers is None:
+            tickers = [t for t in self.metadata["city_map"]]
+        for ticker in tickers:
             city = self.metadata["city_map"][ticker]
             if ticker not in os.listdir(os.path.join(self.data_dir, "weather")):
                 os.makedirs(os.path.join(self.data_dir, "weather", ticker))
@@ -232,7 +234,11 @@ class OpenMeteoAPI(WeatherAPI):
             day_forecast[key] = response["daily"][key][0]
         day_forecast['forecast'] = day_forecast['temperature_2m_max_best_match']
         return day_forecast
-
+    
+    def get_daily_weather_forecast(self, ticker: str) -> pd.DataFrame:
+        df = pd.read_csv(f'{self.data_dir}/weather/{ticker}/daily_weather_forecast.csv')
+        return df
+ 
 
 class TomorrowAPI(WeatherAPI):
 
@@ -249,10 +255,10 @@ if __name__ == "__main__":
     openmeteo = OpenMeteoAPI(data_dir="../data")
     # current_forecast = openmeteo.get_current_forecast("kxhighny")
     # pprint(current_forecast)
-    openmeteo.update_historical_forecast_data(max_days=300, verbose=True)
+    openmeteo.update_historical_forecast_data(max_days=300, verbose=True, tickers=["kxhighlax"])
     # openmeteo.set_model("kxhighny")
     # pprint(openmeteo.get_current_forecast("kxhighny")[0])
     # openmeteo.process_historical_forecast_data("kxhighny")
-    # nws = NWSAPI(data_dir="../data")
+    nws = NWSAPI(data_dir="../data")
 
-    # pprint(nws.get_daily_high_forecast('kxhighny'))
+    pprint(nws.get_current_forecast('kxhighny'))

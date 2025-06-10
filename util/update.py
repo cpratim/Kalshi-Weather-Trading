@@ -8,7 +8,6 @@ def get_all_updates(data_dir: str = "../data"):
     loader = DataLoader(data_dir=data_dir)
     kalshi = KalshiAPI(data_dir=data_dir)
     weather = OpenMeteoAPI(data_dir=data_dir)
-    polymarket = PolyMarketAPI(data_dir=data_dir)
     kalshi.update_current_weather_event_data(verbose=False)
     print("UPDATED   | Kalshi     [event data]")
     kalshi.update_current_weather_trade_data(verbose=False)
